@@ -27,44 +27,8 @@
 
 .lang_wrap {
   display: flex;
-  gap: 5px;
+  gap: 14px;
   align-items: center;
-
-  & > button {
-    display: none;
-  }
-
-  @media (min-width: 1060px) {
-    & > button {
-      display: block;
-      width: 140px;
-      flex-shrink: 0;
-      padding: 10px;
-    }
-  }
-
-  @media (min-width: 1085px) {
-    & > button {
-      width: 160px;
-    }
-  }
-
-  @media (min-width: 1150px) {
-    & > button {
-      width: 180px;
-      padding: 12px;
-    }
-  }
-
-  @media (min-width: 1328px) {
-    gap: 16px;
-  }
-  @media (min-width: 1408px) {
-    & > button {
-      width: 220px;
-      padding: 17px;
-    }
-  }
 }
 
 .nav {
@@ -143,7 +107,6 @@
 }
 
 .burgerWrap {
-  margin-left: 14px;
   width: 48px;
   height: 40px;
   display: flex;
