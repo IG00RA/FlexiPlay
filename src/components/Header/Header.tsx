@@ -31,10 +31,10 @@ export default function Header({ locale }: HeaderProps) {
   return (
     <header className={`${styles.header}`}>
       <Link className={styles.logoWrap} href={`/${locale}`}>
-        <Icon name="icon-logoMob" width={116} height={35} />
+        <Icon name="icon-logoMob" width={116} height={35} color="#000" />
       </Link>
       <Link className={styles.logDesk} href={`/${locale}`}>
-        <Icon name="icon-logoDesk" width={220} height={64} />
+        <Icon name="icon-logoDesk" width={220} height={64} color="#000" />
       </Link>
 
       <nav className={styles.nav}>
