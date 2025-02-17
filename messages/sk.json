@@ -1,0 +1,200 @@
+{
+  "Main": {
+    "button": "Start working with Mustage"
+  },
+  "Header": {
+    "home": "MUSTAGE",
+    "about": "Who We Are",
+    "ecosystem": "Ecosystem",
+    "community": "Our Value for the Community",
+    "values": "Our Principles",
+    "achieve": "Achievements in Numbers",
+    "contacts": "Contacts"
+  },
+  "Hero": {
+    "title": "Who is the Mustage Team"
+  },
+  "About": {
+    "title": "How It All Started",
+    "firstPar": "It all started in 2021, when three enthusiasts decided to enter the traffic arbitration industry.",
+    "secondPar": {
+      "part1": "We started as",
+      "part2": "a small team with big ambitions,",
+      "part3": "where only the account scheme and one farmer were working steadily."
+    },
+    "thirdPar": {
+      "part1": "At that time, we didn't know that we were creating something that would soon",
+      "part2": "become an entire ecosystem of services",
+      "part3": "in the affiliate marketing industry."
+    },
+    "fourthPar": {
+      "part1": "The first months were full of challenges.",
+      "part2": "We experimented with various approaches in traffic buys and farming, learned from our mistakes, and constantly adapted to market changes."
+    },
+    "fifthPar": {
+      "part1": "The beginning of 2022 was a real test — the events in Ukraine forced us to completely rethink our business approach. From a team of 13 people, only three founders remained, but this test",
+      "part2": "tempered us and helped us become stronger."
+    }
+  },
+  "Achieve": {
+    "title": "Achievements in Numbers",
+    "items": {
+      "communityMembers": "active community members",
+      "proxyUsers": "users who bought proxies",
+      "creoClients": "satisfied Creo clients",
+      "videos": "educational videos on YouTube",
+      "views": "views in the last 90 days",
+      "botUsers": "users of our bots",
+      "academyGraduates": "graduates of the Academy"
+    }
+  },
+  "Clients": {
+    "header": {
+      "headerPart1": "We also",
+      "headerPart2": "actively collaborate",
+      "headerPart3": "with other services",
+      "headerPart4": "from the niche",
+      "headerPart5": "and help them attract clients"
+    },
+    "link": "https://dust-family-4c4.notion.site/Mustage-Media-Group-13ce2e1c8c15802bbc02d0096c6f6f6f",
+    "items": {
+      "dolphinAnty": {
+        "header": {
+          "headerPart1": "Anti-detect browser Dolphin",
+          "headerPart2": "anty"
+        },
+        "text": "Find out the number of attracted users and promotion methods via the link -"
+      },
+      "smartSender": {
+        "header": "Smart Sender - a platform for creating chats and bots for Telegram, Facebook Messenger, Viber, Instagram, VKontakte, and Skype.",
+        "text": "Find out the number of attracted users and promotion methods via the link - "
+      },
+      "cloakIt": {
+        "header": "CLOAK IT traffic filtering service",
+        "text": "Find out the number of attracted users and promotion methods via the link - "
+      },
+      "proxyClient": {
+        "header": "Mobile proxy rental service z-proxy.com",
+        "text": "Find out the number of attracted users and promotion methods via the link - "
+      },
+      "cloakingHouse": {
+        "header": "Cloaking House traffic filtering service",
+        "text": "Find out the number of attracted users and promotion methods via the link - "
+      },
+      "digitalOcean": {
+        "header": "DigitalOcean cloud computing provider",
+        "text": "Find out the number of attracted users and promotion methods via the link - "
+      }
+    }
+  },
+  "Community": {
+    "header": {
+      "headerPart1": "Our value for the community or",
+      "headerPart2": "Mustage Community"
+    },
+    "media_info": "View all our media resources and check out the price list for advertising via the link:",
+    "button_link": "https://dust-family-4c4.notion.site/Mustage-Media-Group-13ce2e1c8c15802bbc02d0096c6f6f6f",
+    "icon_info": "over 35,000",
+    "icon_sub_info": "Total number of channel members",
+    "audit_info": "These are not just numbers, but a live, engaged audience that regularly interacts with our services, chats, and bots."
+  },
+  "Contacts": {
+    "header": "Contacts",
+    "supportText": "Support for the following areas:",
+    "supportCreatives": "Support for creatives -",
+    "supportAccounts": "Support for accounts -",
+    "supportProxies": "Support for proxies -",
+    "courseCurator": "Curator for the free traffic arbitration course -",
+    "advertisingText": "Advertising and collaboration -"
+  },
+  "Development": {
+    "header": "Product Line Development",
+    "description": "By listening to the needs of our community, we have gradually launched new services:",
+    "mustageStoreHeader": "Mustage Store",
+    "mustageStoreText": "Our signature marketplace, Mustage Store, has become a reliable solution for arbitrageurs in need of quality ad accounts. We thoroughly check every account before selling it, ensuring stable operation and maximum efficiency. Our assortment includes premium Facebook accounts, Kings from $1.99, and automatically farmed accounts from $0.3. Each client is provided with personalized support.",
+    "mustageProxyHeader": "Mustage Proxy",
+    "mustageProxyText": "We created a reliable proxy infrastructure after seeing our clients suffer from unstable connections, frequent proxy drops, and scam sellers. Our Ukrainian mobile proxies have been a real breakthrough in the market, offering the perfect balance of price and quality.",
+    "mustageCreoHeader": "Mustage Creo",
+    "mustageCreoText": "Creatives are the heart of a successful advertising campaign. We started by creating creatives for our own needs, but the demand from the community was so high that we opened a separate department. Today, our creative team creates unique creatives for anyone in a fairly short time.",
+    "mustageAcademyHeader": "Mustage Academy",
+    "mustageAcademyText": "A special pride – our educational platform with free traffic arbitration courses. We believe knowledge should be accessible, so we created a free traffic arbitration course. More than (specify the number at the time of layout) successful graduates – the best confirmation of the quality of our education.",
+    "mustageServiceBotHeader": "Mustage Service Bot",
+    "mustageServiceBotText": "Our specialized Telegram bot has become an effective solution for creative uniqueization. By integrating with the Telegram messenger, the bot processes photo and video materials quickly and efficiently, significantly expanding opportunities for creating successful ad campaigns.",
+    "goToProduct": "Go to product"
+  },
+  "Ecosystem": {
+    "header": "From Accounts to Ecosystem",
+    "par_first_header": "Starting our journey by selling Facebook accounts,",
+    "par_first": "we quickly realized that the market needed much more. Our clients faced various problems in traffic arbitration, and we decided to create a comprehensive solution for each of them.",
+    "par_second_first": {
+      "1": "First came",
+      "2": "Mustage Store ",
+      "3": "or rather, the seller —",
+      "4": "Mustage Support,",
+      "5": " which initially performed the role of a store until we created a full-fledged website."
+    },
+    "par_second_second": {
+      "1": "Mustage Store",
+      "2": " — a place where every arbitrageur can find quality accounts for work.",
+      "3": "We are perfectionists when it comes to quality, so every account undergoes thorough verification before sale."
+    }
+  },
+  "Footer": {
+    "title": "Our Resources:",
+    "profile": "Facebook accounts for launching ads",
+    "proxy": "Ukrainian mobile proxies ($35/month)",
+    "graduation": "Free traffic arbitration course",
+    "creativity": "Order creatives for arbitration (different verticals)",
+    "portfolio": "Portfolio of creatives",
+    "youtube": "Our YouTube channel",
+    "telegram": "Our Telegram channel",
+    "telegramChat": "Our Telegram chat",
+    "instagram": "Our Instagram",
+    "tikTok": "Our TikTok"
+  },
+  "Future": {
+    "title": "Looking into the Future",
+    "par": "We do not stop at what we've achieved.",
+    "plans": "Plans:",
+    "products": "Expansion of the product line",
+    "development": "Development of educational direction",
+    "position": "Strengthening positions in the international market",
+    "tech": "Implementation of new technological solutions"
+  },
+  "Media": {
+    "header": "Media Presence",
+    "youtube_channel_title": "Our YouTube Channel",
+    "youtube_channel_description": "has grown from simple tutorial videos into a full-fledged media platform with an audience of over 18,000 subscribers. We talk about complex topics in simple terms and share real-world experience.",
+    "telegram_community_title": "In Telegram, we have created a vibrant community,",
+    "telegram_community_description": "where over 15,000 professionals exchange experiences daily, discuss trends, and help each other grow. Our service bots serve as excellent tools for maintaining audience activity. The total number of subscribers to our Telegram bots is 10,282 users.",
+    "bots_title": "We have developed an entire system of bots,",
+    "bots_description": "which helps our users solve everyday tasks:",
+    "bot_list": {
+      "bot_1": "The creative uniqueness bot simplified the work with visual content",
+      "bot_2": "Giveaway bots create additional value for the community;",
+      "bot_3": "The educational bot helps structure the learning process"
+    },
+    "bot_link_text": "You can see the full list of our bots at the following link:",
+    "bot_link": "https://dust-family-4c4.notion.site/Bots-13ce2e1c8c1581f3bcf5ec8517638885"
+  },
+  "Values": {
+    "header": "Our Values",
+    "values": {
+      "honesty": {
+        "title": "Transparency",
+        "description": "We believe in open and honest relationships with our clients.",
+        "details": "There are practically no negative reviews on our products, and if any do appear, we do not hide them because we are open to criticism and believe that it helps us improve! For example, the chat with reviews about our course is completely open. Anyone who has completed the course can write there, and in a year, we have received only a couple of negative reviews."
+      },
+      "innovations": {
+        "title": "Innovations",
+        "description": "We are constantly exploring new opportunities and technologies. Our team is not afraid to experiment and implement bold solutions.",
+        "details": "We were the first in the market to create a worthy free traffic arbitration course. Our mobile proxy service is one of the cheapest and highest quality on the Ukrainian market."
+      },
+      "support": {
+        "title": "Support",
+        "description": "We know how important timely assistance is in arbitration. That's why our support is available 7 days a week from 11:00 AM to 10:00 PM Kyiv time, ready to answer any questions related to traffic arbitration or purchasing consumables for free.",
+        "details": ""
+      }
+    }
+  }
+}

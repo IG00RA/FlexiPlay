@@ -1,0 +1,29 @@
+:root {
+  --font_fredoka: 'Fredoka', serif;
+
+  --background: #fefefe;
+  --main_text_color: #404969;
+  --second_text_color: #000000;
+
+  --main_gradient: linear-gradient(180deg, #94bfff 0%, #5390ec 100%), #d9d9d9;
+  --modal_backdrop: rgba(235, 244, 255, 0.7);
+
+  --fs_small: 14px;
+  --fs_xsmall: 16px;
+  --fs_medium: 18px;
+  --fs_large: 24px;
+  --fs_xlarge: 32px;
+  --fs_mxlarge: 40px;
+  --fs_xxlarge: 64px;
+  --fs_xxxlarge: 72px;
+
+  --mobile: 328px;
+  --mobile_l: 360px;
+  --mobile_xl: 475px;
+  --tablet: 768px;
+  --laptop: 1024px;
+  --desktop: 1408px;
+
+  --container: 91.1%;
+  --container_mob: 85%;
+}
