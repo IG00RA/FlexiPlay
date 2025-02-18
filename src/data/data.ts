@@ -28,7 +28,7 @@ export const mainPageGeometry = [
     header: 'MainPage.board.header',
     description: 'MainPage.board.description',
     time: '8-12 ',
-    link: 'memory-case',
+    link: 'basic-board',
   },
 ];
 

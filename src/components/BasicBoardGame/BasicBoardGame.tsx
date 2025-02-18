@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './MemoryCaseGame.module.css';
+import styles from './BasicBoardGame.module.css';
 import memory from '@/img/pages/memory.webp';
 import memory_mob from '@/img/pages/memory_mob.webp';
 import { useTranslations } from 'next-intl';
@@ -9,7 +9,7 @@ import ModalComponent from '../Modals/ModalComponent';
 import useLanguageStore from '@/store/useLanguageStore';
 import { useEffect, useState } from 'react';
 
-export default function MemoryCaseGame() {
+export default function BasicBoardGame() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isFirstText, setIsFirstText] = useState(true);
   const t = useTranslations();

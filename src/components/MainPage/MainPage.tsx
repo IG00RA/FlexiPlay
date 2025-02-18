@@ -8,7 +8,7 @@ import Image, { StaticImageData } from 'next/image';
 import ModalComponent from '../Modals/ModalComponent';
 import MainVideoModal from '../Modals/MainVideoModal/MainVideoModal';
 import Link from 'next/link';
-import useStore from '@/store/useLanguageStore';
+import useLanguageStore from '@/store/useLanguageStore';
 
 export interface VideoItem {
   img: StaticImageData;
@@ -25,7 +25,7 @@ export default function MainPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations();
 
-  const { locale } = useStore();
+  const { locale } = useLanguageStore();
 
   const openMenu = (item: VideoItem) => {
     setVideoItem(item);
