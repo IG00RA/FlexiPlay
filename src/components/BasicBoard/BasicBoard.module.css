@@ -1,8 +1,4 @@
-.section {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 40px 0;
-}
+
 
 .header {
   text-align: center;

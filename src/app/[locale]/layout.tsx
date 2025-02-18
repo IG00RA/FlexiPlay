@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { Fredoka } from 'next/font/google';
 import Header from '@/components/Header/Header';
 import { getMessages } from 'next-intl/server';
+import styles from './Main.module.css';
 
 const fredoka = Fredoka({
   subsets: ['latin'],
@@ -107,7 +108,7 @@ export default async function RootLayout({
       <NextIntlClientProvider messages={messages}>
         <body className={`${fredoka.variable}`}>
           <Header locale={locale} />
-          <main>{children}</main>
+          <main className={styles.main}>{children}</main>
           <div id="__next"></div>
         </body>
       </NextIntlClientProvider>

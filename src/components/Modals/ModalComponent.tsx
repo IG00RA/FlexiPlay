@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl';
 import { useState, ReactNode, useEffect } from 'react';
 import Modal from 'react-modal';
 import styles from './ModalComponent.module.css';
-import Icon from '@/helpers/Icon';
 
 interface ModalProps {
   isOpen: boolean;
@@ -30,14 +29,6 @@ export default function ModalComponent({
       className={styles.modal}
       overlayClassName={styles.overlay}
     >
-      {/* <button onClick={onClose} className={styles.close_btn}>
-        <Icon
-          className={styles.close_icon}
-          name="icon-close-modal"
-          width={16}
-          height={16}
-        />
-      </button> */}
       {children}
     </Modal>
   );

@@ -47,7 +47,7 @@ export default function BasicBoardGame() {
   };
 
   return (
-    <section className={styles.section}>
+    <section>
       <h2 className={styles.header}>{t('MemoryCasePage.header')}</h2>
       <h3 className={styles.header_text}>{t('MemoryCasePage.headerText')}</h3>
 

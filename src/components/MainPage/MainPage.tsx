@@ -48,7 +48,7 @@ export default function MainPage() {
   };
 
   return (
-    <section className={styles.section}>
+    <section>
       <h2 className={styles.header}>{t('MainPage.trainingText')}</h2>
       <ul className={styles.list}>
         {mainPageGeometry.map((item, index) => (

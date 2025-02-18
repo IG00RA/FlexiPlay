@@ -1,7 +1,8 @@
 {
   "Buttons": {
     "start": "Старт",
-    "back": "Назад"
+    "back": "Назад",
+    "main": "На головну"
   },
   "MainPage": {
     "trainingText": "Онлайн тренажер FlexiFun Geometry",
