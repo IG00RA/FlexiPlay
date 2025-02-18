@@ -37,6 +37,13 @@ export const mainPageVideo = [
     header: 'MainPage.introduction.header',
     description: 'MainPage.introduction.description',
     time: '10-15 ',
+    descriptionFull: 'MainPage.introduction.descriptionFull',
+    quests: [
+      'MainPage.introduction.quests.first',
+      'MainPage.introduction.quests.second',
+      'MainPage.introduction.quests.third',
+      'MainPage.introduction.quests.fourth',
+    ],
   },
   {
     img: color,
@@ -44,6 +51,13 @@ export const mainPageVideo = [
     header: 'MainPage.color.header',
     description: 'MainPage.color.description',
     time: '8-12 ',
+    descriptionFull: 'MainPage.color.descriptionFull',
+    quests: [
+      'MainPage.color.quests.first',
+      'MainPage.color.quests.second',
+      'MainPage.color.quests.third',
+      'MainPage.color.quests.fourth',
+    ],
   },
   {
     img: placing,
@@ -51,6 +65,12 @@ export const mainPageVideo = [
     header: 'MainPage.placing.header',
     description: 'MainPage.placing.description',
     time: '12-15 ',
+    descriptionFull: 'MainPage.placing.descriptionFull',
+    quests: [
+      'MainPage.placing.quests.first',
+      'MainPage.placing.quests.second',
+      'MainPage.placing.quests.third',
+    ],
   },
   {
     img: combinations,
@@ -58,5 +78,11 @@ export const mainPageVideo = [
     header: 'MainPage.combinations.header',
     description: 'MainPage.combinations.description',
     time: '10-12 ',
+    descriptionFull: 'MainPage.combinations.descriptionFull',
+    quests: [
+      'MainPage.combinations.quests.first',
+      'MainPage.combinations.quests.second',
+      'MainPage.combinations.quests.third',
+    ],
   },
 ];
