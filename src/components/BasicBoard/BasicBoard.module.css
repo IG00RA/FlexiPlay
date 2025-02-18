@@ -23,10 +23,12 @@
 }
 
 .card {
+  display: block;
   overflow: hidden;
   border-radius: 32px;
   background: var(--foreground);
   box-shadow: 0px 12px 28.3px 0px rgba(124, 122, 151, 0.25);
+  margin-bottom: 16px;
 }
 
 .image_wrap {
@@ -35,7 +37,7 @@
   align-items: center;
   width: 100%;
   height: auto;
-  aspect-ratio: 328/395;
+  aspect-ratio: 328/358;
   margin-bottom: 24px;
 }
 
@@ -104,56 +106,6 @@
   line-height: 165.5%;
   letter-spacing: 0.54px;
   align-self: flex-end;
-  transition: box-shadow 0.3s ease;
-
-  &:hover,
-  &:focus {
-    box-shadow: var(--box_shadow);
-  }
-}
-
-.modal_wrap {
-  display: inline-flex;
-  width: 91.1vw;
-  padding: 24px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  border-radius: 12px;
-  background: var(--foreground);
-}
-
-.modal_header {
-  color: var(--second_text_color);
-  text-align: center;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 125.5%;
-}
-
-.modal_text {
-  color: var(--second_text_color);
-  text-align: center;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 125.5%;
-  letter-spacing: normal;
-}
-
-.modal_button {
-  border-radius: 12px;
-  border: 0.775px solid #000;
-  background: var(--foreground);
-  padding: 8px 16px;
-  color: var(--second_text_color);
-  text-align: center;
-  font-size: var(--fs_xsmall);
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
   transition: box-shadow 0.3s ease;
 
   &:hover,

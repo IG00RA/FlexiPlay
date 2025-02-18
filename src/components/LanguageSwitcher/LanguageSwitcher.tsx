@@ -3,14 +3,13 @@
 import { useEffect } from 'react';
 import styles from './LanguageSwitcher.module.css';
 import { usePathname, useRouter } from 'next/navigation';
-import useStore from '@/store/useLanguageStore';
+import useLanguageStore from '@/store/useLanguageStore';
 
 const LanguageSwitcher = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const { query, setLocale } = useStore();
-
+  const { query, setLocale } = useLanguageStore();
   // Функція для визначення локалі з URL
   const getLocaleFromPath = (pathname: string): string => {
     const pathSegments = pathname.split('/');
