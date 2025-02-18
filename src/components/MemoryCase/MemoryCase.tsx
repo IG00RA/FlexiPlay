@@ -7,15 +7,29 @@ import useLanguageStore from '@/store/useLanguageStore';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
+import arrow from '@/img/arrow.webp';
+import { useRouter } from 'next/navigation';
 
 export default function MemoryCase() {
   const t = useTranslations();
   const { locale } = useLanguageStore();
+
+  const router = useRouter();
+
+  const handleNavigation = () => {
+    router.push(`/${locale}/memory-case/game`);
+  };
+
   return (
     <section>
       <h2 className={styles.header}>{t('MemoryCasePage.header')}</h2>
       <h3 className={styles.header_text}>{t('MemoryCasePage.headerText')}</h3>
-      <Link href={`/${locale}/memory-case/game`} className={styles.card}>
+      <div
+        className={styles.card}
+        onClick={handleNavigation}
+        role="button"
+        tabIndex={0}
+      >
         <div className={styles.image_wrap}>
           <Image
             src={memory}
@@ -42,13 +56,35 @@ export default function MemoryCase() {
             {t('MemoryCasePage.cardHeader')}
           </h3>
           <div className={styles.text_wrap}>
-            <p className={styles.item_description}>
-              {t('MemoryCasePage.cardText')}
-            </p>
-            <p className={styles.time}>
-              <span>10-15 </span>
-              {t('MainPage.min')}
-            </p>
+            <div className={styles.arrow_wrap}>
+              <Image
+                src={arrow}
+                className={styles.arrow}
+                width={0}
+                height={0}
+                sizes="100vw"
+                alt="Text arrow"
+                priority
+              />
+              <p className={styles.item_description}>
+                {t('MemoryCasePage.cardText')}
+              </p>
+            </div>
+            <div className={styles.arrow_wrap}>
+              <Image
+                src={arrow}
+                className={styles.arrow}
+                width={0}
+                height={0}
+                sizes="100vw"
+                alt="Text arrow"
+                priority
+              />
+              <p className={styles.time}>
+                <span>10-15 </span>
+                {t('MainPage.min')}
+              </p>
+            </div>
             <Link
               href={`/${locale}/memory-case/game`}
               className={styles.button}
@@ -57,7 +93,7 @@ export default function MemoryCase() {
             </Link>
           </div>
         </div>
-      </Link>
+      </div>
     </section>
   );
 }

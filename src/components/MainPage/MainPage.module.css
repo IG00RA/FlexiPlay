@@ -108,9 +108,21 @@
 }
 
 .text_wrap {
-  padding-left: 49px;
   display: flex;
   flex-direction: column;
+}
+
+.arrow_wrap {
+  flex-shrink: 0;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.arrow {
+  flex-shrink: 0;
+  width: 33px;
+  height: 33px;
 }
 
 .item_description {
@@ -118,7 +130,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: 165.5%;
-  margin-bottom: 16px;
   @media (min-width: 1024px) {
     font-size: var(--fs_medium);
     letter-spacing: 0.54px;
@@ -131,7 +142,6 @@
   font-weight: 500;
   line-height: 165.5%;
   letter-spacing: 0.48px;
-  margin-bottom: 24px;
 
   & span {
     font-weight: 700;
@@ -160,6 +170,7 @@
   letter-spacing: 0.54px;
   align-self: flex-end;
   transition: box-shadow 0.3s ease;
+  margin-top: 8px;
 
   &:hover,
   &:focus {
