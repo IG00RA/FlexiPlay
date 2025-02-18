@@ -1,5 +1,5 @@
-import BasicBoardGame from '@/components/BasicBoardGame/BasicBoardGame';
+import MemoryCaseGame from '@/components/MemoryCaseGame/MemoryCaseGame';
 
 export default function Home() {
-  return <BasicBoardGame />;
+  return <MemoryCaseGame />;
 }

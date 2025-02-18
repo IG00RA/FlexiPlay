@@ -1,8 +1,8 @@
 'use client';
 
 import styles from './MemoryCaseGame.module.css';
-import memory from '@/img/pages/memory.webp';
-import memory_mob from '@/img/pages/memory_mob.webp';
+import header_ico from '@/img/game/header_ico.webp';
+import main_board from '@/img/game/memoryCase/main_board.webp';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import ModalComponent from '../Modals/ModalComponent';
@@ -19,6 +19,13 @@ export default function MemoryCaseGame() {
       document.body.style.overflow = 'hidden';
       document.body.style.touchAction = 'none';
     }
+
+    return () => {
+      if (typeof document !== 'undefined') {
+        document.body.style.overflow = 'auto';
+        document.body.style.touchAction = 'auto';
+      }
+    };
   }, []);
 
   const { locale } = useLanguageStore();
@@ -48,45 +55,59 @@ export default function MemoryCaseGame() {
 
   return (
     <section>
-      <h2 className={styles.header}>{t('MemoryCasePage.header')}</h2>
-      <h3 className={styles.header_text}>{t('MemoryCasePage.headerText')}</h3>
+      <h2 className={styles.header}>
+        <span className={styles.ico_wrap}>
+          <Image
+            src={header_ico}
+            className={styles.header_ico}
+            width={0}
+            height={0}
+            sizes="100vw"
+            alt="Header icon"
+            priority
+          />
+        </span>
+        {t('MemoryCaseGame.header')}
+      </h2>
+      <h3 className={styles.header_text}>{t('MemoryCaseGame.headerText')}</h3>
 
-      <div className={styles.card}>
+      <div className={styles.field}>
         <div className={styles.image_wrap}>
           <Image
-            src={memory}
-            className={styles.img}
+            src={main_board}
+            className={styles.main_board}
             width={0}
             height={0}
             sizes="100vw"
-            alt={t('MemoryCasePage.header')}
+            alt="Main board image"
             priority
           />
-          <Image
-            src={memory_mob}
-            className={styles.img_mob}
-            width={0}
-            height={0}
-            sizes="100vw"
-            alt={t('MemoryCasePage.header')}
-            priority
-          />
-        </div>
 
-        <div className={styles.bottom_wrap}>
-          <h3 className={styles.item_header}>
-            {t('MemoryCasePage.cardHeader')}
-          </h3>
-          <div className={styles.text_wrap}>
-            <p className={styles.item_description}>
-              {t('MemoryCasePage.cardText')}
-            </p>
-            <p className={styles.time}>
-              <span>10-15 </span>
-              {t('MainPage.min')}
-            </p>
-            <button className={styles.button} type="button">
-              {t('Buttons.start')}
+          <div className={styles.figures_box}></div>
+        </div>
+        <div className={styles.btn_box}>
+          <div className={styles.timer_wrap}>
+            <button className={styles.timer_button} type="button">
+              {t('MemoryCaseGame.buttons.timer')}
+            </button>
+            <button className={styles.record_button} type="button">
+              {t('MemoryCaseGame.buttons.record')}
+            </button>
+          </div>
+          <div className={styles.control_wrap_main}>
+            <div className={styles.control_wrap}>
+              <button className={styles.start_button} type="button">
+                {t('MemoryCaseGame.buttons.start')}
+              </button>
+              <button className={styles.stop_button} type="button">
+                {t('MemoryCaseGame.buttons.stop')}
+              </button>
+              <button className={styles.score_button} type="button">
+                0
+              </button>
+            </div>
+            <button className={styles.time_button} type="button">
+              {t('MemoryCaseGame.buttons.time')}
             </button>
           </div>
         </div>

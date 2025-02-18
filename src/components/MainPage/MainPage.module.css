@@ -171,7 +171,7 @@
   align-self: flex-end;
   transition: box-shadow 0.3s ease;
   margin-top: 8px;
-
+  text-align: center;
   &:hover,
   &:focus {
     box-shadow: var(--box_shadow);
