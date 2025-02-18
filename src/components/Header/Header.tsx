@@ -5,7 +5,6 @@ import styles from './Header.module.css';
 import Icon from '@/helpers/Icon';
 import MobMenu from '../MobMenu/MobMenu';
 import { useState } from 'react';
-import { navItems } from '@/data/data';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { useTranslations } from 'next-intl';
 
@@ -30,27 +29,18 @@ export default function Header({ locale }: HeaderProps) {
 
   return (
     <header className={`${styles.header}`}>
-      <Link className={styles.logoWrap} href={`/${locale}`}>
+      <Link className={styles.logo_wrap} href={`/${locale}`}>
         <Icon name="icon-logoMob" width={116} height={35} color="#000" />
       </Link>
-      <Link className={styles.logDesk} href={`/${locale}`}>
+      <Link className={styles.logo_desk} href={`/${locale}`}>
         <Icon name="icon-logoDesk" width={220} height={64} color="#000" />
       </Link>
 
-      <nav className={styles.nav}>
-        <ul>
-          {navItems.map((item, index) => (
-            <li key={index}>
-              <Link href={`/${locale}${item.href}`}>{t(item.label)}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
       <div className={`${styles.lang_wrap}`}>
         <LanguageSwitcher />
         <div
-          className={`${styles.burgerWrap} ${
-            isMenuOpen ? styles.burgerOpen : ''
+          className={`${styles.burger_wrap} ${
+            isMenuOpen ? styles.burger_open : ''
           }`}
           onClick={isMenuOpen ? closeMenu : openMenu}
         >
@@ -58,6 +48,9 @@ export default function Header({ locale }: HeaderProps) {
           <span className={styles.line}></span>
           <span className={styles.line}></span>
         </div>
+        <Link className={styles.main_button} href={`/${locale}`}>
+          {t('Buttons.main')}
+        </Link>
       </div>
 
       <MobMenu isMenuOpen={isMenuOpen} closeMenu={closeMenu} />

@@ -6,11 +6,19 @@
   max-height: 90vh;
   overflow-y: auto;
   margin: 0 auto;
+  width: 91.1vw;
 
-  /* @media (min-width: 1408px) {
-    border-radius: 60px;
+  @media (min-width: 800px) {
+    max-width: var(--tablet);
+  }
+
+  @media (min-width: 1024px) {
+    max-width: var(--container);
+  }
+
+  @media (min-width: 1448px) {
     max-width: var(--desktop);
-  } */
+  }
 }
 
 .overlay {

@@ -14,11 +14,7 @@
     padding: 24px 80px;
   }
 
-  @media (min-width: 1060px) {
-    padding: 24px 10px;
-  }
-
-  @media (min-width: 1408px) {
+  @media (min-width: 1448px) {
     padding: 36px 5px;
     max-width: var(--desktop);
     margin: 0 auto;
@@ -31,50 +27,8 @@
   align-items: center;
 }
 
-.nav {
-  display: none;
-
-  @media (min-width: 1060px) {
-    display: block;
-    flex-shrink: 0;
-
-    & ul {
-      display: flex;
-      gap: 10px;
-
-      & li {
-        & a {
-          font-size: var(--fs_xsmall);
-          font-weight: 500;
-          line-height: 1.21;
-          transition: text-shadow 0.3s ease, transform 0.3s ease;
-        }
-      }
-
-      & li {
-        & a:hover,
-        & a:focus {
-          text-shadow: 0px 0 currentColor, 0px 0 currentColor;
-          transform: scale(1.1);
-        }
-      }
-    }
-  }
-
-  @media (min-width: 1250px) {
-    & ul {
-      gap: 17px;
-      & li {
-        & a {
-          font-size: var(--fs_medium);
-        }
-      }
-    }
-  }
-}
-
-.logoWrap,
-.logDesk {
+.logo_wrap,
+.logo_desk {
   display: flex;
   align-items: center;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -88,17 +42,17 @@
   }
 }
 
-.logoWrap {
+.logo_wrap {
   @media (min-width: 1024px) {
     display: none;
   }
 }
 
-.logDesk {
+.logo_desk {
   @media (max-width: 1023px) {
     display: none;
   }
-  @media (max-width: 1300px) {
+  @media (max-width: 1024px) {
     & svg {
       width: 125px;
       height: 40px;
@@ -106,7 +60,7 @@
   }
 }
 
-.burgerWrap {
+.burger_wrap {
   width: 48px;
   height: 40px;
   display: flex;
@@ -118,7 +72,7 @@
   cursor: pointer;
   transition: margin 0.3s ease;
 
-  @media (min-width: 1060px) {
+  @media (min-width: 768px) {
     display: none;
   }
 }
@@ -145,24 +99,57 @@
   top: 24px;
 }
 
-.burgerOpen .line:nth-child(1) {
+.burger_open .line:nth-child(1) {
   transform: rotate(45deg);
   width: 20px;
   top: 18px;
 }
 
-.burgerOpen .line:nth-child(2) {
+.burger_open .line:nth-child(2) {
   opacity: 0;
 }
 
-.burgerOpen .line:nth-child(3) {
+.burger_open .line:nth-child(3) {
   width: 20px;
   transform: rotate(-45deg);
   top: 18px;
 }
 
-.burgerWrap.burgerOpen {
+.burger_wrap.burger_open {
   border: 1px solid #ffffff;
   margin-top: 24px;
   z-index: 3;
+}
+
+.main_button {
+  display: none;
+  @media (min-width: 768px) {
+    width: 150px;
+    height: 35px;
+    display: flex;
+    border-radius: 11px;
+    background: var(--main_gradient);
+    justify-content: center;
+    align-items: center;
+    color: var(--foreground);
+    font-size: var(--fs_xsmall);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 125.5%;
+  }
+  @media (min-width: 1024px) {
+    width: 251px;
+    height: 64px;
+    font-size: 20px;
+    border-radius: 20px;
+  }
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  &:hover,
+  &:focus {
+    filter: drop-shadow(0px 2px 5px #1c16631a)
+      drop-shadow(0px 9px 20px #1c16631f) drop-shadow(0px 16px 20px #1c16630d)
+      drop-shadow(0px 37px 15px #1c166303) drop-shadow(0px 57px 16px #1c166300);
+    transform: scale(1.01);
+  }
 }

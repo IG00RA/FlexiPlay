@@ -12,7 +12,7 @@ export default function MemoryCase() {
   const t = useTranslations();
   const { locale } = useLanguageStore();
   return (
-    <section className={styles.section}>
+    <section>
       <h2 className={styles.header}>{t('MemoryCasePage.header')}</h2>
       <h3 className={styles.header_text}>{t('MemoryCasePage.headerText')}</h3>
       <Link href={`/${locale}/memory-case/game`} className={styles.card}>

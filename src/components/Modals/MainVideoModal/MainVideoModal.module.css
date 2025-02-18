@@ -1,10 +1,17 @@
 .modal {
-  width: 91.1vw;
   border-radius: 24px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   background-color: var(--foreground);
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    border-radius: 40px;
+  }
+  @media (min-width: 1448px) {
+    border-radius: 60px;
+  }
 }
 
 .image_wrapper {
@@ -16,6 +23,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (min-width: 1024px) {
+    flex: 1;
+  }
 }
 
 @keyframes blink {
@@ -53,6 +63,10 @@
 
 .content_wrapper {
   padding: 32px 24px;
+  @media (min-width: 1024px) {
+    flex: 1;
+    padding: 40px 60px;
+  }
 }
 
 .header {
@@ -62,6 +76,11 @@
   font-weight: 700;
   line-height: normal;
   margin-bottom: 8px;
+  @media (min-width: 768px) {
+    font-size: 36px;
+    line-height: 150%;
+    margin-bottom: 16px;
+  }
 }
 
 .time {
@@ -71,6 +90,13 @@
   font-weight: 700;
   line-height: 150%;
   margin-bottom: 32px;
+  @media (min-width: 768px) {
+    margin-bottom: 48px;
+    font-size: var(--fs_large);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 171.5%;
+  }
 }
 
 .description {
@@ -80,6 +106,11 @@
   font-weight: 400;
   line-height: 150%;
   margin-bottom: 32px;
+  @media (min-width: 768px) {
+    margin-bottom: 48px;
+    font-size: var(--fs_large);
+    line-height: 129.5%;
+  }
 }
 
 .question {
@@ -88,10 +119,17 @@
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  @media (min-width: 768px) {
+    font-size: var(--fs_large);
+    line-height: 129.5%;
+  }
 }
 
 .list {
   margin-bottom: 24px;
+  @media (min-width: 768px) {
+    margin-bottom: 70px;
+  }
 }
 
 .item {
@@ -100,6 +138,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  @media (min-width: 768px) {
+    font-size: var(--fs_large);
+    line-height: 129.5%;
+  }
 }
 
 .button {
@@ -119,5 +161,14 @@
   &:hover,
   &:focus {
     box-shadow: var(--box_shadow);
+  }
+
+  @media (min-width: 768px) {
+    font-size: var(--fs_large);
+    font-weight: 600;
+    padding: 24px 96px;
+  }
+  @media (min-width: 1024px) {
+    margin: 0;
   }
 }

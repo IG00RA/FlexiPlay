@@ -14,7 +14,7 @@ export default function BasicBoard() {
   const t = useTranslations();
   const { locale } = useLanguageStore();
   return (
-    <section className={styles.section}>
+    <section>
       <h2 className={styles.header}>{t('BasicBoardPage.header')}</h2>
       <h3 className={styles.header_text}>{t('BasicBoardPage.headerText')}</h3>
       <Link href={`/${locale}/basic-board/game`} className={styles.card}>
