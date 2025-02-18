@@ -19,6 +19,13 @@ export default function BasicBoardGame() {
       document.body.style.overflow = 'hidden';
       document.body.style.touchAction = 'none';
     }
+
+    return () => {
+      if (typeof document !== 'undefined') {
+        document.body.style.overflow = 'auto';
+        document.body.style.touchAction = 'auto';
+      }
+    };
   }, []);
 
   const { locale } = useLanguageStore();
