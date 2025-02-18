@@ -20,6 +20,7 @@ export const mainPageGeometry = [
     header: 'MainPage.memory.header',
     description: 'MainPage.memory.description',
     time: '10-15 ',
+    link: 'memory-case',
   },
   {
     img: board,
@@ -27,6 +28,7 @@ export const mainPageGeometry = [
     header: 'MainPage.board.header',
     description: 'MainPage.board.description',
     time: '8-12 ',
+    link: 'memory-case',
   },
 ];
 

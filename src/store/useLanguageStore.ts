@@ -7,11 +7,11 @@ interface State {
   setLocale: (locale: string) => void;
 }
 
-const useStore = create<State>(set => ({
+const useLanguageStore = create<State>(set => ({
   query: '',
   setQuery: query => set({ query }),
   locale: '',
   setLocale: locale => set({ locale }),
 }));
 
-export default useStore;
+export default useLanguageStore;
