@@ -9,6 +9,7 @@ import ModalComponent from '../Modals/ModalComponent';
 import MainVideoModal from '../Modals/MainVideoModal/MainVideoModal';
 import Link from 'next/link';
 import useLanguageStore from '@/store/useLanguageStore';
+import arrow from '@/img/arrow.webp';
 
 export interface VideoItem {
   img: StaticImageData;
@@ -76,11 +77,35 @@ export default function MainPage() {
             <div className={styles.bottom_wrap}>
               <h3 className={styles.item_header}>{t(item.header)}</h3>
               <div className={styles.text_wrap}>
-                <p className={styles.item_description}>{t(item.description)}</p>
-                <p className={styles.time}>
-                  <span>{item.time}</span>
-                  {t('MainPage.min')}
-                </p>
+                <div className={styles.arrow_wrap}>
+                  <Image
+                    src={arrow}
+                    className={styles.arrow}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    alt="Text arrow"
+                    priority
+                  />
+                  <p className={styles.item_description}>
+                    {t(item.description)}
+                  </p>
+                </div>
+                <div className={styles.arrow_wrap}>
+                  <Image
+                    src={arrow}
+                    className={styles.arrow}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    alt="Text arrow"
+                    priority
+                  />
+                  <p className={styles.time}>
+                    <span>{item.time}</span>
+                    {t('MainPage.min')}
+                  </p>
+                </div>
                 <Link href={`${locale}/${item.link}`} className={styles.button}>
                   {t('Buttons.start')}
                 </Link>
@@ -116,11 +141,35 @@ export default function MainPage() {
             <div className={styles.bottom_wrap}>
               <h3 className={styles.item_header}>{t(item.header)}</h3>
               <div className={styles.text_wrap}>
-                <p className={styles.item_description}>{t(item.description)}</p>
-                <p className={styles.time}>
-                  <span>{item.time}</span>
-                  {t('MainPage.min')}
-                </p>
+                <div className={styles.arrow_wrap}>
+                  <Image
+                    src={arrow}
+                    className={styles.arrow}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    alt="Text arrow"
+                    priority
+                  />
+                  <p className={styles.item_description}>
+                    {t(item.description)}
+                  </p>
+                </div>
+                <div className={styles.arrow_wrap}>
+                  <Image
+                    src={arrow}
+                    className={styles.arrow}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    alt="Text arrow"
+                    priority
+                  />
+                  <p className={styles.time}>
+                    <span>{item.time}</span>
+                    {t('MainPage.min')}
+                  </p>
+                </div>
                 <button
                   className={styles.button}
                   onClick={() => openMenu(item)}
