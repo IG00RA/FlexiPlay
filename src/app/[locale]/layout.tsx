@@ -108,6 +108,7 @@ export default async function RootLayout({
         <body className={`${fredoka.variable}`}>
           <Header locale={locale} />
           <main>{children}</main>
+          <div id="__next"></div>
         </body>
       </NextIntlClientProvider>
     </html>

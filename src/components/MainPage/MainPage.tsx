@@ -4,21 +4,43 @@ import styles from './MainPage.module.css';
 import { useState } from 'react';
 import { mainPageGeometry, mainPageVideo } from '@/data/data';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
+import ModalComponent from '../Modals/ModalComponent';
+import MainVideoModal from '../Modals/MainVideoModal/MainVideoModal';
+
+export interface VideoItem {
+  img: StaticImageData;
+  imgMob: StaticImageData;
+  header: string;
+  description: string;
+  time: string;
+  descriptionFull: string;
+  quests: string[];
+}
 
 export default function MainPage() {
+  const [videoItem, setVideoItem] = useState<VideoItem | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations();
 
+  const openMenu = (item: VideoItem) => {
+    setVideoItem(item);
+    setIsMenuOpen(true);
+
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    }
+  };
+
   const closeMenu = () => {
     setIsMenuOpen(false);
-    document.body.style.overflow = 'auto';
-    document.body.style.touchAction = 'auto';
-  };
-  const openMenu = () => {
-    setIsMenuOpen(true);
-    document.body.style.overflow = 'hidden';
-    document.body.style.touchAction = 'none';
+    setVideoItem(null);
+
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = 'auto';
+      document.body.style.touchAction = 'auto';
+    }
   };
 
   return (
@@ -95,7 +117,11 @@ export default function MainPage() {
                   <span>{item.time}</span>
                   {t('MainPage.min')}
                 </p>
-                <button className={styles.button} type="button">
+                <button
+                  className={styles.button}
+                  onClick={() => openMenu(item)}
+                  type="button"
+                >
                   {t('Buttons.start')}
                 </button>
               </div>
@@ -103,6 +129,9 @@ export default function MainPage() {
           </li>
         ))}
       </ul>
+      <ModalComponent isOpen={isMenuOpen} onClose={closeMenu}>
+        {videoItem && <MainVideoModal onClose={closeMenu} item={videoItem} />}
+      </ModalComponent>
     </section>
   );
 }

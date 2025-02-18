@@ -1,7 +1,7 @@
 .section {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 40px 0 0;
   /* @media (min-width: 1408px) {
     padding: 36px 5px;
     max-width: var(--desktop);
@@ -109,4 +109,10 @@
   line-height: 165.5%;
   letter-spacing: 0.54px;
   align-self: flex-end;
+  transition: box-shadow 0.3s ease;
+
+  &:hover,
+  &:focus {
+    box-shadow: var(--box_shadow);
+  }
 }
