@@ -7,6 +7,8 @@ import { useTranslations } from 'next-intl';
 import Image, { StaticImageData } from 'next/image';
 import ModalComponent from '../Modals/ModalComponent';
 import MainVideoModal from '../Modals/MainVideoModal/MainVideoModal';
+import Link from 'next/link';
+import useStore from '@/store/useLanguageStore';
 
 export interface VideoItem {
   img: StaticImageData;
@@ -22,6 +24,8 @@ export default function MainPage() {
   const [videoItem, setVideoItem] = useState<VideoItem | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations();
+
+  const { locale } = useStore();
 
   const openMenu = (item: VideoItem) => {
     setVideoItem(item);
@@ -77,9 +81,9 @@ export default function MainPage() {
                   <span>{item.time}</span>
                   {t('MainPage.min')}
                 </p>
-                <button className={styles.button} type="button">
+                <Link href={`${locale}/${item.link}`} className={styles.button}>
                   {t('Buttons.start')}
-                </button>
+                </Link>
               </div>
             </div>
           </li>
