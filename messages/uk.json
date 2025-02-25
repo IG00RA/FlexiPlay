@@ -4,6 +4,18 @@
     "back": "Назад",
     "main": "На головну"
   },
+  "Colors": {
+    "blue": "Синій",
+    "green": "Зелений",
+    "red": "Червоний",
+    "yellow": "Жовтий"
+  },
+  "Figures": {
+    "circle": "круг",
+    "rectangle": "прямокутник",
+    "square": "квадрат",
+    "triangle": "трикутник"
+  },
   "MainPage": {
     "trainingText": "Онлайн тренажер FlexiFun Geometry",
     "min": "хвилин",
@@ -69,6 +81,7 @@
   "MemoryCaseGame": {
     "header": " Memory Case ТРЕНАЖЕР",
     "headerText": "Тренування пам'яті",
+    "department": "Відділення",
     "buttons": {
       "timer": "Таймер - ",
       "record": "Минулий рекорд: ",

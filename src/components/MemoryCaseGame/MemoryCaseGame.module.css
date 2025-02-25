@@ -46,6 +46,59 @@
 
 .figures_box {
   display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.figure_container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  align-items: center;
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.figure_container.visible {
+  opacity: 1; /* Fade in when visible */
+}
+
+.figure_description_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.department_label {
+  color: var(--second_text_color);
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125.5%;
+  letter-spacing: 0.36px;
+  white-space: nowrap;
+}
+
+.figure {
+  width: 63px;
+  height: 63px;
+}
+
+.figure_rectangle {
+  width: 48px;
+}
+
+.figure_description {
+  color: var(--second_text_color);
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125.5%;
+  letter-spacing: 0.36px;
+  max-width: 80px;
 }
 
 .btn_box {

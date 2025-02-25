@@ -10,6 +10,38 @@ import combinations_mob from '../img/main/combinations_mob.webp';
 import introduction_mob from '../img/main/introduction_mob.webp';
 import memory_mob from '../img/main/memory_mob.webp';
 import placing_mob from '../img/main/placing_mob.webp';
+import circle_blue from '../img/game/circle_blue.webp';
+import circle_green from '../img/game/circle_green.webp';
+import circle_red from '../img/game/circle_red.webp';
+import circle_yellow from '../img/game/circle_yellow.webp';
+import rectangle_blue from '../img/game/rectangle_blue.webp';
+import rectangle_green from '../img/game/rectangle_green.webp';
+import rectangle_red from '../img/game/rectangle_red.webp';
+import rectangle_yellow from '../img/game/rectangle_yellow.webp';
+import square_blue from '../img/game/square_blue.webp';
+import square_green from '../img/game/square_green.webp';
+import square_red from '../img/game/square_red.webp';
+import square_yellow from '../img/game/square_yellow.webp';
+import triangle_blue from '../img/game/triangle_blue.webp';
+import triangle_green from '../img/game/triangle_green.webp';
+import triangle_red from '../img/game/triangle_red.webp';
+import triangle_yellow from '../img/game/triangle_yellow.webp';
+import { StaticImageData } from 'next/image';
+
+interface Shapes {
+  [key: string]: StaticImageData[];
+  circle: StaticImageData[];
+  rectangle: StaticImageData[];
+  square: StaticImageData[];
+  triangle: StaticImageData[];
+}
+
+export const shapes: Shapes = {
+  circle: [circle_blue, circle_green, circle_red, circle_yellow],
+  rectangle: [rectangle_blue, rectangle_green, rectangle_red, rectangle_yellow],
+  square: [square_blue, square_green, square_red, square_yellow],
+  triangle: [triangle_blue, triangle_green, triangle_red, triangle_yellow],
+};
 
 export const navItems = [{ label: 'Header.about', href: '#about' }];
 
