@@ -51,6 +51,7 @@
 }
 
 .figure_container {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -64,6 +65,50 @@
   opacity: 1; /* Fade in when visible */
 }
 
+.hidden_container {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  width: 63.95px;
+  height: 63.95px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: var(--foreground);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hidden_container.visible {
+  opacity: 1;
+}
+
+.hidden_text {
+  color: var(--second_text_color);
+  text-align: center;
+  font-size: var(--fs_xlarge);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125.5%;
+  letter-spacing: 0.96px;
+}
+
+.image_container_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image_container_wrap.visible {
+  opacity: 1;
+}
 .figure_description_wrap {
   display: flex;
   flex-direction: column;
@@ -118,7 +163,6 @@
 .record_button,
 .start_button,
 .stop_button,
-.score_button,
 .time_button {
   flex: 1;
   padding: 4px;
@@ -136,6 +180,34 @@
   font-weight: 500;
   line-height: 125.5%;
   letter-spacing: -0.12px;
+
+  & span {
+    font-weight: 700;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: var(--box_shadow);
+  }
+}
+
+.score_button {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 10.01px;
+  border: 0.6px solid #000;
+  background: var(--foreground);
+  color: var(--second_text_color);
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125.5%;
+  letter-spacing: -0.12px;
+  width: 33px;
 
   & span {
     font-weight: 700;
