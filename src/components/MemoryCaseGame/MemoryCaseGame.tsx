@@ -11,6 +11,16 @@ import { useEffect, useState, useRef } from 'react';
 import { shapes } from '@/data/data';
 
 type ShapeType = 'circle' | 'rectangle' | 'square' | 'triangle';
+type LevelConfig = {
+  sequences: Sequence[];
+  displayTime: number;
+  requiredScore: number;
+};
+
+type Sequence = {
+  departments: number[];
+  colors: string[];
+};
 
 interface Figure {
   src: StaticImageData;
@@ -19,7 +29,50 @@ interface Figure {
   color: string;
 }
 
+const levelConfig: { [key: number]: LevelConfig } = {
+  1: {
+    sequences: [
+      { departments: [0], colors: ['red'] },
+      { departments: [1], colors: ['blue'] },
+      { departments: [2], colors: ['yellow'] },
+      { departments: [3], colors: ['red'] },
+    ],
+    displayTime: 5000,
+    requiredScore: 4,
+  },
+  2: {
+    sequences: [
+      { departments: [0, 1, 2], colors: ['red', 'blue', 'yellow'] },
+      { departments: [0, 1, 2], colors: ['blue', 'yellow', 'red'] },
+      { departments: [0, 1, 2], colors: ['yellow', 'red', 'blue'] },
+    ],
+    displayTime: 3000,
+    requiredScore: 7,
+  },
+  3: {
+    sequences: [
+      { departments: [0, 1, 2, 3], colors: ['red', 'blue', 'yellow', 'green'] },
+      { departments: [0, 1, 2, 3], colors: ['green', 'yellow', 'red', 'blue'] },
+    ],
+    displayTime: 2000,
+    requiredScore: 9,
+  },
+  4: {
+    sequences: [
+      { departments: [0, 1, 2, 3], colors: ['red', 'blue', 'red', 'green'] },
+      {
+        departments: [0, 1, 2, 3],
+        colors: ['blue', 'green', 'blue', 'yellow'],
+      },
+    ],
+    displayTime: 1500,
+    requiredScore: 11,
+  },
+};
+
 export default function MemoryCaseGame() {
+  const [currentLevel, setCurrentLevel] = useState(1);
+  const [currentStage, setCurrentStage] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isFirstText, setIsFirstText] = useState(true);
   const [randomFigures, setRandomFigures] = useState<Figure[]>([]);
@@ -39,8 +92,14 @@ export default function MemoryCaseGame() {
   const [isConfirming, setIsConfirming] = useState(false);
   const [isInitialAnimationDone, setIsInitialAnimationDone] = useState(false);
   const [totalSeconds, setTotalSeconds] = useState(0);
+  const [isFirstAudit, setIsFirstAudit] = useState(true);
+  const [auditResult, setAuditResult] = useState<'none' | 'yes' | 'no'>('none');
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const totalTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const [modalType, setModalType] = useState<'audit' | 'nextLevel' | null>(
+    null
+  );
+  const [isAnimating, setIsAnimating] = useState(false);
   const t = useTranslations();
 
   const colorMap: { [key: number]: string } = {
@@ -58,23 +117,103 @@ export default function MemoryCaseGame() {
   };
 
   const generateRandomFigures = () => {
-    const shapeKeys = Object.keys(shapes) as ShapeType[];
-    const shuffledShapes = shapeKeys.sort(() => Math.random() - 0.5);
-    const selectedShapes = shuffledShapes.slice(0, 4);
+    if (currentLevel === 4) {
+      const shapeKeys = Object.keys(shapes) as ShapeType[];
+      const shuffledShapes = shapeKeys.sort(() => Math.random() - 0.5);
 
-    const figures = selectedShapes.map(shape => {
-      const colorVariants = shapes[shape];
-      const randomColorIndex = Math.floor(Math.random() * colorVariants.length);
-      return {
-        src: colorVariants[randomColorIndex],
-        alt: `${shape}_${randomColorIndex}`,
-        shape: shape,
-        color: colorMap[randomColorIndex],
+      const sequence =
+        levelConfig[currentLevel].sequences[
+          currentStage % levelConfig[currentLevel].sequences.length
+        ];
+
+      const colorIndices: { [key: string]: number } = {
+        red: 2,
+        blue: 0,
+        green: 1,
+        yellow: 3,
       };
-    });
 
-    setRandomFigures(figures);
-    setVisibleFigures([false, false, false, false]);
+      const figures = Array(4)
+        .fill(null)
+        .map((_, index) => {
+          const color = sequence.colors[index];
+          const colorIndex = colorIndices[color];
+
+          const shape = shuffledShapes[index % shuffledShapes.length];
+
+          return {
+            src: shapes[shape][colorIndex],
+            alt: `${shape}_${colorIndex}`,
+            shape: shape,
+            color: color,
+          };
+        });
+
+      setRandomFigures(figures);
+      setVisibleFigures([false, false, false, false]);
+    } else if (currentLevel === 2 || currentLevel === 3) {
+      const shapeKeys = Object.keys(shapes) as ShapeType[];
+      const shuffledShapes = shapeKeys.sort(() => Math.random() - 0.5);
+
+      const sequence =
+        levelConfig[currentLevel].sequences[
+          currentStage % levelConfig[currentLevel].sequences.length
+        ];
+
+      const colorIndices: { [key: string]: number } = {
+        red: 2,
+        blue: 0,
+        green: 1,
+        yellow: 3,
+      };
+
+      const figures = Array(4)
+        .fill(null)
+        .map((_, index) => {
+          if (index < sequence.departments.length) {
+            const shape = shuffledShapes[index];
+            const color = sequence.colors[index];
+            const colorIndex = colorIndices[color];
+
+            return {
+              src: shapes[shape][colorIndex],
+              alt: `${shape}_${colorIndex}`,
+              shape: shape,
+              color: color,
+            };
+          } else {
+            return {
+              src: shapes.circle[0],
+              alt: 'placeholder',
+              shape: 'circle',
+              color: 'blue',
+            };
+          }
+        });
+
+      setRandomFigures(figures);
+      setVisibleFigures([false, false, false, false]);
+    } else {
+      const shapeKeys = Object.keys(shapes) as ShapeType[];
+      const shuffledShapes = shapeKeys.sort(() => Math.random() - 0.5);
+      const selectedShapes = shuffledShapes.slice(0, 4);
+
+      const figures = selectedShapes.map(shape => {
+        const colorVariants = shapes[shape];
+        const randomColorIndex = Math.floor(
+          Math.random() * colorVariants.length
+        );
+        return {
+          src: colorVariants[randomColorIndex],
+          alt: `${shape}_${randomColorIndex}`,
+          shape: shape,
+          color: colorMap[randomColorIndex],
+        };
+      });
+
+      setRandomFigures(figures);
+      setVisibleFigures([false, false, false, false]);
+    }
   };
 
   const formatTime = (seconds: number) => {
@@ -128,28 +267,157 @@ export default function MemoryCaseGame() {
   };
 
   const showFiguresSequence = () => {
-    const newVisible = [false, false, false, false];
-    setVisibleFigures(newVisible);
+    setIsAnimating(true); // Починаємо анімацію
+    const displayTime = levelConfig[currentLevel].displayTime;
+    const sequence =
+      levelConfig[currentLevel].sequences[
+        currentStage % levelConfig[currentLevel].sequences.length
+      ];
 
-    [0, 1].forEach(index => {
+    // Reset all figures to hidden first
+    setVisibleFigures([false, false, false, false]);
+
+    // Special handling for level 4 - show all figures sequentially
+    if (currentLevel === 4) {
+      sequence.departments.forEach((dept, index) => {
+        setTimeout(() => {
+          setVisibleFigures(prev => {
+            const updated = [...prev];
+            updated[index] = true;
+            return updated;
+          });
+        }, index * displayTime);
+      });
+
+      setTimeout(() => {
+        setShowHidden(true);
+        startTimer();
+        setIsAnimating(false); // Завершуємо анімацію
+      }, sequence.departments.length * displayTime);
+    }
+    // Special handling for level 3 - show figures in pairs
+    else if (currentLevel === 3) {
       setTimeout(() => {
         setVisibleFigures(prev => {
           const updated = [...prev];
-          updated[index] = true;
+          updated[0] = true;
+          updated[1] = true;
           return updated;
         });
-      }, index * 5000);
-    });
+      }, 0);
 
-    setTimeout(() => {
-      setShowHidden(true);
-      startTimer(); // Start the timer when cards are hidden
-    }, 10000);
+      setTimeout(() => {
+        setVisibleFigures(prev => {
+          const updated = [...prev];
+          updated[0] = true;
+          updated[1] = true;
+          updated[2] = true;
+          updated[3] = true;
+          return updated;
+        });
+      }, displayTime);
+
+      setTimeout(() => {
+        setShowHidden(true);
+        startTimer();
+        setIsAnimating(false); // Завершуємо анімацію
+      }, displayTime * 2);
+    }
+    // Special handling for level 2 with different sequence variants
+    else if (currentLevel === 2) {
+      const currentVariant =
+        currentStage % levelConfig[currentLevel].sequences.length;
+
+      if (currentVariant === 0) {
+        sequence.departments.forEach((dept, index) => {
+          setTimeout(() => {
+            setVisibleFigures(prev => {
+              const updated = [...prev];
+              updated[dept] = true;
+              return updated;
+            });
+          }, index * displayTime);
+        });
+
+        setTimeout(() => {
+          setShowHidden(true);
+          startTimer();
+          setIsAnimating(false); // Завершуємо анімацію
+        }, sequence.departments.length * displayTime);
+      } else if (currentVariant === 1) {
+        setTimeout(() => {
+          setVisibleFigures(prev => {
+            const updated = [...prev];
+            updated[0] = true;
+            updated[1] = true;
+            return updated;
+          });
+        }, 0);
+
+        setTimeout(() => {
+          setVisibleFigures(prev => {
+            const updated = [...prev];
+            updated[0] = true;
+            updated[1] = true;
+            updated[2] = true;
+            return updated;
+          });
+        }, displayTime);
+
+        setTimeout(() => {
+          setShowHidden(true);
+          startTimer();
+          setIsAnimating(false); // Завершуємо анімацію
+        }, displayTime * 2);
+      } else if (currentVariant === 2) {
+        setTimeout(() => {
+          setVisibleFigures(prev => {
+            const updated = [...prev];
+            updated[0] = true;
+            return updated;
+          });
+        }, 0);
+
+        setTimeout(() => {
+          setVisibleFigures(prev => {
+            const updated = [...prev];
+            updated[0] = true;
+            updated[1] = true;
+            updated[2] = true;
+            return updated;
+          });
+        }, displayTime);
+
+        setTimeout(() => {
+          setShowHidden(true);
+          startTimer();
+          setIsAnimating(false); // Завершуємо анімацію
+        }, displayTime * 2);
+      }
+    } else {
+      sequence.departments.forEach((dept, index) => {
+        setTimeout(() => {
+          setVisibleFigures(prev => {
+            const updated = [...prev];
+            updated[dept] = true;
+            return updated;
+          });
+        }, index * displayTime);
+      });
+
+      setTimeout(() => {
+        setShowHidden(true);
+        startTimer();
+        setIsAnimating(false); // Завершуємо анімацію
+      }, sequence.departments.length * displayTime);
+    }
   };
 
   const handleStart = () => {
     if (!isGameStarted && !isConfirming && isInitialAnimationDone) {
       setIsGameStarted(true);
+      setIsFirstAudit(true); // Reset isFirstAudit for new round
+      setAuditResult('none'); // Reset auditResult for new round
       generateRandomFigures();
       showFiguresSequence();
     } else if (isGameStarted && !isAuditMenuOpen && !isConfirming) {
@@ -161,35 +429,66 @@ export default function MemoryCaseGame() {
   };
 
   const handleAuditClose = () => {
-    setIsAuditMenuOpen(false);
-    setShowHidden(false);
-    setIsConfirming(true);
+    setIsAuditMenuOpen(false); // Закриваємо модальне вікно
+    setModalType(null); // Скидаємо тип модального вікна
+
+    if (modalType === 'nextLevel') {
+      // Підготовка до нового рівня
+      generateRandomFigures();
+      animateFigures();
+    } else if (isFirstAudit) {
+      setIsFirstAudit(false);
+      setShowHidden(false);
+      setIsConfirming(true);
+    } else {
+      setShowHidden(false);
+      setIsConfirming(false);
+      generateRandomFigures();
+      animateFigures();
+    }
   };
 
   const handleYes = () => {
-    setScore(prev => (parseInt(prev) + 1).toString());
+    const newScore = parseInt(score) + 1;
+    setScore(newScore.toString());
+
+    if (
+      newScore >= levelConfig[currentLevel].requiredScore &&
+      currentLevel < 4
+    ) {
+      setCurrentLevel(prev => prev + 1); // Підвищуємо рівень
+      setCurrentStage(0); // Скидаємо етап
+      setModalType('nextLevel'); // Встановлюємо тип модального вікна
+      setIsAuditMenuOpen(true); // Відкриваємо модальне вікно
+    } else {
+      setCurrentStage(
+        prev => (prev + 1) % levelConfig[currentLevel].sequences.length
+      ); // Переходимо до наступного етапу
+      setModalType('audit'); // Тип для звичайної перевірки
+      setAuditResult('yes'); // Результат перевірки
+      setIsAuditMenuOpen(true); // Відкриваємо модальне вікно
+    }
+
     setLastRecord(timer);
     localStorage.setItem('lastRecord', timer);
     resetTimer();
     setIsGameStarted(false);
     setIsConfirming(false);
-    generateRandomFigures();
-    setShowHidden(false);
-    animateFigures(); // Show demonstration cards after game ends
   };
 
   const handleNo = () => {
+    setCurrentStage(prev => prev % levelConfig[currentLevel].sequences.length);
     setLastRecord(timer);
     localStorage.setItem('lastRecord', timer);
     resetTimer();
     setIsGameStarted(false);
     setIsConfirming(false);
-    generateRandomFigures();
-    setShowHidden(false);
-    animateFigures(); // Show demonstration cards after game ends
+    setAuditResult('no');
+    setIsAuditMenuOpen(true);
   };
 
   const animateFigures = () => {
+    setIsAnimating(true); // Починаємо анімацію
     setVisibleFigures([false, false, false, false]);
     randomFigures.forEach((_, index) => {
       setTimeout(() => {
@@ -200,6 +499,7 @@ export default function MemoryCaseGame() {
         });
         if (index === randomFigures.length - 1) {
           setIsInitialAnimationDone(true);
+          setIsAnimating(false); // Завершуємо анімацію
         }
       }, index * 600);
     });
@@ -217,7 +517,6 @@ export default function MemoryCaseGame() {
   };
 
   useEffect(() => {
-    // Load initial values from localStorage on client-side only
     if (typeof window !== 'undefined') {
       const savedLastRecord = localStorage.getItem('lastRecord') || '00:00';
       const savedTotalSeconds = parseInt(
@@ -229,14 +528,10 @@ export default function MemoryCaseGame() {
       setLastRecord(savedLastRecord);
       setTotalSeconds(savedTotalSeconds);
       setTotalTime(savedTotalTime);
-    }
 
-    // Only call generateRandomFigures on client-side
-    if (typeof window !== 'undefined') {
       generateRandomFigures();
     }
 
-    // Handle visibility and cleanup
     const handleVisibilityChange = () => {
       if (document.hidden) {
         pauseTotalTimer();
@@ -365,6 +660,7 @@ export default function MemoryCaseGame() {
                 className={styles.start_button}
                 type="button"
                 onClick={handleStart}
+                disabled={isAnimating || !isInitialAnimationDone} // Вимикаємо під час анімації або якщо початкова анімація не завершена
               >
                 {!isGameStarted && !isConfirming
                   ? t('MemoryCaseGame.buttons.start')
@@ -372,10 +668,12 @@ export default function MemoryCaseGame() {
                   ? t('MemoryCaseGame.buttons.done')
                   : t('MemoryCaseGame.buttons.yes')}
               </button>
+
               <button
                 className={styles.stop_button}
                 type="button"
                 onClick={isConfirming || isAuditMenuOpen ? handleNo : undefined}
+                disabled={isAnimating || !isGameStarted} // Вимикаємо під час анімації або якщо гра ще не почалася
               >
                 {!isGameStarted || (!isAuditMenuOpen && !isConfirming)
                   ? t('MemoryCaseGame.buttons.stop')
@@ -391,7 +689,7 @@ export default function MemoryCaseGame() {
           </div>
         </div>
       </div>
-      <ModalComponent isOpen={isMenuOpen} onClose={modalClick}>
+      <ModalComponent key="menuModal" isOpen={isMenuOpen} onClose={modalClick}>
         <div className={styles.modal_wrap}>
           <h3 className={styles.modal_header}>
             {t('MemoryCaseGame.modal.tip.header')}
@@ -410,13 +708,23 @@ export default function MemoryCaseGame() {
           </button>
         </div>
       </ModalComponent>
-      <ModalComponent isOpen={isAuditMenuOpen} onClose={handleAuditClose}>
+      <ModalComponent
+        key="auditModal"
+        isOpen={isAuditMenuOpen}
+        onClose={handleAuditClose}
+      >
         <div className={styles.modal_wrap}>
           <h3 className={styles.modal_header}>
             {t('MemoryCaseGame.modal.audit.header')}
           </h3>
           <p className={styles.modal_text}>
-            {t('MemoryCaseGame.modal.audit.text')}
+            {modalType === 'nextLevel'
+              ? t('MemoryCaseGame.modal.audit.nextLevel') // Текст для нового рівня
+              : isFirstAudit
+              ? t('MemoryCaseGame.modal.audit.text') // Текст для першої перевірки
+              : auditResult === 'yes'
+              ? t('MemoryCaseGame.modal.audit.takePoint') // Текст для правильної відповіді
+              : t('MemoryCaseGame.modal.audit.tryAgain')}
           </p>
           <button
             className={styles.modal_button}

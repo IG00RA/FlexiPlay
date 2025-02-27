@@ -9,6 +9,7 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
+  key?: string;
 }
 
 export default function ModalComponent({
