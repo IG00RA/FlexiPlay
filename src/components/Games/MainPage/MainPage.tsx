@@ -5,11 +5,11 @@ import { useState } from 'react';
 import { mainPageGeometry, mainPageVideo } from '@/data/data';
 import { useTranslations } from 'next-intl';
 import Image, { StaticImageData } from 'next/image';
-import ModalComponent from '../Modals/ModalComponent';
-import MainVideoModal from '../Modals/MainVideoModal/MainVideoModal';
 import Link from 'next/link';
 import useLanguageStore from '@/store/useLanguageStore';
 import arrow from '@/img/arrow.webp';
+import ModalComponent from '../Modals/ModalComponent';
+import MainVideoModal from '../Modals/MainVideoModal/MainVideoModal';
 
 export interface VideoItem {
   img: StaticImageData;
@@ -106,7 +106,10 @@ export default function MainPage() {
                     {t('MainPage.min')}
                   </p>
                 </div>
-                <Link href={`${locale}/${item.link}`} className={styles.button}>
+                <Link
+                  href={`/${locale}/${item.link}`}
+                  className={styles.button}
+                >
                   {t('Buttons.start')}
                 </Link>
               </div>

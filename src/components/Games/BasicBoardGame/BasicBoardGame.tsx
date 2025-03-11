@@ -5,9 +5,9 @@ import memory from '@/img/pages/memory.webp';
 import memory_mob from '@/img/pages/memory_mob.webp';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import ModalComponent from '../Modals/ModalComponent';
 import useLanguageStore from '@/store/useLanguageStore';
 import { useEffect, useState } from 'react';
+import ModalComponent from '../Modals/ModalComponent';
 
 export default function BasicBoardGame() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);

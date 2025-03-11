@@ -3,9 +3,7 @@ import '../../styles/globals.css';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { Fredoka } from 'next/font/google';
-import Header from '@/components/Header/Header';
 import { getMessages } from 'next-intl/server';
-import styles from './Main.module.css';
 
 const fredoka = Fredoka({
   subsets: ['latin'],
@@ -20,9 +18,9 @@ const localeMetadata: Record<
   uk: {
     title: 'FlexiFun – Онлайн тренажер FlexiFun Geometry',
     description:
-      'Узнайте, как Mustage Team прошла путь от небольшой команды до экосистемы в affiliate-маркетинге. Наши ценности: прозрачность, инновации и поддержка.',
+      'FlexiFun Geometry – це інноваційний онлайн тренажер, який допомагає розвивати моторику та логічне мислення за допомогою системи відео вправ. Завдяки двом режимам вправ, тренажер адаптується до різних потреб користувачів, роблячи навчання цікавим і ефективним.',
     keywords:
-      'Mustage Team, история компании, ценности, прозрачность, инновации, поддержка, арбитраж трафика, affiliate-маркетинг',
+      'FlexiFun Geometry, онлайн тренажер, розвиток моторики, логічне мислення, відео вправи, інноваційний тренажер, навчання, освіта',
   },
   sk: {
     title: 'Mustage Team – Our Journey, Values, and Innovations',
@@ -107,8 +105,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <NextIntlClientProvider messages={messages}>
         <body className={`${fredoka.variable}`}>
-          <Header locale={locale} />
-          <main className={styles.main}>{children}</main>
+          {children}
           <div id="__next"></div>
         </body>
       </NextIntlClientProvider>

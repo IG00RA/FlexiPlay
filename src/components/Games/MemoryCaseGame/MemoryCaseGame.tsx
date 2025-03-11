@@ -5,10 +5,10 @@ import header_ico from '@/img/game/header_ico.webp';
 import main_board from '@/img/game/memoryCase/main_board.webp';
 import { useTranslations } from 'next-intl';
 import Image, { StaticImageData } from 'next/image';
-import ModalComponent from '../Modals/ModalComponent';
 import useLanguageStore from '@/store/useLanguageStore';
 import { useEffect, useState, useRef } from 'react';
 import { shapes } from '@/data/data';
+import ModalComponent from '../Modals/ModalComponent';
 
 type ShapeType = 'circle' | 'rectangle' | 'square' | 'triangle';
 type LevelConfig = {

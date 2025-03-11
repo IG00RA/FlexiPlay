@@ -2,7 +2,7 @@
 
 import styles from './MainVideoModal.module.css';
 import { useTranslations } from 'next-intl';
-import { VideoItem } from '@/components/MainPage/MainPage';
+import { VideoItem } from '@/components/Games/MainPage/MainPage';
 import Icon from '@/helpers/Icon';
 
 interface ModalProps {
