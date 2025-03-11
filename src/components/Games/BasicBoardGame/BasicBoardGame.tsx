@@ -1,119 +1,370 @@
 'use client';
 
 import styles from './BasicBoardGame.module.css';
-import memory from '@/img/pages/memory.webp';
-import memory_mob from '@/img/pages/memory_mob.webp';
+import header_ico from '@/img/game/header_ico.webp';
+import main_board from '@/img/game/basicBoard.webp';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import useLanguageStore from '@/store/useLanguageStore';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ModalComponent from '../Modals/ModalComponent';
+import { shapes } from '@/data/data';
+
+// Інтерфейс для фігури
+interface Shape {
+  type: string;
+  color: string;
+  image: StaticImageData;
+}
 
 export default function BasicBoardGame() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
-  const [isFirstText, setIsFirstText] = useState(true);
+  const [timer, setTimer] = useState('00:00');
+  const [lastRecord, setLastRecord] = useState('00:00');
+  const [totalTime, setTotalTime] = useState('00:00');
+  const [displayedShapes, setDisplayedShapes] = useState<Shape[]>([]);
+  const [isGameActive, setIsGameActive] = useState(false);
+  const [currentShape, setCurrentShape] = useState<Shape | null>(null);
+  const [isGameCompleted, setIsGameCompleted] = useState(false);
+  const [currentRound, setCurrentRound] = useState(0);
+  const [allCombinations, setAllCombinations] = useState<Shape[]>([]);
+  const [totalSeconds, setTotalSeconds] = useState(0);
+
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const totalTimerRef = useRef<NodeJS.Timeout | null>(null);
   const t = useTranslations();
 
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      document.body.style.overflow = 'hidden';
-      document.body.style.touchAction = 'none';
-    }
+  const shapeTypes = ['circle', 'rectangle', 'square', 'triangle'];
+  const colorMap: { [key: number]: string } = {
+    0: 'blue',
+    1: 'green',
+    2: 'red',
+    3: 'yellow',
+  };
 
-    return () => {
-      if (typeof document !== 'undefined') {
-        document.body.style.overflow = 'auto';
-        document.body.style.touchAction = 'auto';
-      }
-    };
-  }, []);
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60)
+      .toString()
+      .padStart(2, '0');
+    const secs = (seconds % 60).toString().padStart(2, '0');
+    return `${mins}:${secs}`;
+  };
 
-  const { locale } = useLanguageStore();
+  const startTimer = () => {
+    let seconds = 0;
+    timerRef.current = setInterval(() => {
+      seconds++;
+      setTimer(formatTime(seconds));
+    }, 1000);
+  };
 
-  const openMenu = () => {
-    setIsMenuOpen(true);
-
-    if (typeof document !== 'undefined') {
-      document.body.style.overflow = 'hidden';
-      document.body.style.touchAction = 'none';
+  const stopTimer = () => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
     }
   };
 
-  const modalClick = () => {
-    !isFirstText && closeMenu();
-    setIsFirstText(false);
+  const resetTimer = () => {
+    stopTimer();
+    setTimer('00:00');
+  };
+
+  const startTotalTimer = () => {
+    totalTimerRef.current = setInterval(() => {
+      setTotalSeconds(prev => {
+        const newTotal = prev + 1;
+        localStorage.setItem('totalSecondsBoard', newTotal.toString());
+        setTotalTime(formatTime(newTotal));
+        return newTotal;
+      });
+    }, 1000);
+  };
+
+  const pauseTotalTimer = () => {
+    if (totalTimerRef.current) {
+      clearInterval(totalTimerRef.current);
+      totalTimerRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    const combinations: Shape[] = [];
+    shapeTypes.forEach(type => {
+      [0, 1, 2, 3].forEach(colorIndex => {
+        const color = colorMap[colorIndex];
+        const image = shapes[type][colorIndex];
+        combinations.push({ type, color, image });
+      });
+    });
+    combinations.sort(() => 0.5 - Math.random());
+    setAllCombinations(combinations);
+  }, []);
+
+  const generateUniqueShapes = (): Shape[] => {
+    // Копіюємо масиви
+    const availableShapes = [...shapeTypes];
+    const availableColors = Object.values(colorMap);
+
+    // Функція перемішування
+    const shuffleArray = (array: any[]) => {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    };
+
+    const shuffledShapes = shuffleArray(availableShapes).slice(0, 4); // 4 унікальні фігури
+    const shuffledColors = shuffleArray(availableColors).slice(0, 4); // 4 унікальні кольори
+
+    return shuffledShapes.map((type, index) => {
+      const color = shuffledColors[index];
+      const colorIndex = Object.keys(colorMap).find(
+        key => colorMap[Number(key)] === color
+      );
+      const image = shapes[type][Number(colorIndex)];
+      return { type, color, image };
+    });
+  };
+
+  const displayShapesWithDelay = () => {
+    const newShapes = generateUniqueShapes();
+    setDisplayedShapes([]);
+    newShapes.forEach((shape, index) => {
+      setTimeout(() => {
+        setDisplayedShapes(prev => [...prev, shape]);
+      }, index * 500);
+    });
+  };
+
+  const generateAllCombinations = () => {
+    const combinations: Shape[] = [];
+    shapeTypes.forEach(type => {
+      [0, 1, 2, 3].forEach(colorIndex => {
+        const color = colorMap[colorIndex];
+        const image = shapes[type][colorIndex];
+        combinations.push({ type, color, image });
+      });
+    });
+    combinations.sort(() => 0.5 - Math.random());
+    setAllCombinations(combinations);
+  };
+
+  const handleStartOrYes = () => {
+    if (isGameCompleted) {
+      setCurrentRound(0);
+      setIsGameCompleted(false);
+      setIsGameActive(false);
+      setCurrentShape(null);
+      setIsMenuOpen(true);
+      generateAllCombinations();
+    } else if (!isGameActive && currentRound < 16) {
+      setIsGameActive(true);
+      setDisplayedShapes([]);
+      startTimer();
+      const newShape = allCombinations[currentRound];
+      setTimeout(() => setCurrentShape(newShape), 500);
+    }
+  };
+
+  const handleDone = () => {
+    if (isGameActive) {
+      stopTimer();
+      setLastRecord(timer);
+      localStorage.setItem('lastRecordBoard', timer);
+      resetTimer();
+      setCurrentShape(null);
+      setCurrentRound(prev => prev + 1);
+      if (currentRound + 1 < 16) {
+        setIsGameActive(false);
+      } else {
+        setIsGameActive(false);
+        setIsGameCompleted(true);
+      }
+    }
+  };
+
+  const handleNo = () => {
+    console.log('No clicked');
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-
-    if (typeof document !== 'undefined') {
-      document.body.style.overflow = 'auto';
-      document.body.style.touchAction = 'auto';
-    }
+    displayShapesWithDelay();
   };
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedLastRecord =
+        localStorage.getItem('lastRecordBoard') || '00:00';
+      const savedTotalSeconds = parseInt(
+        localStorage.getItem('totalSecondsBoard') || '0',
+        10
+      );
+      const savedTotalTime = formatTime(savedTotalSeconds);
+
+      setLastRecord(savedLastRecord);
+      setTotalSeconds(savedTotalSeconds);
+      setTotalTime(savedTotalTime);
+
+      startTotalTimer();
+    }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = 'auto';
+        document.body.style.touchAction = 'auto';
+        stopTimer();
+        pauseTotalTimer();
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+      document.body.style.touchAction = isMenuOpen ? 'none' : 'auto';
+    }
+  }, [isMenuOpen]);
+
+  const { locale } = useLanguageStore();
   return (
     <section>
-      <h2 className={styles.header}>{t('MemoryCasePage.header')}</h2>
-      <h3 className={styles.header_text}>{t('MemoryCasePage.headerText')}</h3>
-
-      <div className={styles.card}>
+      <h2 className={styles.header}>
+        <span className={styles.ico_wrap}>
+          <Image
+            src={header_ico}
+            className={styles.header_ico}
+            width={0}
+            height={0}
+            sizes="100vw"
+            alt="Header icon"
+            priority
+          />
+        </span>
+        {t('BasicBoardGame.header')}
+      </h2>
+      <h3 className={styles.header_text}>{t('BasicBoardGame.headerText')}</h3>
+      <div className={styles.game_text_wrap}>
+        {isGameActive && currentShape ? (
+          <p className={styles.game_text}>
+            {t('BasicBoardGame.gameTextFirst')}{' '}
+            <span>{t(`Colors.${currentShape.color}`)}</span>{' '}
+            {t(`Figures.${currentShape.type}`)}
+            {t('BasicBoardGame.gameTextSecond')}
+          </p>
+        ) : isGameCompleted ? (
+          <p className={styles.game_text}>{t('BasicBoardGame.newGameText')}</p>
+        ) : currentRound === 0 ? (
+          <p className={styles.game_text}>{t('BasicBoardGame.previewText')}</p>
+        ) : (
+          <p className={styles.game_text}>{t('BasicBoardGame.continueText')}</p>
+        )}
+      </div>
+      <div className={styles.field}>
         <div className={styles.image_wrap}>
           <Image
-            src={memory}
-            className={styles.img}
+            src={main_board}
+            className={styles.main_board}
             width={0}
             height={0}
             sizes="100vw"
-            alt={t('MemoryCasePage.header')}
+            alt="Main board image"
             priority
           />
-          <Image
-            src={memory_mob}
-            className={styles.img_mob}
-            width={0}
-            height={0}
-            sizes="100vw"
-            alt={t('MemoryCasePage.header')}
-            priority
-          />
-        </div>
 
-        <div className={styles.bottom_wrap}>
-          <h3 className={styles.item_header}>
-            {t('MemoryCasePage.cardHeader')}
-          </h3>
-          <div className={styles.text_wrap}>
-            <p className={styles.item_description}>
-              {t('MemoryCasePage.cardText')}
-            </p>
-            <p className={styles.time}>
-              <span>10-15 </span>
-              {t('MainPage.min')}
-            </p>
-            <button className={styles.button} type="button">
-              {t('Buttons.start')}
+          {isGameActive && currentShape ? (
+            <div className={styles.figures_box}>
+              <Image
+                src={currentShape.image}
+                className={`${styles.figure} ${
+                  currentShape.type === 'rectangle'
+                    ? styles.figure_rectangle
+                    : ''
+                }`}
+                width={0}
+                height={0}
+                sizes="100vw"
+                alt={`${currentShape.color} ${currentShape.type}`}
+              />
+            </div>
+          ) : (
+            <div className={styles.figures_box}>
+              {displayedShapes.map((shape, index) => (
+                <Image
+                  key={index}
+                  src={shape.image}
+                  className={`${styles.figure} ${
+                    shape.type === 'rectangle' ? styles.figure_rectangle : ''
+                  }`}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  alt={`${shape.color} ${shape.type}`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+        <div className={styles.btn_box}>
+          <div className={styles.timer_wrap}>
+            <button className={styles.timer_button} type="button">
+              {t('BasicBoardGame.buttons.timer')} {timer}
+            </button>
+            <button className={styles.record_button} type="button">
+              {t('BasicBoardGame.buttons.record')} {lastRecord}
+            </button>
+          </div>
+          <div className={styles.control_wrap_main}>
+            <div className={styles.control_wrap}>
+              <button
+                className={styles.start_button}
+                type="button"
+                onClick={isGameActive ? handleDone : handleStartOrYes}
+              >
+                {isGameCompleted
+                  ? t('BasicBoardGame.buttons.yes')
+                  : isGameActive
+                  ? t('BasicBoardGame.buttons.done')
+                  : t('BasicBoardGame.buttons.start')}
+              </button>
+              <button
+                className={styles.stop_button}
+                type="button"
+                onClick={isGameCompleted ? handleNo : undefined}
+              >
+                {isGameCompleted
+                  ? t('BasicBoardGame.buttons.no')
+                  : t('BasicBoardGame.buttons.stop')}
+              </button>
+            </div>
+            <button className={styles.time_button} type="button">
+              {t('BasicBoardGame.buttons.time')} {totalTime}
             </button>
           </div>
         </div>
       </div>
-      <ModalComponent isOpen={isMenuOpen} onClose={modalClick}>
+      <ModalComponent key="menuModal" isOpen={isMenuOpen} onClose={closeMenu}>
         <div className={styles.modal_wrap}>
           <h3 className={styles.modal_header}>
-            {t('MemoryCaseGame.modal.tip.header')}
+            {t('BasicBoardGame.modal.tip.header')}
           </h3>
           <p className={styles.modal_text}>
-            {isFirstText
-              ? t('MemoryCaseGame.modal.tip.text')
-              : t('MemoryCaseGame.modal.tip.textLarge')}
+            {t('BasicBoardGame.modal.tip.text.first')}
+          </p>
+          <p className={styles.modal_text}>
+            {t('BasicBoardGame.modal.tip.text.second')}
+          </p>
+          <p className={styles.modal_text}>
+            {t('BasicBoardGame.modal.tip.text.third')}
           </p>
           <button
             className={styles.modal_button}
-            onClick={modalClick}
+            onClick={closeMenu}
             type="button"
           >
-            {t('MemoryCaseGame.modal.buttons.ok')}
+            {t('BasicBoardGame.modal.buttons.ok')}
           </button>
         </div>
       </ModalComponent>

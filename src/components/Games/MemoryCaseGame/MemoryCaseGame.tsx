@@ -2,7 +2,7 @@
 
 import styles from './MemoryCaseGame.module.css';
 import header_ico from '@/img/game/header_ico.webp';
-import main_board from '@/img/game/memoryCase/main_board.webp';
+import main_board from '@/img/game/memoryCase.webp';
 import { useTranslations } from 'next-intl';
 import Image, { StaticImageData } from 'next/image';
 import useLanguageStore from '@/store/useLanguageStore';
