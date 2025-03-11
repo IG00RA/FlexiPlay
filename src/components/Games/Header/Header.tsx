@@ -3,17 +3,15 @@
 import Link from 'next/link';
 import styles from './Header.module.css';
 import Icon from '@/helpers/Icon';
-import MobMenu from '../MobMenu/MobMenu';
+import MobMenu from '../../MobMenu/MobMenu';
 import { useState } from 'react';
-import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+import LanguageSwitcher from '../../LanguageSwitcher/LanguageSwitcher';
 import { useTranslations } from 'next-intl';
+import useLanguageStore from '@/store/useLanguageStore';
 
-interface HeaderProps {
-  locale: string;
-}
-
-export default function Header({ locale }: HeaderProps) {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { locale } = useLanguageStore();
   const t = useTranslations();
 
   const closeMenu = () => {
@@ -29,10 +27,10 @@ export default function Header({ locale }: HeaderProps) {
 
   return (
     <header className={`${styles.header}`}>
-      <Link className={styles.logo_wrap} href={`/${locale}`}>
+      <Link className={styles.logo_wrap} href={`/${locale}/games/`}>
         <Icon name="icon-logoMob" width={116} height={35} color="#000" />
       </Link>
-      <Link className={styles.logo_desk} href={`/${locale}`}>
+      <Link className={styles.logo_desk} href={`/${locale}/games/`}>
         <Icon name="icon-logoDesk" width={220} height={64} color="#000" />
       </Link>
 
