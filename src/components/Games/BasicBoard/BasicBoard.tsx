@@ -25,6 +25,9 @@ export default function BasicBoard() {
     <section>
       <h2 className={styles.header}>{t('BasicBoardPage.header')}</h2>
       <h3 className={styles.header_text}>{t('BasicBoardPage.headerText')}</h3>
+      <h3 className={styles.header_text_second}>
+        {t('BasicBoardPage.headerTextSecond')}
+      </h3>
       <div className={styles.card_wrap}>
         <div
           className={styles.card}

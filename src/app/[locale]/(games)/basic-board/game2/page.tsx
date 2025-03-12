@@ -1,5 +1,5 @@
-import BasicBoardGame from '@/components/Games/BasicBoardGame/BasicBoardGame';
+import BasicBoardSpeedGame from '@/components/Games/BasicBoardSpeedGame/BasicBoardSpeedGame';
 
 export default function Home() {
-  return <BasicBoardGame />;
+  return <BasicBoardSpeedGame />;
 }
