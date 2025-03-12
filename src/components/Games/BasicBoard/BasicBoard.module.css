@@ -17,6 +17,17 @@
   font-style: normal;
   font-weight: 500;
   line-height: 125.5%;
+  @media (min-width: 1024px) {
+    font-size: 36px;
+  }
+}
+
+.header_text_second {
+  text-align: center;
+  font-size: var(--fs_xlarge);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125.5%;
   margin-bottom: 60px;
   @media (min-width: 1024px) {
     font-size: 36px;

@@ -43,10 +43,17 @@ export default function BasicBoardGame() {
   };
 
   const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60)
+    const hours = Math.floor(seconds / 3600); // Кількість годин
+    const mins = Math.floor((seconds % 3600) / 60)
       .toString()
-      .padStart(2, '0');
-    const secs = (seconds % 60).toString().padStart(2, '0');
+      .padStart(2, '0'); // Залишок хвилин
+    const secs = (seconds % 60).toString().padStart(2, '0'); // Залишок секунд
+
+    if (hours > 0) {
+      // Якщо є години, повертаємо формат HH:MM:SS
+      return `${hours.toString().padStart(2, '0')}:${mins}:${secs}`;
+    }
+    // Якщо годин немає, повертаємо старий формат MM:SS
     return `${mins}:${secs}`;
   };
 
@@ -102,11 +109,9 @@ export default function BasicBoardGame() {
   }, []);
 
   const generateUniqueShapes = (): Shape[] => {
-    // Копіюємо масиви
     const availableShapes = [...shapeTypes];
     const availableColors = Object.values(colorMap);
 
-    // Функція перемішування
     const shuffleArray = (array: any[]) => {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -115,8 +120,8 @@ export default function BasicBoardGame() {
       return array;
     };
 
-    const shuffledShapes = shuffleArray(availableShapes).slice(0, 4); // 4 унікальні фігури
-    const shuffledColors = shuffleArray(availableColors).slice(0, 4); // 4 унікальні кольори
+    const shuffledShapes = shuffleArray(availableShapes).slice(0, 4);
+    const shuffledColors = shuffleArray(availableColors).slice(0, 4);
 
     return shuffledShapes.map((type, index) => {
       const color = shuffledColors[index];
@@ -185,8 +190,15 @@ export default function BasicBoardGame() {
     }
   };
 
-  const handleNo = () => {
-    console.log('No clicked');
+  const handleStopOrNo = () => {
+    setCurrentRound(0);
+    setIsGameCompleted(false);
+    setIsGameActive(false);
+    setCurrentShape(null);
+    setDisplayedShapes([]);
+    resetTimer();
+    generateAllCombinations();
+    displayShapesWithDelay();
   };
 
   const closeMenu = () => {
@@ -229,6 +241,7 @@ export default function BasicBoardGame() {
   }, [isMenuOpen]);
 
   const { locale } = useLanguageStore();
+
   return (
     <section>
       <h2 className={styles.header}>
@@ -273,7 +286,6 @@ export default function BasicBoardGame() {
             alt="Main board image"
             priority
           />
-
           {isGameActive && currentShape ? (
             <div className={styles.figures_box}>
               <Image
@@ -289,7 +301,7 @@ export default function BasicBoardGame() {
                 alt={`${currentShape.color} ${currentShape.type}`}
               />
             </div>
-          ) : (
+          ) : !isGameCompleted && currentRound === 0 ? (
             <div className={styles.figures_box}>
               {displayedShapes.map((shape, index) => (
                 <Image
@@ -305,7 +317,7 @@ export default function BasicBoardGame() {
                 />
               ))}
             </div>
-          )}
+          ) : null}
         </div>
         <div className={styles.btn_box}>
           <div className={styles.timer_wrap}>
@@ -332,7 +344,7 @@ export default function BasicBoardGame() {
               <button
                 className={styles.stop_button}
                 type="button"
-                onClick={isGameCompleted ? handleNo : undefined}
+                onClick={handleStopOrNo}
               >
                 {isGameCompleted
                   ? t('BasicBoardGame.buttons.no')
