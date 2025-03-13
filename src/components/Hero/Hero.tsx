@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import useLanguageStore from '@/store/useLanguageStore';
 import styles from './Hero.module.css';
 import { useTranslations } from 'next-intl';
 import Icon from '@/helpers/Icon';
@@ -18,7 +17,6 @@ import { useState } from 'react';
 import ButtonHero from '../Buttons/ButtonHero';
 
 export default function Hero() {
-  const { locale } = useLanguageStore();
   const t = useTranslations();
 
   const [loadingImages, setLoadingImages] = useState<boolean[]>(
