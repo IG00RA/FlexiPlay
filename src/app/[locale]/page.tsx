@@ -1,13 +1,12 @@
-import MainPage from '@/components/Games/MainPage/MainPage';
-import styles from './Main.module.css';
-import Header from '@/components/Games/Header/Header';
+import HeaderMain from '@/components/HeaderMain/HeaderMain';
+import Hero from '@/components/Hero/Hero';
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <main className={styles.main}>
-        <MainPage />
+      <HeaderMain />
+      <main>
+        <Hero />
       </main>
     </>
   );
