@@ -65,6 +65,7 @@
   padding: 32px 24px;
   @media (min-width: 1024px) {
     flex: 1;
+    max-width: 50%;
     padding: 40px 60px;
   }
 }
@@ -77,6 +78,7 @@
   line-height: normal;
   margin-bottom: 8px;
   @media (min-width: 768px) {
+    letter-spacing: 1.08px;
     font-size: 36px;
     line-height: 150%;
     margin-bottom: 16px;
@@ -91,6 +93,7 @@
   line-height: 150%;
   margin-bottom: 32px;
   @media (min-width: 768px) {
+    letter-spacing: 0.72px;
     margin-bottom: 48px;
     font-size: var(--fs_large);
     font-style: normal;
@@ -107,6 +110,7 @@
   line-height: 150%;
   margin-bottom: 32px;
   @media (min-width: 768px) {
+    letter-spacing: 0.72px;
     margin-bottom: 48px;
     font-size: var(--fs_large);
     line-height: 129.5%;
@@ -120,6 +124,7 @@
   font-weight: 400;
   line-height: 150%;
   @media (min-width: 768px) {
+    letter-spacing: 0.72px;
     font-size: var(--fs_large);
     line-height: 129.5%;
   }
@@ -139,6 +144,7 @@
   font-weight: 400;
   line-height: 150%;
   @media (min-width: 768px) {
+    letter-spacing: 0.72px;
     font-size: var(--fs_large);
     line-height: 129.5%;
   }

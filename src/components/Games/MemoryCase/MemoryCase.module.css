@@ -8,6 +8,7 @@
   @media (min-width: 1024px) {
     font-size: var(--fs_xxlarge);
     margin-bottom: 30px;
+    letter-spacing: 1.92px;
   }
 }
 
@@ -20,6 +21,7 @@
   margin-bottom: 60px;
   @media (min-width: 1024px) {
     font-size: 36px;
+    letter-spacing: 1.08px;
     margin-bottom: 100px;
   }
 }
@@ -68,7 +70,7 @@
 .bottom_wrap {
   padding: 24px;
   @media (min-width: 1024px) {
-    padding: 24px 32px 108px;
+    padding: 24px 32px 83px;
   }
 }
 
@@ -152,7 +154,9 @@
 
   @media (min-width: 1024px) {
     position: absolute;
-    bottom: 60px;
+    width: 100px;
+    padding: 8px 24px;
+    bottom: 50px;
     left: 32px;
   }
 }
