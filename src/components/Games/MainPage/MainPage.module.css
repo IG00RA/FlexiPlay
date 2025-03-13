@@ -14,6 +14,7 @@
   }
 
   @media (min-width: 1024px) {
+    letter-spacing: 1.92px;
     font-size: var(--fs_mxlarge);
     margin-bottom: 80px;
   }
@@ -154,7 +155,7 @@
 }
 
 .button {
-  width: 116px;
+  width: 113px;
   padding: 8px 32px;
   border-radius: 20px;
   border: 0.1px solid #000;
@@ -178,10 +179,11 @@
   }
 
   @media (min-width: 1024px) {
-    bottom: 32px;
+    width: 98px;
+    bottom: 58px;
     left: 32px;
     position: absolute;
-    padding: 8px 23px;
+    padding: 8px;
     font-size: var(--fs_medium);
     letter-spacing: 0.54px;
   }
