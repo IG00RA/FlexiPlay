@@ -4,6 +4,9 @@ import '../../styles/globals.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { Fredoka } from 'next/font/google';
 import { getMessages } from 'next-intl/server';
+import { ToastContainer } from 'react-toastify';
+import { Suspense } from 'react';
+import { FacebookPixel } from '@/components/FacebookPixel/FacebookPixel';
 
 const fredoka = Fredoka({
   subsets: ['latin'],
@@ -108,6 +111,11 @@ export default async function RootLayout({
           {children}
           <div id="__next"></div>
         </body>
+        <div id="portal-root"></div>
+        <ToastContainer />
+        <Suspense fallback={null}>
+          <FacebookPixel />
+        </Suspense>
       </NextIntlClientProvider>
     </html>
   );

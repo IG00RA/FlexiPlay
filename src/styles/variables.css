@@ -28,4 +28,15 @@
 
   --container: 91.1%;
   --container_mob: 85%;
+
+  --swiper-pagination-color: #404969;
+  --swiper-pagination-bullet-size: 19px;
+  --swiper-pagination-bullet-width: 19px;
+  --swiper-pagination-bullet-height: 9.5px;
+  --swiper-pagination-bullet-inactive-color: #cddbe3;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 3px;
+  --swiper-pagination-bullet-vertical-gap: 3px;
+  --swiper-pagination-bullet-border-radius: 6.8px;
 }
