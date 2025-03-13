@@ -13,6 +13,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+
   background: linear-gradient(180deg, #94bfff 0%, #5390ec 100%);
 
   &:hover,
@@ -59,6 +60,8 @@
   border-radius: 20px;
   border: 1px solid var(--Overlays-Default, rgba(0, 0, 0, 0.2));
   background: #fff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
   &:hover,
   &:focus {
     box-shadow: 0px 15px 25px 0px #e2e2e233;
@@ -76,7 +79,14 @@
 }
 
 .button_header {
-  @media (min-width: 768px) {
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+    width: 140px;
+    height: 54px;
+  }
+
+  @media (min-width: 1200px) {
     width: 184px;
     height: 64px;
   }

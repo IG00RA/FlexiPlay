@@ -33,7 +33,7 @@ import slider5 from '../img/hero/slider1.webp';
 export const menuItems = [
   { label: 'Footer.menu.reasons', href: '#reasons' },
   { label: 'Footer.menu.about', href: '#about' },
-  { label: 'Footer.menu.included', href: '#included' },
+  { label: 'Footer.menu.included', href: '#how-works' },
   { label: 'Footer.menu.feedback', href: '#feedback' },
 ];
 

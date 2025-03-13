@@ -11,6 +11,10 @@
   }
 
   @media (min-width: 1024px) {
+    padding: 24px 40px;
+  }
+
+  @media (min-width: 1408px) {
     padding: 24px 80px;
   }
 
@@ -60,6 +64,48 @@
   }
 }
 
+.nav {
+  display: none;
+  @media (min-width: 1024px) {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 20px;
+  }
+  @media (min-width: 1408px) {
+    gap: 32px;
+  }
+}
+
+.nav_item {
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  &:hover,
+  &:focus {
+    filter: drop-shadow(0px 2px 5px #1c16631a)
+      drop-shadow(0px 9px 20px #1c16631f) drop-shadow(0px 16px 20px #1c16630d)
+      drop-shadow(0px 37px 15px #1c166303) drop-shadow(0px 57px 16px #1c166300);
+    transform: scale(1.05);
+  }
+}
+
+.nav_link {
+  color: #404969;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  @media (min-width: 1200px) {
+    font-size: 16px;
+  }
+  @media (min-width: 1408px) {
+    font-size: 18px;
+  }
+}
+
 .burger_wrap {
   width: 48px;
   height: 40px;
@@ -72,7 +118,7 @@
   cursor: pointer;
   transition: margin 0.3s ease;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 }
@@ -116,40 +162,8 @@
 }
 
 .burger_wrap.burger_open {
+  background: transparent;
   border: 1px solid #ffffff;
   margin-top: 24px;
   z-index: 3;
-}
-
-.main_button {
-  display: none;
-  @media (min-width: 768px) {
-    width: 150px;
-    height: 35px;
-    display: flex;
-    border-radius: 11px;
-    background: var(--main_gradient);
-    justify-content: center;
-    align-items: center;
-    color: var(--foreground);
-    font-size: var(--fs_xsmall);
-    font-style: normal;
-    font-weight: 500;
-    line-height: 125.5%;
-  }
-  @media (min-width: 1024px) {
-    width: 251px;
-    height: 64px;
-    font-size: 20px;
-    border-radius: 20px;
-  }
-  transition: transform 0.3s ease, filter 0.3s ease;
-
-  &:hover,
-  &:focus {
-    filter: drop-shadow(0px 2px 5px #1c16631a)
-      drop-shadow(0px 9px 20px #1c16631f) drop-shadow(0px 16px 20px #1c16630d)
-      drop-shadow(0px 37px 15px #1c166303) drop-shadow(0px 57px 16px #1c166300);
-    transform: scale(1.01);
-  }
 }

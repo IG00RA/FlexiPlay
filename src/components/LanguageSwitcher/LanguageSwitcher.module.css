@@ -1,8 +1,7 @@
 .language {
-  position: relative;
+  display: flex;
   border-radius: 11px;
   background-color: #333;
-  display: flex;
   width: 92px;
   height: 35px;
   align-items: center;
@@ -11,18 +10,12 @@
   @media (min-width: 1024px) {
     border-radius: 20px;
     width: 134px;
-    height: 64px;
+    height: 50px;
   }
 
-  &:hover,
-  &:focus {
-    & .buttonActive {
-      background: #333;
-    }
-
-    & .buttonUnActive {
-      background: var(--main_gradient);
-    }
+  @media (min-width: 1200px) {
+    width: 170px;
+    height: 64px;
   }
 }
 
@@ -33,40 +26,41 @@
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: 0.32px;
-  padding: 11px 15px;
-  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
   width: 46px;
   height: 35px;
-  background-color: transparent;
-  transition: color 0.3s ease;
+  background: none;
+  transition: background-color 0.3s ease;
 
   @media (min-width: 1024px) {
-    font-size: 20px;
-    border-radius: 20px;
+    font-size: 18px;
+    border-radius: 19px;
     width: 67px;
-    height: 64px;
-    padding: 20px 17px;
+    height: 50px;
   }
-}
 
-.buttonActive {
-  background: var(--main_gradient);
-  padding: 11px 15px;
-  flex-shrink: 0;
-  pointer-events: none;
-  transition: background 0.3s ease;
-  transform: scale(1.015);
-  @media (min-width: 1024px) {
-    padding: 20px;
+  @media (min-width: 1200px) {
+    font-size: 20px;
+    width: 87px;
+    height: 64px;
   }
 }
 
 .buttonUnActive {
-  background: transparent;
-  padding: 11px 15px;
-  flex-shrink: 0;
-  transition: background 0.3s ease;
-  @media (min-width: 1024px) {
-    padding: 20px;
-  }
+  background-color: transparent;
+}
+
+.buttonActive {
+  background-color: #74a8f6;
+}
+
+.buttonUnActiveHover {
+  background-color: #74a8f6;
+}
+
+.buttonActiveHover {
+  background-color: transparent;
 }

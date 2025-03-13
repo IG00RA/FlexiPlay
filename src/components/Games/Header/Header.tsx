@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import styles from './Header.module.css';
 import Icon from '@/helpers/Icon';
-import MobMenu from '../../MobMenu/MobMenu';
+import MobMenu from '../MobMenu/MobMenu';
 import { useState } from 'react';
 import LanguageSwitcher from '../../LanguageSwitcher/LanguageSwitcher';
 import { useTranslations } from 'next-intl';
