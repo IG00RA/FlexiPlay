@@ -37,6 +37,15 @@ export const menuItems = [
   { label: 'Footer.menu.feedback', href: '#feedback' },
 ];
 
+export const heroItems = [
+  'Hero.items.first',
+  'Hero.items.second',
+  'Hero.items.third',
+  'Hero.items.fourth',
+];
+
+export const slideItems = [slider1, slider2, slider3, slider4, slider5];
+
 // export const importantItems = [
 //   {
 //     head: 'Important.items.first.head',
@@ -98,58 +107,43 @@ export const menuItems = [
 //   },
 // ];
 
-export const heroItems = [
-  'Hero.items.first',
-  'Hero.items.second',
-  'Hero.items.third',
-  'Hero.items.fourth',
-];
+// export const awaitItems: string[] = [
+//   'Await.items.first',
+//   'Await.items.second',
+//   'Await.items.third',
+// ];
 
-export const aboutItems = [
-  'About.items.first',
-  'About.items.second',
-  'About.items.third',
-];
+// export const includedItems = [
+//   'Included.items.first',
+//   'Included.items.second',
+//   'Included.items.third',
+//   'Included.items.fourth',
+//   'Included.items.fifth',
+//   'Included.items.sixth',
+// ];
 
-export const awaitItems: string[] = [
-  'Await.items.first',
-  'Await.items.second',
-  'Await.items.third',
-];
-
-export const includedItems = [
-  'Included.items.first',
-  'Included.items.second',
-  'Included.items.third',
-  'Included.items.fourth',
-  'Included.items.fifth',
-  'Included.items.sixth',
-];
-
-export const slideItems = [slider1, slider2, slider3, slider4, slider5];
-
-export const howWorksItems = [
-  {
-    numb: '1',
-    header: 'HowWorks.items.first.head',
-    text: 'HowWorks.items.first.text',
-  },
-  {
-    numb: '2',
-    header: 'HowWorks.items.second.head',
-    text: 'HowWorks.items.second.text',
-  },
-  {
-    numb: '3',
-    header: 'HowWorks.items.third.head',
-    text: 'HowWorks.items.third.text',
-  },
-  {
-    numb: '4',
-    header: 'HowWorks.items.fourth.head',
-    text: 'HowWorks.items.fourth.text',
-  },
-];
+// export const howWorksItems = [
+//   {
+//     numb: '1',
+//     header: 'HowWorks.items.first.head',
+//     text: 'HowWorks.items.first.text',
+//   },
+//   {
+//     numb: '2',
+//     header: 'HowWorks.items.second.head',
+//     text: 'HowWorks.items.second.text',
+//   },
+//   {
+//     numb: '3',
+//     header: 'HowWorks.items.third.head',
+//     text: 'HowWorks.items.third.text',
+//   },
+//   {
+//     numb: '4',
+//     header: 'HowWorks.items.fourth.head',
+//     text: 'HowWorks.items.fourth.text',
+//   },
+// ];
 
 // export const feedbackItems = [
 //   {
@@ -241,55 +235,55 @@ export const howWorksItems = [
 //   },
 // ];
 
-export const questionsItems = [
-  {
-    head: 'Questions.items.first.head',
-    numb: '1',
-    text: 'Questions.items.first.text',
-  },
-  {
-    head: 'Questions.items.second.head',
-    numb: '2',
-    text: 'Questions.items.second.text',
-  },
-  {
-    head: 'Questions.items.third.head',
-    numb: '3',
-    text: 'Questions.items.third.text',
-  },
-  {
-    head: 'Questions.items.fourth.head',
-    numb: '4',
-    text: 'Questions.items.fourth.text',
-  },
-  {
-    head: 'Questions.items.fifth.head',
-    numb: '5',
-    text: 'Questions.items.fifth.text',
-  },
-  {
-    head: 'Questions.items.sixth.head',
-    numb: '6',
-    text: 'Questions.items.sixth.text',
-  },
-  {
-    head: 'Questions.items.seventh.head',
-    numb: '7',
-    text: 'Questions.items.seventh.text',
-  },
-  {
-    head: 'Questions.items.eighth.head',
-    numb: '8',
-    text: 'Questions.items.eighth.text',
-  },
-  {
-    head: 'Questions.items.ninth.head',
-    numb: '9',
-    text: 'Questions.items.ninth.text',
-  },
-  {
-    head: 'Questions.items.ten.head',
-    numb: '10',
-    text: 'Questions.items.ten.text',
-  },
-];
+// export const questionsItems = [
+//   {
+//     head: 'Questions.items.first.head',
+//     numb: '1',
+//     text: 'Questions.items.first.text',
+//   },
+//   {
+//     head: 'Questions.items.second.head',
+//     numb: '2',
+//     text: 'Questions.items.second.text',
+//   },
+//   {
+//     head: 'Questions.items.third.head',
+//     numb: '3',
+//     text: 'Questions.items.third.text',
+//   },
+//   {
+//     head: 'Questions.items.fourth.head',
+//     numb: '4',
+//     text: 'Questions.items.fourth.text',
+//   },
+//   {
+//     head: 'Questions.items.fifth.head',
+//     numb: '5',
+//     text: 'Questions.items.fifth.text',
+//   },
+//   {
+//     head: 'Questions.items.sixth.head',
+//     numb: '6',
+//     text: 'Questions.items.sixth.text',
+//   },
+//   {
+//     head: 'Questions.items.seventh.head',
+//     numb: '7',
+//     text: 'Questions.items.seventh.text',
+//   },
+//   {
+//     head: 'Questions.items.eighth.head',
+//     numb: '8',
+//     text: 'Questions.items.eighth.text',
+//   },
+//   {
+//     head: 'Questions.items.ninth.head',
+//     numb: '9',
+//     text: 'Questions.items.ninth.text',
+//   },
+//   {
+//     head: 'Questions.items.ten.head',
+//     numb: '10',
+//     text: 'Questions.items.ten.text',
+//   },
+// ];
