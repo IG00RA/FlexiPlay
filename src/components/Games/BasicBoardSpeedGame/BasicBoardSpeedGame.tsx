@@ -5,7 +5,6 @@ import header_ico from '@/img/game/header_ico.webp';
 import main_board from '@/img/game/basicBoard.webp';
 import { useTranslations } from 'next-intl';
 import Image, { StaticImageData } from 'next/image';
-import useLanguageStore from '@/store/useLanguageStore';
 import { useEffect, useState, useRef } from 'react';
 import ModalComponent from '../Modals/ModalComponent';
 import { shapes } from '@/data/data';
@@ -28,7 +27,6 @@ export default function BasicBoardSpeedGame() {
   const [currentRound, setCurrentRound] = useState(0);
   const [currentLevel, setCurrentLevel] = useState(1);
   const [allCombinations, setAllCombinations] = useState<Shape[]>([]);
-  const [totalSeconds, setTotalSeconds] = useState(0);
   const [levelTwoColors, setLevelTwoColors] = useState<string[]>([]);
   const [levelThreePairs, setLevelThreePairs] = useState<Shape[][]>([]);
   const [isTimeOut, setIsTimeOut] = useState(false); // Новий стан для закінчення часу
@@ -55,6 +53,17 @@ export default function BasicBoardSpeedGame() {
       ? `${hours.toString().padStart(2, '0')}:${mins}:${secs}`
       : `${mins}:${secs}`;
   };
+
+  function shuffleArray<T>(array: T[]): T[] {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = newArray[i];
+      newArray[i] = newArray[j];
+      newArray[j] = temp;
+    }
+    return newArray;
+  }
 
   const startRoundTimer = () => {
     const timeLimit = currentLevel === 3 ? 20 : 30;
@@ -90,11 +99,12 @@ export default function BasicBoardSpeedGame() {
 
   const startTotalTimer = () => {
     totalTimerRef.current = setInterval(() => {
-      setTotalSeconds(prev => {
-        const newTotal = prev + 1;
-        localStorage.setItem('totalSecondsSpeedBoard', newTotal.toString());
-        setTotalTime(formatTime(newTotal));
-        return newTotal;
+      setTotalTime(prev => {
+        const [minutes, seconds] = prev.split(':').map(Number);
+        const totalSeconds = minutes * 60 + seconds + 1;
+        const newTime = formatTime(totalSeconds);
+        localStorage.setItem('totalSecondsSpeedBoard', totalSeconds.toString());
+        return newTime;
       });
     }, 1000);
   };
@@ -113,14 +123,6 @@ export default function BasicBoardSpeedGame() {
   const generateUniqueShapes = (): Shape[] => {
     const availableShapes = [...shapeTypes];
     const availableColors = Object.values(colorMap);
-
-    const shuffleArray = (array: any[]) => {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    };
 
     const shuffledShapes = shuffleArray(availableShapes).slice(0, 4);
     const shuffledColors = shuffleArray(availableColors).slice(0, 4);
@@ -155,14 +157,6 @@ export default function BasicBoardSpeedGame() {
         combinations.push({ type, color, image });
       });
     });
-
-    const shuffleArray = (array: any[]) => {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    };
 
     const shuffledCombinations = shuffleArray(combinations);
     const pairs: Shape[][] = [];
@@ -258,13 +252,6 @@ export default function BasicBoardSpeedGame() {
 
     if (currentLevel === 2) {
       const availableColors = Object.values(colorMap);
-      const shuffleArray = (array: any[]) => {
-        for (let i = array.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-      };
       setLevelTwoColors(shuffleArray([...availableColors]));
     } else if (currentLevel === 3) {
       setLevelThreePairs(generatePairsForLevelThree());
@@ -304,9 +291,7 @@ export default function BasicBoardSpeedGame() {
       const savedTotalTime = formatTime(savedTotalSeconds);
 
       setLastRecord(savedLastRecord);
-      setTotalSeconds(savedTotalSeconds);
       setTotalTime(savedTotalTime);
-
       startTotalTimer();
     }
 
@@ -327,7 +312,6 @@ export default function BasicBoardSpeedGame() {
     }
   }, [isMenuOpen]);
 
-  const { locale } = useLanguageStore();
 
   return (
     <section>

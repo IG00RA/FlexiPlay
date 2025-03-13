@@ -323,6 +323,10 @@
   }
 }
 
+.time_button {
+  white-space: nowrap;
+}
+
 .start_button:disabled,
 .stop_button:disabled {
   background: #e0e0e0; /* Світло-сірий фон */

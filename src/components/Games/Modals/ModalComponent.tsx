@@ -1,7 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
-import { useState, ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 import Modal from 'react-modal';
 import styles from './ModalComponent.module.css';
 
@@ -17,8 +16,6 @@ export default function ModalComponent({
   onClose,
   children,
 }: ModalProps) {
-  const t = useTranslations('');
-
   if (typeof window !== 'undefined') {
     Modal.setAppElement('#__next');
   }

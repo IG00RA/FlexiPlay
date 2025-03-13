@@ -5,7 +5,6 @@ import header_ico from '@/img/game/header_ico.webp';
 import main_board from '@/img/game/basicBoard.webp';
 import { useTranslations } from 'next-intl';
 import Image, { StaticImageData } from 'next/image';
-import useLanguageStore from '@/store/useLanguageStore';
 import { useEffect, useState, useRef } from 'react';
 import ModalComponent from '../Modals/ModalComponent';
 import { shapes } from '@/data/data';
@@ -28,7 +27,6 @@ export default function BasicBoardGame() {
   const [isGameCompleted, setIsGameCompleted] = useState(false);
   const [currentRound, setCurrentRound] = useState(0);
   const [allCombinations, setAllCombinations] = useState<Shape[]>([]);
-  const [totalSeconds, setTotalSeconds] = useState(0);
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const totalTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -42,19 +40,26 @@ export default function BasicBoardGame() {
     3: 'yellow',
   };
 
+  function shuffleArray<T>(array: T[]): T[] {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = newArray[i];
+      newArray[i] = newArray[j];
+      newArray[j] = temp;
+    }
+    return newArray;
+  }
+
   const formatTime = (seconds: number) => {
-    const hours = Math.floor(seconds / 3600); // Кількість годин
+    const hours = Math.floor(seconds / 3600);
     const mins = Math.floor((seconds % 3600) / 60)
       .toString()
-      .padStart(2, '0'); // Залишок хвилин
-    const secs = (seconds % 60).toString().padStart(2, '0'); // Залишок секунд
-
-    if (hours > 0) {
-      // Якщо є години, повертаємо формат HH:MM:SS
-      return `${hours.toString().padStart(2, '0')}:${mins}:${secs}`;
-    }
-    // Якщо годин немає, повертаємо старий формат MM:SS
-    return `${mins}:${secs}`;
+      .padStart(2, '0');
+    const secs = (seconds % 60).toString().padStart(2, '0');
+    return hours > 0
+      ? `${hours.toString().padStart(2, '0')}:${mins}:${secs}`
+      : `${mins}:${secs}`;
   };
 
   const startTimer = () => {
@@ -78,14 +83,18 @@ export default function BasicBoardGame() {
   };
 
   const startTotalTimer = () => {
-    totalTimerRef.current = setInterval(() => {
-      setTotalSeconds(prev => {
-        const newTotal = prev + 1;
-        localStorage.setItem('totalSecondsBoard', newTotal.toString());
-        setTotalTime(formatTime(newTotal));
-        return newTotal;
-      });
-    }, 1000);
+    if (!totalTimerRef.current) {
+      let totalSeconds = parseInt(
+        localStorage.getItem('totalSecondsBoard') || '0',
+        10
+      );
+      totalTimerRef.current = setInterval(() => {
+        totalSeconds += 1;
+        const formattedTime = formatTime(totalSeconds);
+        setTotalTime(formattedTime);
+        localStorage.setItem('totalSecondsBoard', totalSeconds.toString());
+      }, 1000);
+    }
   };
 
   const pauseTotalTimer = () => {
@@ -111,14 +120,6 @@ export default function BasicBoardGame() {
   const generateUniqueShapes = (): Shape[] => {
     const availableShapes = [...shapeTypes];
     const availableColors = Object.values(colorMap);
-
-    const shuffleArray = (array: any[]) => {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    };
 
     const shuffledShapes = shuffleArray(availableShapes).slice(0, 4);
     const shuffledColors = shuffleArray(availableColors).slice(0, 4);
@@ -217,9 +218,7 @@ export default function BasicBoardGame() {
       const savedTotalTime = formatTime(savedTotalSeconds);
 
       setLastRecord(savedLastRecord);
-      setTotalSeconds(savedTotalSeconds);
       setTotalTime(savedTotalTime);
-
       startTotalTimer();
     }
 
@@ -239,8 +238,6 @@ export default function BasicBoardGame() {
       document.body.style.touchAction = isMenuOpen ? 'none' : 'auto';
     }
   }, [isMenuOpen]);
-
-  const { locale } = useLanguageStore();
 
   return (
     <section>
@@ -263,7 +260,13 @@ export default function BasicBoardGame() {
         {isGameActive && currentShape ? (
           <p className={styles.game_text}>
             {t('BasicBoardGame.gameTextFirst')}{' '}
-            <span>{t(`Colors.${currentShape.color}`)}</span>{' '}
+            <span>
+              {t(
+                `${currentShape.type === 'circle' ? 'ColorCircle' : 'Color'}.${
+                  currentShape.color
+                }`
+              )}
+            </span>{' '}
             {t(`Figures.${currentShape.type}`)}
             {t('BasicBoardGame.gameTextSecond')}
           </p>

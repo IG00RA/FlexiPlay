@@ -5,7 +5,6 @@ import header_ico from '@/img/game/header_ico.webp';
 import main_board from '@/img/game/memoryCase.webp';
 import { useTranslations } from 'next-intl';
 import Image, { StaticImageData } from 'next/image';
-import useLanguageStore from '@/store/useLanguageStore';
 import { useEffect, useState, useRef } from 'react';
 import { shapes } from '@/data/data';
 import ModalComponent from '../Modals/ModalComponent';
@@ -91,7 +90,6 @@ export default function MemoryCaseGame() {
   const [showHidden, setShowHidden] = useState(false);
   const [isConfirming, setIsConfirming] = useState(false);
   const [isInitialAnimationDone, setIsInitialAnimationDone] = useState(false);
-  const [totalSeconds, setTotalSeconds] = useState(0);
   const [isFirstAudit, setIsFirstAudit] = useState(true);
   const [auditResult, setAuditResult] = useState<'none' | 'yes' | 'no'>('none');
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -217,11 +215,14 @@ export default function MemoryCaseGame() {
   };
 
   const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60)
+    const hours = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60)
       .toString()
       .padStart(2, '0');
     const secs = (seconds % 60).toString().padStart(2, '0');
-    return `${mins}:${secs}`;
+    return hours > 0
+      ? `${hours.toString().padStart(2, '0')}:${mins}:${secs}`
+      : `${mins}:${secs}`;
   };
 
   const startTimer = () => {
@@ -246,15 +247,15 @@ export default function MemoryCaseGame() {
 
   const startTotalTimer = () => {
     if (!totalTimerRef.current) {
+      let totalSeconds = parseInt(
+        localStorage.getItem('totalSeconds') || '0',
+        10
+      );
       totalTimerRef.current = setInterval(() => {
-        setTotalSeconds(prev => {
-          const newSeconds = prev + 1;
-          const formattedTime = formatTime(newSeconds);
-          setTotalTime(formattedTime);
-          localStorage.setItem('totalSeconds', newSeconds.toString());
-          localStorage.setItem('totalTime', formattedTime);
-          return newSeconds;
-        });
+        totalSeconds += 1;
+        const formattedTime = formatTime(totalSeconds);
+        setTotalTime(formattedTime);
+        localStorage.setItem('totalSeconds', totalSeconds.toString());
       }, 1000);
     }
   };
@@ -267,17 +268,15 @@ export default function MemoryCaseGame() {
   };
 
   const showFiguresSequence = () => {
-    setIsAnimating(true); // Починаємо анімацію
+    setIsAnimating(true);
     const displayTime = levelConfig[currentLevel].displayTime;
     const sequence =
       levelConfig[currentLevel].sequences[
         currentStage % levelConfig[currentLevel].sequences.length
       ];
 
-    // Reset all figures to hidden first
     setVisibleFigures([false, false, false, false]);
 
-    // Special handling for level 4 - show all figures sequentially
     if (currentLevel === 4) {
       sequence.departments.forEach((dept, index) => {
         setTimeout(() => {
@@ -292,11 +291,9 @@ export default function MemoryCaseGame() {
       setTimeout(() => {
         setShowHidden(true);
         startTimer();
-        setIsAnimating(false); // Завершуємо анімацію
+        setIsAnimating(false);
       }, sequence.departments.length * displayTime);
-    }
-    // Special handling for level 3 - show figures in pairs
-    else if (currentLevel === 3) {
+    } else if (currentLevel === 3) {
       setTimeout(() => {
         setVisibleFigures(prev => {
           const updated = [...prev];
@@ -320,11 +317,9 @@ export default function MemoryCaseGame() {
       setTimeout(() => {
         setShowHidden(true);
         startTimer();
-        setIsAnimating(false); // Завершуємо анімацію
+        setIsAnimating(false);
       }, displayTime * 2);
-    }
-    // Special handling for level 2 with different sequence variants
-    else if (currentLevel === 2) {
+    } else if (currentLevel === 2) {
       const currentVariant =
         currentStage % levelConfig[currentLevel].sequences.length;
 
@@ -342,7 +337,7 @@ export default function MemoryCaseGame() {
         setTimeout(() => {
           setShowHidden(true);
           startTimer();
-          setIsAnimating(false); // Завершуємо анімацію
+          setIsAnimating(false);
         }, sequence.departments.length * displayTime);
       } else if (currentVariant === 1) {
         setTimeout(() => {
@@ -367,7 +362,7 @@ export default function MemoryCaseGame() {
         setTimeout(() => {
           setShowHidden(true);
           startTimer();
-          setIsAnimating(false); // Завершуємо анімацію
+          setIsAnimating(false);
         }, displayTime * 2);
       } else if (currentVariant === 2) {
         setTimeout(() => {
@@ -391,7 +386,7 @@ export default function MemoryCaseGame() {
         setTimeout(() => {
           setShowHidden(true);
           startTimer();
-          setIsAnimating(false); // Завершуємо анімацію
+          setIsAnimating(false);
         }, displayTime * 2);
       }
     } else {
@@ -408,7 +403,7 @@ export default function MemoryCaseGame() {
       setTimeout(() => {
         setShowHidden(true);
         startTimer();
-        setIsAnimating(false); // Завершуємо анімацію
+        setIsAnimating(false);
       }, sequence.departments.length * displayTime);
     }
   };
@@ -416,8 +411,8 @@ export default function MemoryCaseGame() {
   const handleStart = () => {
     if (!isGameStarted && !isConfirming && isInitialAnimationDone) {
       setIsGameStarted(true);
-      setIsFirstAudit(true); // Reset isFirstAudit for new round
-      setAuditResult('none'); // Reset auditResult for new round
+      setIsFirstAudit(true);
+      setAuditResult('none');
       generateRandomFigures();
       showFiguresSequence();
     } else if (isGameStarted && !isAuditMenuOpen && !isConfirming) {
@@ -428,12 +423,32 @@ export default function MemoryCaseGame() {
     }
   };
 
+  const handleStop = () => {
+    setIsGameStarted(false);
+    setCurrentLevel(1);
+    setCurrentStage(0);
+    setScore('0');
+    setTimer('00:00');
+    setTotalTime('00:00');
+    setShowHidden(false);
+    setIsConfirming(false);
+    setIsAuditMenuOpen(false);
+    setAuditResult('none');
+    setIsFirstAudit(true);
+    setModalType(null);
+    setVisibleFigures([false, false, false, false]);
+    stopTimer();
+    localStorage.setItem('lastRecord', '00:00');
+    setLastRecord('00:00');
+    generateRandomFigures();
+    animateFigures();
+  };
+
   const handleAuditClose = () => {
-    setIsAuditMenuOpen(false); // Закриваємо модальне вікно
-    setModalType(null); // Скидаємо тип модального вікна
+    setIsAuditMenuOpen(false);
+    setModalType(null);
 
     if (modalType === 'nextLevel') {
-      // Підготовка до нового рівня
       generateRandomFigures();
       animateFigures();
     } else if (isFirstAudit) {
@@ -456,17 +471,17 @@ export default function MemoryCaseGame() {
       newScore >= levelConfig[currentLevel].requiredScore &&
       currentLevel < 4
     ) {
-      setCurrentLevel(prev => prev + 1); // Підвищуємо рівень
-      setCurrentStage(0); // Скидаємо етап
-      setModalType('nextLevel'); // Встановлюємо тип модального вікна
-      setIsAuditMenuOpen(true); // Відкриваємо модальне вікно
+      setCurrentLevel(prev => prev + 1);
+      setCurrentStage(0);
+      setModalType('nextLevel');
+      setIsAuditMenuOpen(true);
     } else {
       setCurrentStage(
         prev => (prev + 1) % levelConfig[currentLevel].sequences.length
-      ); // Переходимо до наступного етапу
-      setModalType('audit'); // Тип для звичайної перевірки
-      setAuditResult('yes'); // Результат перевірки
-      setIsAuditMenuOpen(true); // Відкриваємо модальне вікно
+      );
+      setModalType('audit');
+      setAuditResult('yes');
+      setIsAuditMenuOpen(true);
     }
 
     setLastRecord(timer);
@@ -488,7 +503,7 @@ export default function MemoryCaseGame() {
   };
 
   const animateFigures = () => {
-    setIsAnimating(true); // Починаємо анімацію
+    setIsAnimating(true);
     setVisibleFigures([false, false, false, false]);
     randomFigures.forEach((_, index) => {
       setTimeout(() => {
@@ -499,7 +514,7 @@ export default function MemoryCaseGame() {
         });
         if (index === randomFigures.length - 1) {
           setIsInitialAnimationDone(true);
-          setIsAnimating(false); // Завершуємо анімацію
+          setIsAnimating(false);
         }
       }, index * 600);
     });
@@ -523,13 +538,16 @@ export default function MemoryCaseGame() {
         localStorage.getItem('totalSeconds') || '0',
         10
       );
-      const savedTotalTime = localStorage.getItem('totalTime') || '00:00';
+      const savedTotalTime = formatTime(savedTotalSeconds);
 
       setLastRecord(savedLastRecord);
-      setTotalSeconds(savedTotalSeconds);
       setTotalTime(savedTotalTime);
 
       generateRandomFigures();
+
+      if (!isMenuOpen) {
+        startTotalTimer();
+      }
     }
 
     const handleVisibilityChange = () => {
@@ -556,7 +574,7 @@ export default function MemoryCaseGame() {
         );
       }
     };
-  }, []);
+  }, [isMenuOpen]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -565,7 +583,6 @@ export default function MemoryCaseGame() {
     }
   }, [isMenuOpen]);
 
-  const { locale } = useLanguageStore();
 
   return (
     <section>
@@ -634,7 +651,13 @@ export default function MemoryCaseGame() {
                   />
                   <div className={styles.figure_description_wrap}>
                     <span className={styles.figure_description}>
-                      {t(`Colors.${figure.color}`)}
+                      {t(
+                        `${
+                          shapeNames[figure.shape] === 'circle'
+                            ? 'ColorCircle'
+                            : 'Color'
+                        }.${figure.color}`
+                      )}
                     </span>
                     <span className={styles.figure_description}>
                       {t(`Figures.${shapeNames[figure.shape]}`)}
@@ -660,7 +683,7 @@ export default function MemoryCaseGame() {
                 className={styles.start_button}
                 type="button"
                 onClick={handleStart}
-                disabled={isAnimating || !isInitialAnimationDone} // Вимикаємо під час анімації або якщо початкова анімація не завершена
+                disabled={isAnimating || !isInitialAnimationDone}
               >
                 {!isGameStarted && !isConfirming
                   ? t('MemoryCaseGame.buttons.start')
@@ -668,12 +691,13 @@ export default function MemoryCaseGame() {
                   ? t('MemoryCaseGame.buttons.done')
                   : t('MemoryCaseGame.buttons.yes')}
               </button>
-
               <button
                 className={styles.stop_button}
                 type="button"
-                onClick={isConfirming || isAuditMenuOpen ? handleNo : undefined}
-                disabled={isAnimating || !isGameStarted} // Вимикаємо під час анімації або якщо гра ще не почалася
+                onClick={
+                  isConfirming || isAuditMenuOpen ? handleNo : handleStop
+                }
+                disabled={isAnimating}
               >
                 {!isGameStarted || (!isAuditMenuOpen && !isConfirming)
                   ? t('MemoryCaseGame.buttons.stop')
@@ -719,11 +743,11 @@ export default function MemoryCaseGame() {
           </h3>
           <p className={styles.modal_text}>
             {modalType === 'nextLevel'
-              ? t('MemoryCaseGame.modal.audit.nextLevel') // Текст для нового рівня
+              ? t('MemoryCaseGame.modal.audit.nextLevel')
               : isFirstAudit
-              ? t('MemoryCaseGame.modal.audit.text') // Текст для першої перевірки
+              ? t('MemoryCaseGame.modal.audit.text')
               : auditResult === 'yes'
-              ? t('MemoryCaseGame.modal.audit.takePoint') // Текст для правильної відповіді
+              ? t('MemoryCaseGame.modal.audit.takePoint')
               : t('MemoryCaseGame.modal.audit.tryAgain')}
           </p>
           <button
