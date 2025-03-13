@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './LanguageSwitcher.module.css';
 import { usePathname, useRouter } from 'next/navigation';
 import useLanguageStore from '@/store/useLanguageStore';
@@ -10,6 +10,8 @@ const LanguageSwitcher = () => {
   const router = useRouter();
 
   const { query, setLocale } = useLanguageStore();
+  const [hoveredButton, setHoveredButton] = useState<string | null>(null); // Стан для ховера
+
   // Функція для визначення локалі з URL
   const getLocaleFromPath = (pathname: string): string => {
     const pathSegments = pathname.split('/');
@@ -27,22 +29,51 @@ const LanguageSwitcher = () => {
     const path = pathname?.split('/').slice(2).join('/');
     router.push(`/${lang}/${path}?${query}`);
   };
+
+  // Обробники подій для ховера
+  const handleMouseEnter = (lang: string) => {
+    if (locale !== lang) {
+      setHoveredButton(lang); // Встановлюємо кнопку, на яку наведено курсор
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredButton(null); // Скидаємо стан ховера
+  };
+
+  // Функція для визначення класів кнопок
+  const getButtonClass = (lang: string) => {
+    let className = styles.button;
+    if (locale === lang) {
+      className += ` ${styles.buttonActive}`;
+      if (hoveredButton && hoveredButton !== lang) {
+        className += ` ${styles.buttonActiveHover}`;
+      }
+    } else {
+      className += ` ${styles.buttonUnActive}`;
+      if (hoveredButton === lang) {
+        className += ` ${styles.buttonUnActiveHover}`;
+      }
+    }
+    return className;
+  };
+
   return (
     <div className={styles.language}>
       <button
-        className={`${styles.button} ${
-          locale === 'sk' ? styles.buttonActive : styles.buttonUnActive
-        }`}
+        className={getButtonClass('sk')}
         onClick={() => handleLanguageChange('sk')}
+        onMouseEnter={() => handleMouseEnter('sk')}
+        onMouseLeave={handleMouseLeave}
         type="button"
       >
         SK
       </button>
       <button
-        className={`${styles.button} ${
-          locale === 'uk' ? styles.buttonActive : styles.buttonUnActive
-        }`}
+        className={getButtonClass('uk')}
         onClick={() => handleLanguageChange('uk')}
+        onMouseEnter={() => handleMouseEnter('uk')}
+        onMouseLeave={handleMouseLeave}
         type="button"
       >
         UA

@@ -5,7 +5,7 @@ import styles from './Buttons.module.css';
 import Form from '../Form/Form';
 import { useTranslations } from 'next-intl';
 
-const ButtonHeader = (className = '') => {
+const ButtonHeader = ({ className = '' }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const toggleForm = () => {
