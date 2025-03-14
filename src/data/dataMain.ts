@@ -1,6 +1,6 @@
-// import ipm1 from '../img/important/1.webp';
-// import ipm2 from '../img/important/2.webp';
-// import ipm3 from '../img/important/3.webp';
+import ipm1 from '../img/important/first.webp';
+import ipm2 from '../img/important/second.webp';
+import ipm3 from '../img/important/third.webp';
 
 // import reas1 from '../img/reasons/1.webp';
 // import reas2 from '../img/reasons/2.webp';
@@ -46,23 +46,45 @@ export const heroItems = [
 
 export const slideItems = [slider1, slider2, slider3, slider4, slider5];
 
-// export const importantItems = [
-//   {
-//     head: 'Important.items.first.head',
-//     img: ipm1,
-//     text: 'Important.items.first.text',
-//   },
-//   {
-//     head: 'Important.items.second.head',
-//     img: ipm2,
-//     text: 'Important.items.second.text',
-//   },
-//   {
-//     head: 'Important.items.third.head',
-//     img: ipm3,
-//     text: 'Important.items.third.text',
-//   },
-// ];
+export const importantItems = [
+  {
+    head: 'Important.items.first.head',
+    img: ipm1,
+    text: [
+      'Important.items.first.text.first',
+      'Important.items.first.text.second',
+      'Important.items.first.text.third',
+      'Important.items.first.text.fourth',
+    ],
+  },
+  {
+    head: 'Important.items.second.head',
+    img: ipm2,
+    text: [
+      'Important.items.second.text.first',
+      'Important.items.second.text.second',
+      'Important.items.second.text.third',
+      'Important.items.second.text.fourth',
+    ],
+  },
+  {
+    head: 'Important.items.third.head',
+    img: ipm3,
+    text: [
+      'Important.items.third.text.first',
+      'Important.items.third.text.second',
+      'Important.items.third.text.third',
+      'Important.items.third.text.fourth',
+    ],
+  },
+];
+
+export const importantTraining = [
+  'Important.items.fourth.text.first',
+  'Important.items.fourth.text.second',
+  'Important.items.fourth.text.third',
+  'Important.items.fourth.text.fourth',
+];
 
 // export const reasonsItems = [
 //   {

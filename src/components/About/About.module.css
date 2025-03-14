@@ -62,6 +62,9 @@
   margin: 0 auto;
   @media (min-width: 1024px) {
     margin: 0;
+    width: 40%;
+  }
+  @media (min-width: 1200px) {
     width: 49%;
   }
 }
@@ -71,6 +74,12 @@
   flex-direction: column;
   gap: 40px;
   @media (min-width: 1024px) {
+    width: 58%;
+  }
+  @media (min-width: 1200px) {
+    width: 48%;
+  }
+  @media (min-width: 1408px) {
     width: 41%;
   }
 }
@@ -109,7 +118,7 @@
   @media (min-width: 768px) {
     font-size: 28px;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     font-size: 32px;
     letter-spacing: 0.64px;
   }
@@ -127,7 +136,7 @@
   @media (min-width: 768px) {
     font-size: 17px;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     font-size: 18px;
     line-height: 125.5%;
     letter-spacing: 0.36px;
@@ -200,6 +209,9 @@
 .geometry_container {
   padding-bottom: 56%;
   position: relative;
+  @media (min-width: 768px) {
+    padding-bottom: 32%;
+  }
   @media (min-width: 1024px) {
     width: 41%;
     padding-bottom: 48px;
@@ -210,6 +222,9 @@
 .memory_container {
   padding-bottom: 56%;
   position: relative;
+  @media (min-width: 768px) {
+    padding-bottom: 28%;
+  }
   @media (min-width: 1024px) {
     width: 58%;
     padding-bottom: 22%;
@@ -263,6 +278,9 @@
   width: 95%;
   height: auto;
   aspect-ratio: 1219/619;
+  @media (min-width: 768px) {
+    bottom: 20px;
+  }
 
   @media (min-width: 1024px) {
     bottom: 4px;
@@ -296,7 +314,7 @@
   aspect-ratio: 280/265;
   border-radius: 12px;
   box-shadow: 0px 12.42px 20.7px 0px rgba(124, 122, 151, 0.15);
-  @media (min-width: 1200px) {
+  @media (min-width: 768px) {
     flex-shrink: 0;
     width: 31%;
   }
