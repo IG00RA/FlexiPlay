@@ -26,9 +26,9 @@ import slider5 from '../img/hero/slider1.webp';
 // import feed11 from '../img/feedback/11.webp';
 // import feed12 from '../img/feedback/12.webp';
 
-// import qual1 from '../img/quality/1.webp';
-// import qual2 from '../img/quality/2.webp';
-// import qual3 from '../img/quality/3.webp';
+import qual1 from '../img/choose/first.webp';
+import qual2 from '../img/choose/second.webp';
+import qual3 from '../img/choose/third.webp';
 
 export const menuItems = [
   { label: 'Footer.menu.reasons', href: '#reasons' },
@@ -86,6 +86,28 @@ export const importantTraining = [
   'Important.items.fourth.text.fourth',
 ];
 
+export const includedItems = [
+  'Included.items.first',
+  'Included.items.second',
+  'Included.items.third',
+  'Included.items.fourth',
+];
+
+export const qualityItems = [
+  {
+    head: 'Quality.items.first',
+    img: qual1,
+  },
+  {
+    head: 'Quality.items.second',
+    img: qual2,
+  },
+  {
+    head: 'Quality.items.third',
+    img: qual3,
+  },
+];
+
 // export const reasonsItems = [
 //   {
 //     head: 'Reasons.items.first.head',
@@ -133,15 +155,6 @@ export const importantTraining = [
 //   'Await.items.first',
 //   'Await.items.second',
 //   'Await.items.third',
-// ];
-
-// export const includedItems = [
-//   'Included.items.first',
-//   'Included.items.second',
-//   'Included.items.third',
-//   'Included.items.fourth',
-//   'Included.items.fifth',
-//   'Included.items.sixth',
 // ];
 
 // export const howWorksItems = [
@@ -239,21 +252,6 @@ export const importantTraining = [
 //     head: 'Feedback.items.twelfth.head',
 //     img: feed12.src,
 //     text: 'Feedback.items.twelfth.text',
-//   },
-// ];
-
-// export const qualityItems = [
-//   {
-//     head: 'Quality.items.first',
-//     img: qual1,
-//   },
-//   {
-//     head: 'Quality.items.second',
-//     img: qual2,
-//   },
-//   {
-//     head: 'Quality.items.third',
-//     img: qual3,
 //   },
 // ];
 
