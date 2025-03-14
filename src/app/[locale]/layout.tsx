@@ -26,11 +26,11 @@ const localeMetadata: Record<
       'FlexiFun Geometry, онлайн тренажер, розвиток моторики, логічне мислення, відео вправи, інноваційний тренажер, навчання, освіта',
   },
   sk: {
-    title: 'Mustage Team – Our Journey, Values, and Innovations',
+    title: 'FlexiFun – Online trenažér FlexiFun Geometry',
     description:
-      'Discover how Mustage Team evolved from a small team into an ecosystem in affiliate marketing. Our core values: transparency, innovation, and support.',
+      'FlexiFun Geometry je inovatívny online trenažér, ktorý pomáha rozvíjať motoriku a logické myslenie pomocou systému video cvičení. Vďaka dvom režimom cvičení sa trenažér prispôsobuje rôznym potrebám používateľov, čím robí učenie zábavným a efektívnym.',
     keywords:
-      'Mustage Team, company history, values, transparency, innovation, support, traffic arbitrage, affiliate marketing',
+      'FlexiFun Geometry, online trenažér, rozvoj motoriky, logické myslenie, video cvičenia, inovatívny trenažér, učenie, vzdelávanie',
   },
 };
 
@@ -42,7 +42,7 @@ export const generateMetadata = async ({
   params,
 }: Props): Promise<Metadata> => {
   const { locale } = await params;
-  const metadataValues = localeMetadata[locale] || localeMetadata.ru;
+  const metadataValues = localeMetadata[locale] || localeMetadata.uk;
 
   return {
     metadataBase: new URL(

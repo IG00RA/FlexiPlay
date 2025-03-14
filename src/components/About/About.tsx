@@ -16,7 +16,7 @@ export default function About() {
   const t = useTranslations();
 
   return (
-    <section id="about" className={styles.section}>
+    <section id="how-works" className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.header}>{t('About.header')}</h2>
 
