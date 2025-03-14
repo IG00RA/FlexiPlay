@@ -13,18 +13,14 @@ import slider3 from '../img/hero/slider1.webp';
 import slider4 from '../img/hero/slider1.webp';
 import slider5 from '../img/hero/slider1.webp';
 
-// import feed1 from '../img/feedback/1.webp';
-// import feed2 from '../img/feedback/2.webp';
-// import feed3 from '../img/feedback/3.webp';
-// import feed4 from '../img/feedback/4.webp';
-// import feed5 from '../img/feedback/5.webp';
-// import feed6 from '../img/feedback/6.webp';
-// import feed7 from '../img/feedback/7.webp';
-// import feed8 from '../img/feedback/8.webp';
-// import feed9 from '../img/feedback/9.webp';
-// import feed10 from '../img/feedback/10.webp';
-// import feed11 from '../img/feedback/11.webp';
-// import feed12 from '../img/feedback/12.webp';
+import feed1 from '../img/review/1.webp';
+import feed2 from '../img/review/2.webp';
+import feed3 from '../img/review/3.webp';
+import feed4 from '../img/review/4.webp';
+import feed5 from '../img/review/5.webp';
+import feed6 from '../img/review/6.webp';
+import feed7 from '../img/review/7.webp';
+import feed8 from '../img/review/8.webp';
 
 import qual1 from '../img/choose/first.webp';
 import qual2 from '../img/choose/second.webp';
@@ -108,6 +104,57 @@ export const qualityItems = [
   },
 ];
 
+export const feedbackItems = [
+  {
+    span: 'Feedback.items.first.span',
+    head: 'Feedback.items.first.head',
+    img: feed1.src,
+    text: 'Feedback.items.first.text',
+  },
+  {
+    span: 'Feedback.items.second.span',
+    head: 'Feedback.items.second.head',
+    img: feed2.src,
+    text: 'Feedback.items.second.text',
+  },
+  {
+    span: 'Feedback.items.third.span',
+    head: 'Feedback.items.third.head',
+    img: feed3.src,
+    text: 'Feedback.items.third.text',
+  },
+  {
+    span: 'Feedback.items.fourth.span',
+    head: 'Feedback.items.fourth.head',
+    img: feed4.src,
+    text: 'Feedback.items.fourth.text',
+  },
+  {
+    span: 'Feedback.items.fifth.span',
+    head: 'Feedback.items.fifth.head',
+    img: feed5.src,
+    text: 'Feedback.items.fifth.text',
+  },
+  {
+    span: 'Feedback.items.sixth.span',
+    head: 'Feedback.items.sixth.head',
+    img: feed6.src,
+    text: 'Feedback.items.sixth.text',
+  },
+  {
+    span: 'Feedback.items.seventh.span',
+    head: 'Feedback.items.seventh.head',
+    img: feed7.src,
+    text: 'Feedback.items.seventh.text',
+  },
+  {
+    span: 'Feedback.items.eighth.span',
+    head: 'Feedback.items.eighth.head',
+    img: feed8.src,
+    text: 'Feedback.items.eighth.text',
+  },
+];
+
 // export const reasonsItems = [
 //   {
 //     head: 'Reasons.items.first.head',
@@ -177,81 +224,6 @@ export const qualityItems = [
 //     numb: '4',
 //     header: 'HowWorks.items.fourth.head',
 //     text: 'HowWorks.items.fourth.text',
-//   },
-// ];
-
-// export const feedbackItems = [
-//   {
-//     span: 'Feedback.items.first.span',
-//     head: 'Feedback.items.first.head',
-//     img: feed1.src,
-//     text: 'Feedback.items.first.text',
-//   },
-//   {
-//     span: 'Feedback.items.second.span',
-//     head: 'Feedback.items.second.head',
-//     img: feed2.src,
-//     text: 'Feedback.items.second.text',
-//   },
-//   {
-//     span: 'Feedback.items.third.span',
-//     head: 'Feedback.items.third.head',
-//     img: feed3.src,
-//     text: 'Feedback.items.third.text',
-//   },
-//   {
-//     span: 'Feedback.items.fourth.span',
-//     head: 'Feedback.items.fourth.head',
-//     img: feed4.src,
-//     text: 'Feedback.items.fourth.text',
-//   },
-//   {
-//     span: 'Feedback.items.fifth.span',
-//     head: 'Feedback.items.fifth.head',
-//     img: feed5.src,
-//     text: 'Feedback.items.fifth.text',
-//   },
-//   {
-//     span: 'Feedback.items.sixth.span',
-//     head: 'Feedback.items.sixth.head',
-//     img: feed6.src,
-//     text: 'Feedback.items.sixth.text',
-//   },
-//   {
-//     span: 'Feedback.items.seventh.span',
-//     head: 'Feedback.items.seventh.head',
-//     img: feed7.src,
-//     text: 'Feedback.items.seventh.text',
-//   },
-//   {
-//     span: 'Feedback.items.eighth.span',
-//     head: 'Feedback.items.eighth.head',
-//     img: feed8.src,
-//     text: 'Feedback.items.eighth.text',
-//   },
-//   {
-//     span: 'Feedback.items.ninth.span',
-//     head: 'Feedback.items.ninth.head',
-//     img: feed9.src,
-//     text: 'Feedback.items.ninth.text',
-//   },
-//   {
-//     span: 'Feedback.items.ten.span',
-//     head: 'Feedback.items.ten.head',
-//     img: feed10.src,
-//     text: 'Feedback.items.ten.text',
-//   },
-//   {
-//     span: 'Feedback.items.eleventh.span',
-//     head: 'Feedback.items.eleventh.head',
-//     img: feed11.src,
-//     text: 'Feedback.items.eleventh.text',
-//   },
-//   {
-//     span: 'Feedback.items.twelfth.span',
-//     head: 'Feedback.items.twelfth.head',
-//     img: feed12.src,
-//     text: 'Feedback.items.twelfth.text',
 //   },
 // ];
 
