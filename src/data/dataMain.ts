@@ -28,7 +28,7 @@ import qual3 from '../img/choose/third.webp';
 
 export const menuItems = [
   { label: 'Footer.menu.reasons', href: '#reasons' },
-  { label: 'Footer.menu.about', href: '#about' },
+  { label: 'Footer.menu.about', href: '#included' },
   { label: 'Footer.menu.included', href: '#how-works' },
   { label: 'Footer.menu.feedback', href: '#feedback' },
 ];

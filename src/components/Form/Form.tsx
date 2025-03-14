@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import Icon from '@/helpers/Icon';
 import useLanguageStore from '@/store/useLanguageStore';
 import { useTranslations } from 'next-intl';
+import ButtonHeader from '../Buttons/ButtonHeader';
 
 interface FormProps {
   toggleForm: () => void;
@@ -135,13 +136,13 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
   return ReactDOM.createPortal(
     <div
       onClick={toggleForm}
-      className={`${styles.backDrop} ${isFormOpen && styles.formOpen}`}
+      className={`${styles.backdrop} ${isFormOpen && styles.form_open}`}
     >
       <div
-        className={styles.formWrap}
+        className={styles.form_wrap}
         onClick={event => event.stopPropagation()}
       >
-        <button className={styles.closeBtn} onClick={toggleForm} type="button">
+        <button className={styles.close_btn} onClick={toggleForm} type="button">
           <Icon name="icon-close" width={16} height={16} color="#999" />
         </button>
         <h2 className={styles.header}>{t('Form.header')}</h2>
@@ -157,7 +158,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               className={`${styles.input} ${errors.name ? styles.error : ''}`}
               required
             />
-            {errors.name && <p className={styles.errorText}>{errors.name}</p>}
+            {errors.name && <p className={styles.error_text}>{errors.name}</p>}
           </label>
 
           <label className={styles.label}>
@@ -172,12 +173,12 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               }`}
             />
             {errors.nickname && (
-              <p className={styles.errorText}>{errors.nickname}</p>
+              <p className={styles.error_text}>{errors.nickname}</p>
             )}
           </label>
 
-          <p className={styles.pricePar}>{t('Form.form.priceText')}</p>
-          <div className={styles.priceWrap}>
+          <p className={styles.price_par}>{t('Form.form.priceText')}</p>
+          <div className={styles.price_wrap}>
             <button
               className={styles.min}
               type="button"
@@ -200,13 +201,13 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               onClick={() => handleQuantityChange(1)}
             ></button>
             <span className={styles.priceTotal}>
-              ={formData.quantity * (locale === 'sk' ? 20 : 1320)}
+              ={formData.quantity * (locale === 'sk' ? 20 : 420)}
               {t('Form.form.priceValue')}
             </span>
           </div>
 
-          <p className={styles.pricePar}>{t('Form.form.socialPar')}</p>
-          <div className={styles.socWrap}>
+          <p className={styles.price_par}>{t('Form.form.socialPar')}</p>
+          <div className={styles.soc_wrap}>
             <label>
               <input
                 type="radio"
@@ -238,7 +239,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               Viber
             </label>
             {errors.communication && (
-              <p className={styles.errorText}>{errors.communication}</p>
+              <p className={styles.error_text}>{errors.communication}</p>
             )}
           </div>
 
@@ -254,7 +255,9 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               className={`${styles.input} ${errors.phone ? styles.error : ''}`}
               required
             />
-            {errors.phone && <p className={styles.errorText}>{errors.phone}</p>}
+            {errors.phone && (
+              <p className={styles.error_text}>{errors.phone}</p>
+            )}
           </label>
 
           <label className={styles.label}>
@@ -271,9 +274,11 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
           <span
             className={`${styles.loader} ${!isLoading ? styles.hidden : ''}`}
           ></span>
-          <div className={`${isLoading ? styles.hidden : styles.formButton}`}>
-            <button type="submit">{t('Main.buttonSecond')}</button>
-          </div>
+
+          <ButtonHeader
+            className={`${isLoading ? styles.hidden : styles.formButton}`}
+            type="submit"
+          />
         </form>
       </div>
     </div>,

@@ -1,0 +1,141 @@
+.section {
+  width: 100%;
+  background: var(--main_gradient);
+  padding: 60px 0 96px;
+
+  @media (min-width: 1024px) {
+    padding: 80px 0;
+  }
+}
+
+.container {
+  width: var(--container);
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: var(--desktop);
+  }
+}
+
+@media (min-width: 1024px) {
+  .fist_wrap {
+    display: flex;
+    gap: 36px;
+  }
+  .second_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .fist_wrap {
+    gap: 80px;
+  }
+  .second_wrap {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+.logo_wrap {
+  margin-bottom: 40px;
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0px 2px 5px #66adff1a);
+    transform: scale(1.01);
+  }
+
+  @media (min-width: 1024px) {
+    & svg {
+      width: 220px;
+      height: 66px;
+    }
+  }
+}
+
+.nav {
+  margin-bottom: 40px;
+}
+
+.nav_title {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 16px;
+  @media (min-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+.nav_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nav_item {
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0px 2px 5px #66adff1a);
+    transform: scale(1.01);
+  }
+}
+
+.nav_link {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  @media (min-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+.policy {
+  display: inline-block;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0px 2px 5px #66adff1a);
+    transform: scale(1.01);
+  }
+  @media (min-width: 1024px) {
+    font-size: 20px;
+  }
+  @media (min-width: 1300px) {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.btn {
+  @media (min-width: 768px) {
+    width: 220px;
+    height: 64px;
+    color: #5792ed;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 125.5%;
+    letter-spacing: 0.48px;
+  }
+}

@@ -46,12 +46,6 @@
   }
 }
 
-.logo_wrap {
-  @media (min-width: 1024px) {
-    display: none;
-  }
-}
-
 .logo_desk {
   @media (max-width: 1023px) {
     display: none;
@@ -61,6 +55,12 @@
       width: 125px;
       height: 40px;
     }
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo_wrap {
+    display: none;
   }
 }
 

@@ -265,10 +265,10 @@
   background: var(--main_gradient);
   border-radius: 23px;
   position: relative;
+  flex-shrink: 0;
 
   @media (min-width: 1024px) {
     order: 1;
-    flex-shrink: 0;
   }
   @media (min-width: 1200px) {
     width: 228px;

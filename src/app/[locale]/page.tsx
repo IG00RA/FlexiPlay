@@ -1,5 +1,6 @@
 import About from '@/components/About/About';
 import Feedback from '@/components/Feedback/Feedback';
+import Footer from '@/components/Footer/Footer';
 import HeaderMain from '@/components/HeaderMain/HeaderMain';
 import Hero from '@/components/Hero/Hero';
 import Important from '@/components/Important/Important';
@@ -17,6 +18,7 @@ export default function Home() {
         <Included />
         <Feedback />
         <Questions />
+        <Footer />
       </main>
     </>
   );

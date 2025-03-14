@@ -10,7 +10,7 @@ import Icon from '@/helpers/Icon';
 export default function Important() {
   const t = useTranslations();
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="reasons">
       <h2 className={styles.header}>{t('Important.header')}</h2>
       <p className={styles.text}>{t('Important.text')}</p>
       <ul className={styles.list}>

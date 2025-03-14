@@ -1,15 +1,15 @@
 {
   "name": {
-    "ru": "Mustage Team – История и Ценности",
-    "en": "Mustage Team – Our Story and Values"
+    "uk": "FlexiFun – Онлайн тренажер FlexiFun Geometry",
+    "sk": "FlexiFun – Online trenažér FlexiFun Geometry"
   },
   "short_name": {
-    "ru": "Mustage",
-    "en": "Mustage"
+    "uk": "FlexiFun",
+    "sk": "FlexiFun"
   },
   "description": {
-    "ru": "Узнайте, как Mustage Team прошла путь от небольшой команды до экосистемы в affiliate-маркетинге. Наши ценности: прозрачность, инновации и поддержка.",
-    "en": "Discover how Mustage Team evolved from a small team into an ecosystem in affiliate marketing. Our core values: transparency, innovation, and support."
+    "uk": "FlexiFun Geometry – це інноваційний онлайн тренажер, який допомагає розвивати моторику та логічне мислення за допомогою системи відео вправ. Завдяки двом режимам вправ, тренажер адаптується до різних потреб користувачів, роблячи навчання цікавим і ефективним.",
+    "sk": "FlexiFun Geometry je inovatívny online trenažér, ktorý pomáha rozvíjať motoriku a logické myslenie pomocou systému video cvičení. Vďaka dvom režimom cvičení sa trenažér prispôsobuje rôznym potrebám používateľov, čím robí učenie zábavným a efektívnym."
   },
   "icons": [
     {
@@ -25,10 +25,10 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#6e6bff",
+  "theme_color": "#5390ec",
   "background_color": "#f1f1f6",
   "display": "standalone",
-  "lang": ["ru", "en"],
-  "start_url": "/ru",
+  "lang": ["uk", "sk"],
+  "start_url": "/uk",
   "scope": "/"
 }
