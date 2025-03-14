@@ -4,6 +4,7 @@ import HeaderMain from '@/components/HeaderMain/HeaderMain';
 import Hero from '@/components/Hero/Hero';
 import Important from '@/components/Important/Important';
 import Included from '@/components/Included/Included';
+import Questions from '@/components/Questions/Questions';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Important />
         <Included />
         <Feedback />
+        <Questions />
       </main>
     </>
   );
