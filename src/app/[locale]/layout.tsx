@@ -110,12 +110,12 @@ export default async function RootLayout({
         <body className={`${fredoka.variable}`}>
           {children}
           <div id="__next"></div>
+          <div id="portal-root"></div>
+          <ToastContainer />
+          <Suspense fallback={null}>
+            <FacebookPixel />
+          </Suspense>
         </body>
-        <div id="portal-root"></div>
-        <ToastContainer />
-        <Suspense fallback={null}>
-          <FacebookPixel />
-        </Suspense>
       </NextIntlClientProvider>
     </html>
   );
