@@ -155,127 +155,50 @@ export const feedbackItems = [
   },
 ];
 
-// export const reasonsItems = [
-//   {
-//     head: 'Reasons.items.first.head',
-//     img: reas1,
-//     text: {
-//       first: 'Reasons.items.first.text.first',
-//       second: 'Reasons.items.first.text.second',
-//       third: 'Reasons.items.first.text.third',
-//       fourth: 'Reasons.items.first.text.fourth',
-//     },
-//   },
-//   {
-//     head: 'Reasons.items.second.head',
-//     img: reas2,
-//     text: {
-//       first: 'Reasons.items.second.text.first',
-//       second: 'Reasons.items.second.text.second',
-//       third: 'Reasons.items.second.text.third',
-//       fourth: 'Reasons.items.second.text.fourth',
-//     },
-//   },
-//   {
-//     head: 'Reasons.items.third.head',
-//     img: reas3,
-//     text: {
-//       first: 'Reasons.items.third.text.first',
-//       second: 'Reasons.items.third.text.second',
-//       third: 'Reasons.items.third.text.third',
-//       fourth: 'Reasons.items.third.text.fourth',
-//     },
-//   },
-//   {
-//     head: 'Reasons.items.fourth.head',
-//     img: reas4,
-//     text: {
-//       first: 'Reasons.items.fourth.text.first',
-//       second: 'Reasons.items.fourth.text.second',
-//       third: 'Reasons.items.fourth.text.third',
-//       fourth: 'Reasons.items.fourth.text.fourth',
-//     },
-//   },
-// ];
-
-// export const awaitItems: string[] = [
-//   'Await.items.first',
-//   'Await.items.second',
-//   'Await.items.third',
-// ];
-
-// export const howWorksItems = [
-//   {
-//     numb: '1',
-//     header: 'HowWorks.items.first.head',
-//     text: 'HowWorks.items.first.text',
-//   },
-//   {
-//     numb: '2',
-//     header: 'HowWorks.items.second.head',
-//     text: 'HowWorks.items.second.text',
-//   },
-//   {
-//     numb: '3',
-//     header: 'HowWorks.items.third.head',
-//     text: 'HowWorks.items.third.text',
-//   },
-//   {
-//     numb: '4',
-//     header: 'HowWorks.items.fourth.head',
-//     text: 'HowWorks.items.fourth.text',
-//   },
-// ];
-
-// export const questionsItems = [
-//   {
-//     head: 'Questions.items.first.head',
-//     numb: '1',
-//     text: 'Questions.items.first.text',
-//   },
-//   {
-//     head: 'Questions.items.second.head',
-//     numb: '2',
-//     text: 'Questions.items.second.text',
-//   },
-//   {
-//     head: 'Questions.items.third.head',
-//     numb: '3',
-//     text: 'Questions.items.third.text',
-//   },
-//   {
-//     head: 'Questions.items.fourth.head',
-//     numb: '4',
-//     text: 'Questions.items.fourth.text',
-//   },
-//   {
-//     head: 'Questions.items.fifth.head',
-//     numb: '5',
-//     text: 'Questions.items.fifth.text',
-//   },
-//   {
-//     head: 'Questions.items.sixth.head',
-//     numb: '6',
-//     text: 'Questions.items.sixth.text',
-//   },
-//   {
-//     head: 'Questions.items.seventh.head',
-//     numb: '7',
-//     text: 'Questions.items.seventh.text',
-//   },
-//   {
-//     head: 'Questions.items.eighth.head',
-//     numb: '8',
-//     text: 'Questions.items.eighth.text',
-//   },
-//   {
-//     head: 'Questions.items.ninth.head',
-//     numb: '9',
-//     text: 'Questions.items.ninth.text',
-//   },
-//   {
-//     head: 'Questions.items.ten.head',
-//     numb: '10',
-//     text: 'Questions.items.ten.text',
-//   },
-// ];
+export const questionsItems = [
+  {
+    head: 'Questions.items.first.head',
+    numb: '1',
+    text: 'Questions.items.first.text',
+  },
+  {
+    head: 'Questions.items.second.head',
+    numb: '2',
+    text: 'Questions.items.second.text',
+  },
+  {
+    head: 'Questions.items.third.head',
+    numb: '3',
+    text: 'Questions.items.third.text',
+  },
+  {
+    head: 'Questions.items.fourth.head',
+    numb: '4',
+    text: 'Questions.items.fourth.text',
+  },
+  {
+    head: 'Questions.items.fifth.head',
+    numb: '5',
+    text: 'Questions.items.fifth.text',
+  },
+  {
+    head: 'Questions.items.sixth.head',
+    numb: '6',
+    text: 'Questions.items.sixth.text',
+  },
+  {
+    head: 'Questions.items.seventh.head',
+    numb: '7',
+    text: 'Questions.items.seventh.text',
+  },
+  {
+    head: 'Questions.items.eighth.head',
+    numb: '8',
+    text: 'Questions.items.eighth.text',
+  },
+  {
+    head: 'Questions.items.ninth.head',
+    numb: '9',
+    text: 'Questions.items.ninth.text',
+  },
+];
