@@ -11,6 +11,9 @@
     background-image: none;
     padding: 0;
   }
+  @media (min-width: 1024px) {
+    height: calc(100vh - 160px);
+  }
 }
 
 .container {

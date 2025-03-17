@@ -209,7 +209,7 @@
 
 .soc_wrap input[type='radio']:checked {
   background-color: #5390ec;
-  border-color: #ff9466;
+  border-color: #1554ff;
 }
 
 .soc_wrap input[type='radio']:hover,
@@ -230,8 +230,8 @@
 
 .loader {
   margin: 0 auto;
-  border: 2px solid #951e1eb5;
-  border-top: 2px solid #951818;
+  border: 2px solid #1e5b95b5;
+  border-top: 2px solid #185995;
   border-radius: 58%;
   width: 44px;
   height: 44px;
