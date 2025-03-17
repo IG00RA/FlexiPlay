@@ -3,7 +3,7 @@
     "start": "Старт",
     "back": "Назад",
     "main": "На головну",
-    "order": "Замовити"
+    "order": "Objednávka"
   },
   "Color": {
     "blue": "Синій",
@@ -203,224 +203,228 @@
     }
   },
   "Hero": {
-    "price": "700₴",
-    "priceSecond": "420₴",
-    "text": "FlexiFun Geometry - Перші кроки у світ логіки",
-    "header": "Розвивальний набір для дітей від 1 до 3 років ",
-    "headerDesk": "з інтерактивним онлайн-тренажером",
-    "par": "Уявіть: доки ваш малюк захоплено грається з яскравими геометричними фігурами, його мозок проходить інтенсивне тренування! Кожне торкання до фігур, кожна спроба знайти правильне місце розвиває:",
+    "price": "65€",
+    "priceSecond": "20€",
+    "text": "FlexiFun Geometry: Prvé kroky do sveta logiky",
+    "header": "Vývojová sada pre deti od 1 do 3 rokov ",
+    "headerDesk": "Prístup k interaktívnemu online trenažéru",
+    "par": "Predstavte si: zatiaľ čo sa vaše dieťa hrá s pestrofarebnými geometrickými tvarmi, jeho mozog intenzívne trénuje! Každý dotyk tvarov, každý pokus nájsť správne miesto rozvíja mozog",
     "items": {
-      "first": "Логічне мислення через сортування форм і кольорів",
-      "second": "Просторове сприйняття через роботу з розмірами",
-      "third": "Дрібну моторику через точні рухи",
-      "fourth": "Увагу та пам'ять через послідовні дії"
+      "first": "Logické myslenie prostredníctvom triedenia tvarov a farieb",
+      "second": "Priestorové vnímanie prostredníctvom práce s rozmermi",
+      "third": "Jemná motorika prostredníctvom presných pohybov",
+      "fourth": "Pozornosť a pamäť prostredníctvom postupných činností"
     }
   },
   "Footer": {
-    "policy": "Угода користувача",
-    "policyLink": "/privacy-policy-uk",
+    "policy": "Zmluva s používateľom",
+    "policyLink": "/privacy-policy-sk",
     "menu": {
-      "reasons": "Що розвиває нібр",
-      "about": "Спеціальні вправи",
-      "included": "Як це працює",
-      "feedback": "Відгуки"
+      "reasons": "Čo vyvíja súprava",
+      "about": "Ako to funguje",
+      "included": "Vývojové cvičenia",
+      "feedback": "Recenzie"
     }
   },
   "About": {
-    "header": "3 простих кроки до швидкого розвитку",
-    "secondHeader": "Що входить до набору",
+    "header": "3 jednoduché kroky k rýchlemu vývoju",
+    "secondHeader": "Čo vstúpi do súpravy",
     "items": {
       "first": {
-        "header": "Отримайте набір",
-        "textFirst": "Барвистий комплект з геометричними фігурами та основою для їх розміщення",
-        "textSecond": "Basic Memory Case для тренування пам'яті та уваги"
+        "header": "Získajte súpravu",
+        "textFirst": "Farebná súprava s geometrickými tvarmi a základňou, na ktorú ich môžete umiestniť",
+        "textSecond": "FlexiFun Memory Case na trénovanie pamäte a pozornosti"
       },
       "second": {
-        "header": "Відскануйте QR-код на картці, що входить до комплекту",
-        "headerAdd": " та отримайте",
-        "textMob": "Отримайте миттєвий доступ до системи розвивальних вправ, розроблених дитячими психологами",
-        "textFirst": "Миттєвий доступ до системи розвивальних вправ, розроблених дитячими психологами",
-        "textSecond": "Доступ до інтерактивного онлайн тренажера "
+        "header": "ВNaskenujte QR kód na karte",
+        "headerAdd": ", ktorá je súčasťou súpravy",
+        "textMob": "Získajte okamžitý prístup k systému vývojových cvičení navrhnutých detskými psychológmi.",
+        "textFirst": "Získajte okamžitý prístup k systému vývojových cvičení navrhnutých detskými psychológmi.",
+        "textSecond": "Prístup k interaktívnemu online simulátoru "
       },
       "third": {
-        "header": "Виконуйте вправи та спостерігайте за прогресом",
-        "headerAdd": " в онлайн-тренажері",
-        "text": "Досить 15 хвилин на день захоплюючих занять з геометричними фігурами, щоб побачити відчутний прогрес уже через два тижні"
+        "header": " Vykonávajte cvičenia a sledujte svoj pokrok",
+        "headerAdd": " v online trenažéri",
+        "text": "Len 15 minút denne zábavných aktivít s geometrickými tvarmi stačí na to, aby ste už za dva týždne videli merateľný pokrok."
       }
     },
     "containers": {
-      "geometry": "Геометричні фігури FlexiFun Geometry і дошка Basic Board для розвитку моторики та логіки",
-      "memory": "Memory Case для тренування пам'яті та уваги",
-      "game": "Доступ до спеціально розроблених вправ та онлайн тренажеру через QR-код"
+      "geometry": "Geometrické tvary FlexiFun Geometry a doska Basic Board pre rozvoj motoriky a logiky",
+      "memory": "Memory Case pre tréning pamäti a pozornosti",
+      "game": "Prístup k špeciálne navrhnutým cvičeniam a online trenažéru prostredníctvom QR kódu"
     }
   },
   "Important": {
-    "text": "Кожне заняття - це маленьке відкриття! Граючи з геометричними фігурами, ваша дитина вчиться",
-    "header": "Комплексний розвиток через гру",
+    "text": "Každá činnosť je malým objavom! Hrou s geometrickými tvarmi sa vaše dieťa učí:",
+    "header": "Integrovaný rozvoj prostredníctvom hry",
     "items": {
       "first": {
-        "head": "Логічне мислення",
+        "head": "Logické myslenie",
         "text": {
-          "first": "Аналізувати форми та їх особливості",
-          "second": "Знаходити закономірності в послідовностях",
-          "third": "Розуміти причинно-наслідкові зв'язки",
-          "fourth": "Приймати рішення на основі аналізу"
+          "first": "Analyzovať tvary a ich vlastnosti",
+          "second": "Nachádzať vzory v postupnostiach",
+          "third": "Chápať vzťahy príčiny a následku",
+          "fourth": "Rozhodovať sa na základe analýz"
         }
       },
       "second": {
-        "head": "Дрібна моторика",
+        "head": "Jemná motorika:",
         "text": {
-          "first": "Координація пальців для підготовки до письма",
-          "second": "Захоплення та переміщення предметів різної форми",
-          "third": "Тактильне сприйняття текстур і форм",
-          "fourth": "Контроль над дрібними рухами"
+          "first": "Koordinácia prstov rúk pri príprave na písanie",
+          "second": "Uchopovanie a premiestňovanie predmetov rôznych tvarov",
+          "third": "Hmatové vnímanie textúr a tvarov",
+          "fourth": "Kontrola jemných pohybov"
         }
       },
       "third": {
-        "head": "Просторове мислення",
+        "head": "Priestorové myslenie",
         "text": {
-          "first": "Розуміти взаємне розташування предметів",
-          "second": "Розрізняти розміри та пропорції",
-          "third": "Розвивати образне мислення",
-          "fourth": "Покращувати орієнтацію в просторі"
+          "first": "Pochopiť vzájomné usporiadanie predmetov",
+          "second": "Rozlišovať veľkosti a proporcie",
+          "third": "Rozvíjať predstavivosť",
+          "fourth": "Zlepšiť orientáciu v priestore"
         }
       },
       "fourth": {
-        "head": "Тренування пам'яті та уваги",
+        "head": "Školenie v pamäti ta pozornosť",
         "text": {
-          "first": "Запам'ятовування послідовностей",
-          "second": "Розвиток концентрації",
-          "third": "Робота з кольором і формою",
-          "fourth": "Адаптивна складність завдань"
+          "first": "Spomienky sekvencie",
+          "second": "Rozvoj koncentrácie",
+          "third": "Robot s farbou a forme",
+          "fourth": "Adaptívny zložitosť zavdan"
         }
       }
     }
   },
   "Included": {
-    "header": "Захоплюючі вправи для розвитку",
-    "text": "Опис вправ",
+    "header": "Fascinujúce cvičenia pre rozvoj",
+    "text": "Popis cvičení",
     "items": {
-      "first": "Навчаємось розрізняти кольори та створювати патерни. Дитина розвиває пам'ять і увагу, запам'ятовуючи та відтворюючи послідовності",
-      "second": "Досліджуємо властивості різних форм. Від простого до складного: коло, трикутник, квадрат та їх комбінації.",
-      "third": "Порівнюємо та зіставляємо різні фігури, вчимося розуміти їх особливості та знаходити закономірності.",
-      "fourth": "Вивчаємо поняття 'більше-менше', 'вище-нижче', розвиваємо просторове мислення."
+      "first": "Naučte sa rozlišovať farby a vytvárať vzory. Dieťa si zapamätaním a reprodukovaním sekvencií rozvíja pamäť a pozornosť.",
+      "second": "Skúmanie vlastností rôznych tvarov. Od jednoduchých po zložité: kruh, trojuholník, štvorec a ich kombinácie.",
+      "third": "Porovnávanie a porovnávanie rôznych tvarov, učenie sa chápať ich vlastnosti a nachádzať vzory.",
+      "fourth": "Skúmanie pojmov „väčšie - menšie“, „vyššie - nižšie“, rozvíjanie priestorového myslenia."
     }
   },
   "Quality": {
-    "header": "Чому батьки обирають FlexiFun Geometry",
+    "header": "Prečo si rodičia vyberajú FlexiFun Geometry",
     "items": {
-      "first": "Доступ до вправ за QR-кодом",
-      "second": "Достатньо всього 10 хвилин на день для досягнення результату",
-      "third": "100% безпечні та сертифіковані матеріали "
+      "first": "Prístup k cvičeniam pomocou kódu QR",
+      "second": "Na dosiahnutie výsledkov stačí 10 minút cvičenia denne",
+      "third": "Bezpečné materiály"
     }
   },
 
   "Feedback": {
-    "header": "Відгуки",
+    "header": "Recenzier",
     "items": {
       "first": {
-        "head": "батько 2-річного Томаша",
-        "span": "Петро",
-        "text": "Чудовий набір для розвитку логіки! Син не тільки навчився розрізняти фігури, а й став більш старанним. Кожне заняття для нього як нове відкриття"
+        "head": "otec dvojročného Tomasza",
+        "span": "Petr",
+        "text": "Skvelá súprava na rozvoj logiky! Môj syn sa nielen naučil rozlišovať tvary, ale stal sa aj usilovnejším. Každá lekcia je pre neho ako nový objav"
       },
       "second": {
-        "head": "мама 3-річної Ніни",
-        "span": "Даніела",
-        "text": "Моя донька раніше не цікавилася розвиваючими іграшками, але цей набір їй сподобався з першого дня. Яскраві кольори та прості форми дуже приваблюють"
+        "head": "mama 3-ročnej Niny",
+        "span": "Daniela",
+        "text": "Moja dcéra predtým nemala záujem o vzdelávacie hračky, ale túto súpravu si zamilovala od prvého dňa. Jasné farby a jednoduché tvary sú veľmi atraktívne."
       },
       "third": {
-        "head": "мама 2-річного Якуба",
-        "span": "Мартіна",
-        "text": "Чудово підходить як для індивідуальної роботи, так і для групових занять. Діти швидко опановують базові геометричні поняття."
+        "head": "mama 2-ročného Jakuba",
+        "span": "Martina",
+        "text": "Výborná príprava do školy! Môj syn sa naučil lepšie sústrediť a začal sa zaujímať o geometriu. Teraz rozpoznáva známe tvary aj v predmetoch okolo seba."
       },
       "fourth": {
-        "head": "батько 2-річних двійнят",
-        "span": "Міхал",
-        "text": "Я купив одразу два набори для своїх двійнят. Діти не тільки граються самостійно, але й вчаться взаємодіяти один з одним, допомагаючи один одному з фігурками"
+        "head": "otec dvojičiek vo veku 2 roka:",
+        "span": "Michal",
+        "text": "Je to hračka, ktorá sa dá použiť v praxi: „Kúpil som pre svoje dvojčatá hneď dve sady. Deti sa nielen hrajú samostatne, ale učia sa aj vzájomnej interakcii tým, že si navzájom pomáhajú s figúrkami."
       },
       "fifth": {
-        "head": "мама 4-річної Христини",
-        "span": "Олена",
-        "text": "Мені дуже подобається якість виготовлення - всі деталі приємні на дотик, гарні кольори. А головне, що це не просто іграшка, а повноцінний розвиваючий набір"
+        "head": "mama 4-ročnej Kristíny",
+        "span": "Elena",
+        "text": "Veľmi sa mi páči kvalita spracovania - všetky detaily sú príjemné na dotyk, krásne farby. A hlavné je, že to nie je len hračka, ale plnohodnotná vývojová súprava."
       },
       "sixth": {
-        "head": "мама дворічного Давида",
-        "span": "Вероніка",
-        "text": "Я помітила, що після того, як мій син почав грати з набором, він став краще виконувати інші логічні завдання. Зокрема, покращилося розуміння форм і розмірів"
+        "head": "mama dvojročného Davida",
+        "span": "Veronika",
+        "text": "Všimla som si, že po tom, čo sa môj syn začal hrať so súpravou, zlepšil sa v iných logických úlohách. Zlepšilo sa najmä jeho chápanie tvarov a veľkostí."
       },
       "seventh": {
-        "head": "батько 3-річної Емми",
-        "span": "Лукаш",
-        "text": "Чудово підходить як для індивідуальної роботи, так і для групових занять. Діти швидко опановують базові геометричні поняття."
+        "head": "otec 3-ročnej Emmy",
+        "span": "Lukáš",
+        "text": "Výborne sa hodí ako na individuálnu prácu, tak aj na skupinové aktivity. Deti rýchlo zvládajú základné geometrické pojmy."
       },
       "eighth": {
-        "head": "мама 3-річної Софії",
-        "span": "Марія",
-        "text": "Я бачу, як покращилася координація рухів у моєї доньки. Особливо приємно, що Софійка сама просить дістати геометричні фігури і грається з ними"
+        "head": "mama trojročnej Sofie",
+        "span": "Maria",
+        "text": "Vidím, ako sa zlepšila koordinácia pohybov mojej dcéry. Obzvlášť ma teší, že Sofia si sama pýta, aby si vytiahla geometrické obrazce a precvičovala ich"
       }
     }
   },
 
   "Questions": {
-    "header": "Часті запитання",
+    "header": "FAQ",
     "items": {
       "first": {
-        "head": "Що таке Memory Case?",
-        "text": "Memory Case - це спеціальний кейс з 4 пронумерованими відділеннями, призначений для тренування пам'яті, уваги та послідовного мислення у дітей. Використовується разом з онлайн-тренажером для виконання вправ на запам'ятовування."
+        "head": "Čo je Memory Case?",
+        "text": "Memory Case je špeciálny kufrík so 4 očíslovanými priehradkami, určený na tréning pamäti, pozornosti a sekvenčného myslenia u detí. Používa sa spolu s online trénerom na vykonávanie cvičení zameraných na zapamätanie si."
       },
       "second": {
-        "head": "Як працює онлайн-тренажер?",
-        "text": "Онлайн-тренажер доступний через QR-код, який входить у комплект. Він пропонує серію вправ різного рівня складності для розвитку логіки, пам'яті та моторики. Тренажер показує послідовності кольорів і форм, які дитина повинна повторити за допомогою фізичних фігурок."
+        "head": "Ako funguje online školiteľ?",
+        "text": "Online tréner je dostupný prostredníctvom QR kódu, ktorý je súčasťou súpravy. Ponúka sériu cvičení rôznej úrovne náročnosti na rozvoj logiky, pamäti a motoriky. Tréner zobrazuje sekvencie farieb a tvarov, ktoré dieťa musí zopakovať pomocou fyzických tvarov."
       },
       "third": {
-        "head": "Для якого віку підходить набір?",
-        "text": "Набір розроблений для дітей від 3 до 6 років. У цьому віці активно розвивається логічне мислення і дрібна моторика, тому заняття особливо ефективні."
+        "head": "Pre aký vek je súprava vhodná?",
+        "text": "Súprava je navrhnutá pre deti od 3 do 6 rokov. V tomto veku sa aktívne rozvíja logické myslenie a jemná motorika, preto sú cvičenia obzvlášť efektívne."
       },
       "fourth": {
-        "head": "Скільки часу потрібно приділяти заняттям?",
-        "text": "Рекомендуємо займатися по 15 хвилин на день. Цього достатньо для розвитку навичок без втомлення дитини."
+        "head": "Koľko času je potrebné venovať lekciám?",
+        "text": "Odporúčame trénovať 15 minút denne. To stačí na rozvoj zručností bez únavy dieťaťa."
       },
       "fifth": {
-        "head": "Чи безпечний набір?",
-        "text": "Абсолютно! Набір виготовлений з біорозкладного PLA-пластику, який створений на основі натуральних харчових компонентів. Цей матеріал повністю безпечний для дітей, не містить шкідливих речовин. Усі елементи набору мають заокруглені краї та безпечні розміри. Особливість цього матеріалу в тому, що він повністю розкладається за 6-7 років, не залишаючи шкідливих слідів у навколишньому середовищі, що робить іграшку не тільки корисною для дитини, але й дружньою до природи."
+        "head": "Je súprava bezpečná?",
+        "text": "Absolútne! Súprava je vyrobená z biologicky rozložiteľného PLA plastu, ktorý je vytvorený z prírodných potravinových zložiek. Tento materiál je úplne bezpečný pre deti, neobsahuje škodlivé látky. Všetky prvky súpravy majú zaoblené hrany a bezpečné rozmery. Zvláštnosťou tohto materiálu je, že sa úplne rozloží za 6-7 rokov bez zanechania škodlivých stôp v životnom prostredí, čo robí hračku nielen užitočnou pre dieťa, ale aj priateľskou k prírode."
       },
       "sixth": {
-        "head": "Чи потрібна допомога батьків?",
-        "text": "На початковому етапі рекомендується займатися разом з дитиною. Після освоєння базових вправ діти зазвичай грають самостійно."
+        "head": "Potrebujú rodičia pomoc?",
+        "text": "V počiatočnej fáze odporúčame trénovať spolu s dieťaťom. Po zvládnutí základných cvičení deti zvyčajne hrajú samostatne."
       },
       "seventh": {
-        "head": "Як зрозуміти, що дитина правильно виконує вправи?",
-        "text": "Кожна вправа має чіткий результат - фігурка або підходить до основи, або ні. Це допомагає дитині самостійно перевіряти правильність своїх дій. В онлайн-тренажері є система підказок і зворотного зв'язку."
+        "head": "Ako zistím, či dieťa robí cvičenia správne?",
+        "text": "Každé cvičenie má jasný výsledok - tvar buď pasuje do základne alebo nie. To pomáha dieťaťu samostatne kontrolovať správnosť svojich akcií. Online tréner obsahuje systém tipov a spätnej väzby."
       },
       "eighth": {
-        "head": "Як часто потрібно займатися для досягнення результату?",
-        "text": "Для помітного розвитку достатньо займатися 4-5 разів на тиждень по 15 хвилин. Головне - регулярність і позитивний настрій дитини."
+        "head": "Aký je správny spôsob uloženia súpravy?",
+        "text": "Po tréningu odporúčame uložiť všetky prvky do krabice. Skladujte na suchom mieste pri izbovej teplote, vyhnite sa priamemu slnečnému žiareniu."
       },
       "ninth": {
-        "head": "Хто виробник?",
-        "text": "Виробник набору - компанія FlexiFun (Словаччина), що спеціалізується на розвиваючих іграшках для дітей."
+        "head": "Kto je výrobcom?",
+        "text": "Výrobcom súpravy je spoločnosť FlexiFun (Slovensko), ktorá sa špecializuje na výrobu vzdelávacích hračiek pre deti"
       }
     }
   },
   "Form": {
-    "header": "Форма замовлення",
-    "ok": "Форму успішно надіслано!",
+    "header": "Formulár žiadosti",
+    "ok": "Formulár bol úspešne odoslaný!",
     "errors": {
-      "nameRequired": "Ім'я обов'язкове",
-      "communicationRequired": "Оберіть спосіб зв'язку",
-      "phoneRequired": "Телефон обов'язковий",
-      "nickRequired": "Прізвище обов'язкове",
-      "sendError": "Не вдалося надіслати форму, спробуйте ще раз!",
-      "validError": "Будь ласка, заповніть усі обов'язкові поля!"
+      "nameRequired": "Vyžaduje sa meno",
+      "phoneRequired": "Vyžaduje sa telefónne číslo",
+      "communicationRequired": "Vyberte spôsob komunikácie",
+      "nickRequired": "Priezvisko je povinné",
+      "sendError": "Formulár sa nepodarilo odoslať, skúste to znova!",
+      "validError": "Vyplňte prosím všetky povinné polia!"
     },
     "form": {
-      "namePlaceHolder": "Ім'я",
-      "nickPlaceHolder": "Прізвище",
-      "priceText": "Кількість наборів",
+      "namePlaceHolder": "Názov",
+      "nickPlaceHolder": "Priezvisko",
+      "priceText": "Počet súprav",
       "price": 20,
-      "priceValue": "₴",
-      "socialPar": "Спосіб зв'язку",
-      "phone": "Номер телефону"
+      "priceValue": "€",
+      "socialPar": "Spôsob komunikácie",
+      "phone": "Phone number"
     }
+  },
+  "Confirm": {
+    "header": "Ďakujeme, že ste si objednali sadu FlexiFun Geometry!",
+    "text": "Čoskoro vás budeme kontaktovať prostredníctvom vami zvoleného spôsobu komunikácie. Už čoskoro vaše dieťa urobí prvé kroky do sveta logiky, naučí sa rozlišovať tvary a farby a rozvíjať priestorové myslenie prostredníctvom vzrušujúcej hry!"
   }
 }
