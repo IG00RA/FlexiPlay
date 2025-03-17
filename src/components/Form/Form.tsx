@@ -90,16 +90,13 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
     }
     try {
       const message = {
-        type: 'flexi',
-        formData: {
-          message: 'Користувач відправив форму',
-          name: formData.name,
-          surname: formData.nickname,
-          quantity: formData.quantity,
-          messenger: formData.communication,
-          phone: formData.phone,
-          email: formData.email,
-        },
+        message: 'Користувач зробив замовлення',
+        name: formData.name,
+        surname: formData.nickname,
+        quantity: formData.quantity,
+        messenger: formData.communication,
+        phone: formData.phone,
+        email: formData.email,
       };
       setIsLoading(true);
       await Promise.all([

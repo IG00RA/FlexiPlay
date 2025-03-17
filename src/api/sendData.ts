@@ -1,6 +1,3 @@
-const BACK_HOST = process.env.NEXT_PUBLIC_BACK_HOST;
-const BACK_PORT = process.env.NEXT_PUBLIC_BACK_PORT;
-
 interface FormData {
   message: string;
   name?: string;
@@ -11,11 +8,6 @@ interface FormData {
   email?: string;
 }
 
-interface SendMessageData {
-  type: string;
-  bot?: boolean;
-  formData: FormData;
-}
 interface QueryParams {
   [key: string]: string | null | undefined;
   refId?: string | null | undefined;
@@ -64,68 +56,63 @@ const getQueryParams = (): QueryParams => {
   };
 };
 
-const sendPostRequest = async (
-  endpoint: string,
-  data: object
-): Promise<void> => {
-  try {
-    const response = await fetch(
-      `http://${BACK_HOST}:${BACK_PORT}${endpoint}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error(`Failed to send data to ${endpoint}`);
-    }
-  } catch (error) {
-    console.error(`Error sending data to ${endpoint}:`, error);
-    throw error;
-  }
-};
-
-export const sendToGoogleScript = async (
-  data: SendMessageData
-): Promise<void> => {
+export const sendToGoogleScript = async (data: FormData) => {
   const requestData = {
     ...data,
-    formData: {
-      ...data.formData,
-      url,
-      ...getQueryParams(),
-    },
+    url,
+    ...getQueryParams(),
   };
-  await sendPostRequest('/api/send-to-google-script', requestData);
+
+  try {
+    const response = await fetch('/api/sendToGoogle', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestData),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Failed to send data to API: ${errorText}`);
+    }
+  } catch (error) {
+    console.error('Error sending data to API: ', error);
+    throw new Error('Error sending data to API: ' + error);
+  }
 };
 
-export const sendMessage = async (sendData: SendMessageData): Promise<void> => {
+export const sendMessage = async (sendData: FormData): Promise<void> => {
   let botMessage;
-  if (sendData.bot) {
-    botMessage = '<b>Користувач перейшов в бот:</b>\n';
-  } else {
-    botMessage = '<b>Користувач відправив форму:</b>\n';
-    botMessage += 'Імя: <b>' + sendData.formData.name + '</b>\n';
-    botMessage += 'Прізвище: <b>' + sendData.formData.surname + '</b>\n';
-    botMessage += 'Кількість: <b>' + sendData.formData.quantity + '</b>\n';
-    botMessage += 'Месенджер: <b>' + sendData.formData.messenger + '</b>\n';
-    botMessage += 'Телефон: <b>' + sendData.formData.phone + '</b>\n';
-    botMessage += 'Емейл: <b>' + sendData.formData.email + '</b>\n';
-  }
+
+  botMessage = '<b>Користувач зробив замовлення:</b>\n';
+  botMessage += 'Імя: <b>' + sendData.name + '</b>\n';
+  botMessage += 'Прізвище: <b>' + sendData.surname + '</b>\n';
+  botMessage += 'Кількість: <b>' + sendData.quantity + '</b>\n';
+  botMessage += 'Месенджер: <b>' + sendData.messenger + '</b>\n';
+  botMessage += 'Телефон: <b>' + sendData.phone + '</b>\n';
+  botMessage += 'Емейл: <b>' + sendData.email + '</b>\n';
 
   botMessage += 'Url: <b>' + url + '</b>\n';
 
   const params = getQueryParams();
   botMessage += getParamString(params);
 
-  const message = {
-    type: 'flexi',
-    formData: botMessage,
-  };
+  try {
+    const response = await fetch('/api/sendToTg', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(botMessage),
+    });
 
-  await sendPostRequest('/api/send-message', { message });
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Failed to send data to API: ${errorText}`);
+    }
+  } catch (error) {
+    console.error('Error sending data to API: ', error);
+    throw new Error('Error sending data to API: ' + error);
+  }
 };

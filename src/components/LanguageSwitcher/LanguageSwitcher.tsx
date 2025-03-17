@@ -9,7 +9,7 @@ const LanguageSwitcher = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const { query, setLocale } = useLanguageStore();
+  const { query, setLocale, setQuery } = useLanguageStore();
   const [hoveredButton, setHoveredButton] = useState<string | null>(null); // Стан для ховера
 
   // Функція для визначення локалі з URL
@@ -17,6 +17,14 @@ const LanguageSwitcher = () => {
     const pathSegments = pathname.split('/');
     return pathSegments[1] || 'uk';
   };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const queryString = urlSearchParams.toString();
+      setQuery(queryString ? `?${queryString}` : '');
+    }
+  }, [setQuery]);
 
   const locale = getLocaleFromPath(pathname || '');
 
