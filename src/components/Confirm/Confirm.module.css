@@ -1,0 +1,103 @@
+.section {
+  width: 100%;
+  padding: 16px 0 60px;
+  background-image: url('../../img/confirmBackMob.webp');
+  background-position: bottom;
+  background-size: 100% auto;
+  aspect-ratio: 720/950;
+  background-repeat: no-repeat;
+
+  @media (min-width: 768px) {
+    background-image: none;
+    padding: 0;
+  }
+}
+
+.container {
+  width: var(--container);
+  margin: 0 auto;
+  height: calc(100vh - 72px);
+  min-height: 760px;
+
+  @media (min-width: 768px) {
+    background-repeat: no-repeat;
+    background-image: url('../../img/confirmBack.webp');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    position: relative;
+    max-width: var(--desktop);
+    padding: 60px 0 0;
+  }
+  @media (min-width: 1024px) {
+    padding: 93px 0 0;
+    height: calc(100vh - 160px);
+  }
+}
+
+.text {
+  font-size: var(--fs_medium);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0.54px;
+  background: linear-gradient(180deg, #94bfff 0%, #5390ec 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.text_desk {
+  display: inline-block;
+  color: #fff;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 0px 20px 20px 0px;
+  background: linear-gradient(180deg, #94bfff 0%, #5390ec 100%);
+  backdrop-filter: blur(8.5px);
+  padding: 43px 36px;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.wrapper {
+  border-radius: 0px 0px 30px 30px;
+  background: linear-gradient(180deg, #94bfff 0%, #5390ec 100%);
+  backdrop-filter: blur(8.5px);
+  padding: 15px 15px 30px;
+  @media (min-width: 768px) {
+    width: 645px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 20px 0px 0px 20px;
+    padding: 44px 50px;
+  }
+}
+
+.par {
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  & span {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+  @media (min-width: 768px) {
+    text-align: center;
+    font-size: 24px;
+  }
+}
