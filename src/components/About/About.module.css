@@ -1,23 +1,13 @@
+/* Базові стилі */
 .section {
   width: var(--container);
   margin: 0 auto;
   padding: 96px 0;
-
-  @media (min-width: 1024px) {
-    padding: 150px 0;
-  }
-
-  @media (min-width: 1440px) {
-    width: var(--desktop);
-  }
 }
 
 .container {
   margin: 0 auto;
   max-width: var(--mobile_xl);
-  @media (min-width: 768px) {
-    max-width: none;
-  }
 }
 
 .header {
@@ -29,16 +19,6 @@
   line-height: 125.5%;
   letter-spacing: 0.64px;
   margin-bottom: 60px;
-
-  @media (min-width: 768px) {
-    margin-bottom: 70px;
-    font-size: 48px;
-  }
-  @media (min-width: 1024px) {
-    margin-bottom: 80px;
-    font-size: 64px;
-    letter-spacing: 1.28px;
-  }
 }
 
 .about_wrap {
@@ -46,12 +26,6 @@
   flex-direction: column;
   gap: 32px;
   margin-bottom: 48px;
-  @media (min-width: 1024px) {
-    flex-direction: row;
-    margin-bottom: 40px;
-    justify-content: space-between;
-    align-items: center;
-  }
 }
 
 .image {
@@ -60,41 +34,17 @@
   aspect-ratio: 1/1;
   max-width: 689px;
   margin: 0 auto;
-  @media (min-width: 1024px) {
-    margin: 0;
-    width: 40%;
-  }
-  @media (min-width: 1200px) {
-    width: 49%;
-  }
 }
 
 .list {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  @media (min-width: 1024px) {
-    width: 58%;
-  }
-  @media (min-width: 1200px) {
-    width: 48%;
-  }
-  @media (min-width: 1408px) {
-    width: 41%;
-  }
 }
 
 .item {
   display: flex;
   gap: 16px;
-}
-
-.item_icon {
-  @media (min-width: 1024px) {
-    width: 32px;
-    height: 32px;
-    margin-top: 4px;
-  }
 }
 
 .item_text_wrap {
@@ -104,24 +54,12 @@
 }
 
 .item_text_header {
-  @media (max-width: 767px) {
-    & span {
-      display: none;
-    }
-  }
   color: #404969;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: 125.5%;
   letter-spacing: 0.48px;
-  @media (min-width: 768px) {
-    font-size: 28px;
-  }
-  @media (min-width: 1200px) {
-    font-size: 32px;
-    letter-spacing: 0.64px;
-  }
 }
 
 .item_text,
@@ -133,26 +71,9 @@
   font-weight: 500;
   line-height: 125.5%;
   letter-spacing: 0.32px;
-  @media (min-width: 768px) {
-    font-size: 17px;
-  }
-  @media (min-width: 1200px) {
-    font-size: 18px;
-    line-height: 125.5%;
-    letter-spacing: 0.36px;
-  }
-}
-
-.item_text {
-  @media (min-width: 768px) {
-    display: none;
-  }
 }
 
 .item_text_second {
-  @media (max-width: 767px) {
-    display: none;
-  }
   position: relative;
   padding-left: 25px;
 }
@@ -162,7 +83,6 @@
   position: absolute;
   left: 10px;
   color: #404969;
-  left: 10px;
 }
 
 .header_second {
@@ -174,9 +94,6 @@
   line-height: 125.5%;
   letter-spacing: 0.64px;
   margin-bottom: 40px;
-  @media (min-width: 768px) {
-    margin-bottom: 32px;
-  }
 }
 
 .about_game_wrap {
@@ -184,9 +101,6 @@
   flex-direction: column;
   gap: 16px;
   margin-bottom: 16px;
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
 }
 
 .game_container,
@@ -198,37 +112,16 @@
   flex-direction: column;
   border-radius: 32px;
   border: 1px solid #dfdfdf;
-  @media (min-width: 768px) {
-    padding: 32px;
-  }
-  @media (min-width: 1024px) {
-    padding: 48px;
-  }
 }
 
 .geometry_container {
   padding-bottom: 56%;
   position: relative;
-  @media (min-width: 768px) {
-    padding-bottom: 32%;
-  }
-  @media (min-width: 1024px) {
-    width: 41%;
-    padding-bottom: 48px;
-    padding-top: 22%;
-  }
 }
 
 .memory_container {
   padding-bottom: 56%;
   position: relative;
-  @media (min-width: 768px) {
-    padding-bottom: 28%;
-  }
-  @media (min-width: 1024px) {
-    width: 58%;
-    padding-bottom: 22%;
-  }
 }
 
 .geometry_container_header,
@@ -240,22 +133,6 @@
   font-weight: 400;
   line-height: 155.5%;
   letter-spacing: 0.48px;
-
-  @media (min-width: 768px) {
-    font-style: 18px;
-  }
-  @media (min-width: 1024px) {
-    font-size: 24px;
-    letter-spacing: 0.72px;
-  }
-}
-
-.game_container_header {
-  @media (min-width: 1200px) {
-    order: 1;
-    flex-shrink: 0;
-    width: 31%;
-  }
 }
 
 .geometry_img {
@@ -265,10 +142,6 @@
   width: 95%;
   height: auto;
   aspect-ratio: 1069/558;
-  @media (min-width: 1024px) {
-    top: 35px;
-    bottom: auto;
-  }
 }
 
 .memory_img {
@@ -278,32 +151,16 @@
   width: 95%;
   height: auto;
   aspect-ratio: 1219/619;
-  @media (min-width: 768px) {
-    bottom: 20px;
-  }
-
-  @media (min-width: 1024px) {
-    bottom: 4px;
-    right: 16px;
-    left: auto;
-    width: 75%;
-  }
 }
 
 .game_container {
   margin-bottom: 40px;
-  @media (min-width: 1200px) {
-    flex-direction: row;
-  }
 }
 
 .game_container_img_wrap {
   display: flex;
   flex-direction: column;
   gap: 22px;
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
 }
 
 .first_game,
@@ -314,12 +171,172 @@
   aspect-ratio: 280/265;
   border-radius: 12px;
   box-shadow: 0px 12.42px 20.7px 0px rgba(124, 122, 151, 0.15);
-  @media (min-width: 768px) {
+}
+
+.btn {
+  margin: 0 auto;
+}
+
+/* Медіа-запити */
+@media (min-width: 768px) {
+  .container {
+    max-width: none;
+  }
+  .header {
+    margin-bottom: 70px;
+    font-size: 48px;
+  }
+  .item_text_header {
+    font-size: 28px;
+  }
+  .item_text,
+  .item_text_desk,
+  .item_text_second {
+    font-size: 17px;
+  }
+  .item_text {
+    display: none;
+  }
+  .header_second {
+    margin-bottom: 32px;
+  }
+  .about_game_wrap {
+    flex-direction: row;
+  }
+  .game_container,
+  .memory_container,
+  .geometry_container {
+    padding: 32px;
+  }
+  .geometry_container {
+    padding-bottom: 32%;
+  }
+  .memory_container {
+    padding-bottom: 28%;
+  }
+  .geometry_container_header,
+  .memory_container_header,
+  .game_container_header {
+    font-size: 18px; /* Примітка: у вихідному коді було "font-style: 18px", але це помилка, замінено на font-size */
+  }
+  .memory_img {
+    bottom: 20px;
+  }
+  .game_container_img_wrap {
+    flex-direction: row;
+  }
+  .first_game,
+  .second_game,
+  .third_game {
     flex-shrink: 0;
     width: 31%;
   }
 }
 
-.btn {
-  margin: 0 auto;
+@media (min-width: 1024px) {
+  .section {
+    padding: 150px 0;
+  }
+  .header {
+    margin-bottom: 80px;
+    font-size: 64px;
+    letter-spacing: 1.28px;
+  }
+  .about_wrap {
+    flex-direction: row;
+    margin-bottom: 40px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .image {
+    margin: 0;
+    width: 40%;
+  }
+  .list {
+    width: 58%;
+  }
+  .item_icon {
+    width: 32px;
+    height: 32px;
+    margin-top: 4px;
+  }
+  .game_container,
+  .memory_container,
+  .geometry_container {
+    padding: 48px;
+  }
+  .geometry_container {
+    width: 41%;
+    padding-bottom: 48px;
+    padding-top: 22%;
+  }
+  .memory_container {
+    width: 58%;
+    padding-bottom: 22%;
+  }
+  .geometry_container_header,
+  .memory_container_header,
+  .game_container_header {
+    font-size: 24px;
+    letter-spacing: 0.72px;
+  }
+  .geometry_img {
+    top: 35px;
+    bottom: auto;
+  }
+  .memory_img {
+    bottom: 4px;
+    right: 16px;
+    left: auto;
+    width: 75%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .image {
+    width: 49%;
+  }
+  .list {
+    width: 48%;
+  }
+  .item_text_header {
+    font-size: 32px;
+    letter-spacing: 0.64px;
+  }
+  .item_text,
+  .item_text_desk,
+  .item_text_second {
+    font-size: 18px;
+    line-height: 125.5%;
+    letter-spacing: 0.36px;
+  }
+  .game_container {
+    flex-direction: row;
+  }
+  .game_container_header {
+    order: 1;
+    flex-shrink: 0;
+    width: 31%;
+  }
+}
+
+@media (min-width: 1408px) {
+  .list {
+    width: 41%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section {
+    width: var(--desktop);
+  }
+}
+
+@media (max-width: 767px) {
+  .item_text_header span {
+    display: none;
+  }
+  .item_text_second {
+    display: none;
+  }
 }
