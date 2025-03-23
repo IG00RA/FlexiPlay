@@ -1,204 +1,204 @@
 {
   "Buttons": {
-    "start": "Старт",
-    "back": "Назад",
-    "main": "На головну",
+    "start": "Štart",
+    "back": "Späť",
+    "main": "Domov",
     "order": "Objednávka"
   },
   "Color": {
-    "blue": "Синій",
-    "green": "Зелений",
-    "red": "Червоний",
-    "yellow": "Жовтий"
+    "blue": "Modrý",
+    "green": "Zelený",
+    "red": "Červený",
+    "yellow": "Žltý"
   },
   "ColorCircle": {
-    "blue": "Синє",
-    "green": "Зелене",
-    "red": "Червоне",
-    "yellow": "Жовте"
+    "blue": "Modrý",
+    "green": "Zelený",
+    "red": "Červený",
+    "yellow": "Žltý"
   },
   "Colors": {
-    "blue": "усі сині фігури!",
-    "green": "усі зелені фігури!",
-    "red": "усі червоні фігури!",
-    "yellow": "усі жовті фігури!"
+    "blue": "všetky modré tvary",
+    "green": "všetky zelené tvary",
+    "red": "všetky červené tvary",
+    "yellow": "všetky žlté tvary"
   },
   "Figures": {
-    "circle": "коло",
-    "rectangle": "прямокутник",
-    "square": "квадрат",
-    "triangle": "трикутник"
+    "circle": "kruh",
+    "rectangle": "obdĺžnik",
+    "square": "štvorcový",
+    "triangle": "trojuholník"
   },
   "MainPage": {
-    "trainingText": "Онлайн тренажер FlexiFun Geometry",
-    "min": "хвилин",
-    "question": "Завдання:",
+    "trainingText": "Online tréner FlexiFun Geometry",
+    "min": "minút ",
     "memory": {
       "header": "FLEXI-FUN Memory Case",
-      "description": "Розвиває: Пам'ять, концентрацію уваги, послідовне мислення"
+      "description": "Rozvíja: Pamäť, koncentráciu pozornosti, sekvenčné myslenie"
     },
     "board": {
       "header": "FLEXI-FUN BASIC BOARD",
-      "description": "Розвиває: Дрібна моторика, візуальне сприйняття, логічне мислення"
+      "description": "Rozvíja: Jemná motorika, vizuálne vnímanie, logické myslenie"
     },
-    "videoText": " Система відео вправ FlexiFun Geometry",
+    "videoText": "Systém video cvičení FlexiFun Geometry",
+    "question": "Úlohy:",
     "introduction": {
-      "header": "Знайомство з формами",
-      "description": "Розвиває: Дрібна моторика, візуальне сприйняття, тактильні відчуття",
-      "descriptionFull": "Перші кроки у світ геометрії закладають фундамент математичного мислення. Під час знайомства з формами активізуються ділянки мозку, відповідальні за просторове сприйняття. Це схоже на те, як дитина вчиться читати - спочатку літери, потім слова. Так само і тут: спочатку базові форми, а потім складніші геометричні поняття.",
+      "header": "Zoznámenie s tvarmi",
+      "description": "Rozvíja: Jemná motorika, vizuálne vnímanie, taktilné vnemy",
+      "descriptionFull": "Prvé kroky do sveta geometrie položia základ matematického myslenia. Počas zoznamovania sa s tvarmi sa aktivujú oblasti mozgu zodpovedné za priestorové vnímanie. Je to podobné ako keď sa dieťa učí čítať - najprv písmená, potom slová. Rovnako je to aj tu: najprv základné tvary a potom zložitejšie geometrické pojmy.",
       "quests": {
-        "first": "* Розгляньте кожну фігуру на основі",
-        "second": "* Знайдіть відповідні фігури серед окремих елементів",
-        "third": "* Порівняйте форми: коло, трикутник, квадрат",
-        "fourth": "* Обговоріть особливості кожної форми (кількість кутів, сторони, колір)"
+        "first": "* Prezrite si každý tvar na podložke",
+        "second": "* Nájdite zodpovedajúce tvary medzi jednotlivými prvkami",
+        "third": "* Porovnajte tvary: kruh, trojuholník, štvorec",
+        "fourth": "* Diskutujte o vlastnostiach každého tvaru (počet rohov, strany, farba)"
       }
     },
     "color": {
-      "header": "Колірна відповідність",
-      "description": "Розвиває: Дрібна моторика, візуальне сприйняття, тактильні відчуття",
-      "descriptionFull": "Розрізнення кольорів - це не просто візуальна навичка. Це розвиток здатності класифікувати та організовувати інформацію. Коли малюк сортує фігури за кольором, він вчиться створювати системи та категорії, що є основою аналітичного мислення.",
+      "header": "Farebná zhoda",
+      "description": "Rozvíja: Klasifikácia a zraková pamäť",
+      "descriptionFull": "Rozlišovanie farieb nie je len vizuálna zručnosť. Je to rozvoj schopnosti klasifikovať a organizovať informácie. Keď dieťa triedi tvary podľa farieb, učí sa vytvárať systémy a kategórie, čo je základom analytického myslenia.",
       "quests": {
-        "first": "* Розкладіть фігури за кольорами (червоні, жовті, зелені)",
-        "second": "* Знайдіть усі фігури одного кольору",
-        "third": "* Порівняйте фігури різних кольорів",
-        "fourth": "* Назвіть колір кожної фігури на основі"
+        "first": "* Rozložte tvary podľa farieb (červené, žlté, zelené)",
+        "second": "* Nájdite všetky tvary jednej farby",
+        "third": "* Porovnajte tvary rôznych farieb",
+        "fourth": "* Pomenujte farbu každého tvaru na podložke"
       }
     },
     "placing": {
-      "header": "Розміщення фігур",
-      "description": "Розвиває: Просторове мислення та координація рухів",
-      "descriptionFull": "Правильне розміщення фігур розвиває не тільки моторику, але й просторове мислення. Це як пазл, де кожен елемент має своє місце. Така діяльність формує розуміння причинно-наслідкових зв'язків та вчить досягати конкретної мети.",
+      "header": "Umiestnenie tvarov",
+      "description": "Rozvíja: Priestorové myslenie a koordinácia pohybov",
+      "descriptionFull": "Správne umiestnenie tvarov rozvíja nielen motoriku, ale aj priestorové myslenie. Je to ako puzzle, kde každý prvok má svoje miesto. Táto činnosť formuje pochopenie príčinných súvislostí a učí dosahovať konkrétne ciele.",
       "quests": {
-        "first": "* Знайдіть правильне місце для кожної фігури на основі",
-        "second": "* Навчіться встановлювати фігури рівно",
-        "third": "* Тренуйте точність рухів при встановленні"
+        "first": "* Nájdite správne miesto pre každý tvar na podložke",
+        "second": "* Trénujte presnosť pohybov pri umiestňovaní",
+        "third": ""
       }
     },
     "combinations": {
-      "header": "Комбінації та послідовності",
-      "description": "Розвиває: Логічне мислення та розуміння закономірностей",
-      "descriptionFull": "Створення послідовностей - це перший крок до розуміння математичних закономірностей. Це як музика, де важливий ритм і порядок. Коли дитина будує послідовності, вона розвиває логічне мислення та здатність передбачати наступні кроки.",
+      "header": "Kombinácie a postupnosti",
+      "description": "Rozvíja: Logické myslenie a chápanie zákonitostí",
+      "descriptionFull": "Vytváranie postupností je prvým krokom k pochopeniu matematických zákonitostí. Je to ako hudba, kde je dôležitý rytmus a poriadok. Keď dieťa vytvára postupnosti, rozvíja logické myslenie a schopnosť predvídať ďalšie kroky.",
       "quests": {
-        "first": "* Створіть послідовність з фігур за кольором (червоний-синій-червоний-синій)",
-        "second": "* Побудуйте ряд фігур за розміром (від найменшої до найбільшої)",
-        "third": "* Складіть візерунок, чергуючи різні форми"
+        "first": "* Vytvorte postupnosť tvarov podľa farby (červená-modrá-červená-modrá)",
+        "second": "* Zostavte rad tvarov podľa veľkosti (od najmenšieho po najväčší)",
+        "third": "* Zostavte vzor striedaním rôznych tvarov"
       }
     }
   },
   "MemoryCasePage": {
-    "header": "ТРЕНАЖЕР Memory Case",
-    "headerText": "Ефективний тренажер для розвитку пам'яті! Від простих до складних послідовностей",
-    "cardHeader": "Тренування пам'яті",
-    "cardText": "Розвиває: Візуальну пам'ять і покращує концентрацію уваги"
+    "header": "TRÉNER Memory Case",
+    "headerText": "Efektívny tréner pre rozvoj pamäti! Od jednoduchých po zložité postupnosti",
+    "cardHeader": "Tréning pamäti",
+    "cardText": "Rozvíja: Vizuálnu pamäť a zlepšuje koncentráciu pozornosti"
   },
   "MemoryCaseGame": {
-    "header": " Memory Case ТРЕНАЖЕР",
-    "headerText": "Тренування пам'яті",
-    "department": "Відділення",
+    "header": "  Memory Case TRÉNER",
+    "headerText": "Tréning pamäti",
+    "department": "Priečinok",
     "buttons": {
-      "timer": "Таймер - ",
-      "record": "Минулий рекорд: ",
-      "start": "Почати",
-      "done": "Готово",
-      "yes": "Так",
-      "no": "Ні",
-      "stop": "Стоп",
-      "time": "Загальний час - "
+      "timer": "Časovač - ",
+      "record": "Predchádzajúci rekord: ",
+      "start": "Začať",
+      "done": "Hotovo",
+      "yes": "Áno",
+      "no": "Nie",
+      "stop": "Stop",
+      "time": "Celkový čas - "
     },
     "modal": {
       "buttons": {
-        "ok": "ок"
+        "ok": "ok"
       },
       "tip": {
-        "header": "Підказка",
-        "text": "Вітаємо вас! Підготуйте Memory Case та фігури. Розкладіть їх перед собою і після цього натисніть “ок”",
-        "textLarge": "Після того як ви запустите тренажер і натиснете на кнопку «почати», ви побачите просту послідовність, фігури будуть з'являтися по черзі! Після кожної появи і зникнення фігури потрібно спробувати запам'ятати фігуру і покласти у відповідний відсік та слідувати інструкціям далі, після кожного успішного запам'ятовування послідовностей вам будуть начислятися бали, за допомогою яких ви зможете перейти на рівень вище, кожен рівень складніший за попередній"
+        "header": "Nápoveda",
+        "text": "Gratulujeme! Pripravte si pamäťové puzdro a tvary. Položte ich pred seba a potom kliknite na tlačidlo „ok“",
+        "textLarge": "Po spustení trénera a stlačení tlačidla “začať” uvidíte jednoduchú postupnosť, tvary sa budú objavovať postupne! Po každom zobrazení a zmiznutí tvaru si ho skúste zapamätať a položiť do príslušného priečinku a ďalej postupujte podľa inštrukcií. Za každé úspešné zapamätanie postupností získate body, pomocou ktorých môžete postúpiť na vyššiu úroveň. Každá úroveň je náročnejšia než predchádzajúca."
       },
       "audit": {
-        "header": "Перевірка",
-        "text": "Зараз на екран буде виведена правильна послідовність,натисніть «Так» або «Ні» залежно від того, вгадали ви чи ні.",
-        "takePoint": "Відмінно ви заробили 1 бал, продовжимо? ",
-        "tryAgain": "Не правильно! Давайте попробуем еще раз",
-        "nextLevel": "Чудово! Ви готові до наступного рівня!"
+        "header": "Kontrola",
+        "text": "Teraz sa na obrazovke zobrazí správna postupnosť, stlačte “Áno” alebo “Nie” podľa toho, či ste uhádli alebo nie.",
+        "takePoint": "Výborne, získali ste 1 bod, pokračujeme?",
+        "tryAgain": "Nesprávne! Skúsme to ešte raz",
+        "nextLevel": "Výborne! Ste pripravení na ďalšiu úroveň!"
       }
     }
   },
   "BasicBoardPage": {
-    "header": "ТРЕНАЖЕР FLEXI-FUN BASIC BOARD ",
-    "headerText": "Інноваційний тренажер для розвитку моторики та логічного мислення. ",
-    "headerTextSecond": "Два режими вправ:",
-    "cardHeader": "Пошук форм",
-    "cardText": "Розвиває точність рухів, координацію, та розпізнавання геометричних форм",
-    "secondCardHeader": "Швидкісний пошук",
-    "secondCardText": "Покращує координацію рухів та розвиває швидкість реакції"
+    "header": "TRÉNER FLEXI-FUN BASIC BOARD",
+    "headerText": "Inovatívny tréner pre rozvoj motoriky a logického myslenia. ",
+    "headerTextSecond": "Dva režimy cvičení:",
+    "cardHeader": "Hľadanie tvarov",
+    "cardText": "Rozvíja presnosť pohybov, koordináciu a rozpoznávanie geometrických tvarov",
+    "secondCardHeader": "Rýchle hľadanie",
+    "secondCardText": "Zlepšuje koordináciu pohybov a rozvíja rýchlosť reakcie"
   },
   "BasicBoardGame": {
-    "header": " BASIC BOARD ТРЕНАЖЕР",
-    "headerText": "ПОШУК ФОРМ",
-    "previewText": "Підготуйте дошку та всі фігури! Готові? Почнемо!",
-    "gameTextFirst": "Знайдіть ",
-    "gameTextSecond": " і встановіть на фізичну дощечку",
-    "continueText": "Чудово! Продовжуємо?",
-    "newGameText": "Ви зібрали всі фігури, хочете почати заново?",
+    "header": " BASIC BOARD TRÉNER",
+    "headerText": "HĽADANIE TVAROV",
+    "previewText": "Pripravte dosku a všetky tvary! Pripravení? Začnime!",
+    "gameTextFirst": "Nájdite ",
+    "gameTextSecond": " a umiestnite ho na fyzickú dosku",
+    "continueText": "Výborne! Pokračujeme?",
+    "newGameText": "Zozbierali ste všetky tvary, chcete začať znova?",
     "buttons": {
-      "timer": "Час виконання - ",
-      "record": "Минулий рекорд: ",
-      "start": "Почати",
-      "done": "Готово",
-      "yes": "Так",
-      "no": "Ні",
-      "stop": "Стоп",
-      "time": "Загальний час - "
+      "timer": "Čas vykonania - ",
+      "record": "Predchádzajúci rekord:  ",
+      "start": "Začať",
+      "done": "Hotovo",
+      "yes": "Áno",
+      "no": "Nie",
+      "stop": "Stop",
+      "time": "Celkový čas - "
     },
     "modal": {
       "buttons": {
-        "ok": "ок"
+        "ok": "ok"
       },
       "tip": {
-        "header": "Підказка",
+        "header": "Nápoveda",
         "text": {
-          "first": "1. Підготуйте фізичний набір",
-          "second": "2. Розкладіть усі детальки так, щоб дитині було зручно їх збирати",
-          "third": "3. Дотримуйтесь підказок тренажера у верхньому рядку"
+          "first": "1. Pripravte fyzickú súpravu",
+          "second": "2. Rozložte všetky dieliky tak, aby ich dieťa mohlo pohodlne zbierať",
+          "third": "3. Dodržiavajte pokyny trénera v hornom riadku"
         }
       }
     }
   },
   "BasicBoardSpeedGame": {
-    "header": " BASIC BOARD ТРЕНАЖЕР",
-    "headerText": "ШВИДКІСНИЙ ПОШУК",
-    "previewText": "Приготуйтесь до швидкісного завдання!",
-    "previewTextSecond": "Потрібно знайти фігури якомога швидше!",
-    "gameTextLevel": "Рівень ",
-    "gameTextFirst": "Знайдіть ",
-    "gameTextFindPair": "пару - ",
-    "gameTextSecond": " і встановіть на фізичну дощечку",
-    "continueText": "Чудово! Продовжуємо?",
-    "timeOutTextText": "Час закінчився, спробуємо ще раз?",
-    "newGameText": "Підготуйте дошку та всі фігури! Готові? Почнемо!",
+    "header": " BASIC BOARD TRÉNER",
+    "headerText": "RÝCHLE HĽADANIE",
+    "previewText": "Pripravte sa na rýchlu úlohu! ",
+    "previewTextSecond": "Musíte nájsť tvary čo najrýchlejšie!",
+    "gameTextLevel": "Úroveň ",
+    "gameTextFirst": "Nájdite ",
+    "gameTextFindPair": "pár - ",
+    "gameTextSecond": " a umiestnite ho na fyzickú dosku",
+    "continueText": "Výborne! Pokračujeme?",
+    "timeOutTextText": "Čas vypršal, skúsime to znova?",
+    "newGameText": "Pripravte dosku a všetky tvary! Pripravení? Začnime!",
     "buttons": {
-      "timer": "Таймер - ",
-      "record": "Минулий рекорд: ",
-      "start": "Почати",
-      "done": "Готово",
-      "stop": "Стоп",
-      "time": "Загальний час - "
+      "timer": "Časovač - ",
+      "record": "Predchádzajúci rekord: ",
+      "start": "Začať",
+      "done": "Hotovo",
+      "stop": "Stop",
+      "time": "Celkový čas - "
     },
     "modal": {
       "buttons": {
-        "ok": "ок"
+        "ok": "ok"
       },
       "tip": {
-        "header": "Підказка",
+        "header": "Nápoveda",
         "text": {
-          "first": "Підготуйте фізичний набір, розкладіть усі детальки так, щоб дитині було зручно їх збирати",
-          "second": "Дотримуйтесь підказок тренажера у верхньому рядку"
+          "first": "Pripravte fyzickú súpravu, rozložte všetky dieliky tak, aby ich dieťa mohlo pohodlne zbierať.",
+          "second": "Dodržiavajte pokyny trénera v hornom riadku"
         }
       },
       "nextLevel": {
-        "first": "Вітаємо, ви перейшли на наступний рівень! ",
-        "second": "Очистіть дошку і приготуйтеся! ",
-        "third": "(Для ускладнення завдання ви можете змішати всі фігурки, щоб дитині було не так легко їх шукати)"
+        "first": "Výborne! Ste pripravení na ďalšiu úroveň!",
+        "second": "Vyčistite tabuľu a pripravte sa! ",
+        "third": "(Aby ste úlohu sťažili, môžete všetky čísla pomiešať, aby ich dieťa nemohlo tak ľahko nájsť.)"
       }
     }
   },

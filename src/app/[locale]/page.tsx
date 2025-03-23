@@ -18,8 +18,8 @@ export default function Home() {
         <Included />
         <Feedback />
         <Questions />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }
