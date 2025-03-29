@@ -19,16 +19,16 @@ const localeMetadata: Record<
   { title: string; description: string; keywords: string }
 > = {
   uk: {
-    title: 'FlexiFun – Онлайн тренажер FlexiFun Geometry',
+    title: 'FlexiFun – набір для розвитку FlexiFun Geometry',
     description:
-      'FlexiFun Geometry – це інноваційний онлайн тренажер, який допомагає розвивати моторику та логічне мислення за допомогою системи відео вправ. Завдяки двом режимам вправ, тренажер адаптується до різних потреб користувачів, роблячи навчання цікавим і ефективним.',
+      'FlexiFun Geometry – це інноваційний набір для розвитку дитини, який допомагає розвивати моторику та логічне мислення за допомогою системи відео вправ. Завдяки двом режимам вправ, тренажер адаптується до різних потреб користувачів, роблячи навчання цікавим і ефективним.',
     keywords:
       'FlexiFun Geometry, онлайн тренажер, розвиток моторики, логічне мислення, відео вправи, інноваційний тренажер, навчання, освіта',
   },
   sk: {
-    title: 'FlexiFun – Online trenažér FlexiFun Geometry',
+    title: 'FlexiFun – vývojový kit FlexiFun Geometry',
     description:
-      'FlexiFun Geometry je inovatívny online trenažér, ktorý pomáha rozvíjať motoriku a logické myslenie pomocou systému video cvičení. Vďaka dvom režimom cvičení sa trenažér prispôsobuje rôznym potrebám používateľov, čím robí učenie zábavným a efektívnym.',
+      'FlexiFun Geometry - je inovatívna súprava na rozvoj detí, ktorá pomáha rozvíjať motorické zručnosti a logické myslenie prostredníctvom systému video cvičení. Vďaka dvom režimom cvičenia sa simulátor prispôsobuje rôznym potrebám používateľov, vďaka čomu je tréning zaujímavý a efektívny.',
     keywords:
       'FlexiFun Geometry, online trenažér, rozvoj motoriky, logické myslenie, video cvičenia, inovatívny trenažér, učenie, vzdelávanie',
   },

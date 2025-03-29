@@ -1,15 +1,15 @@
 {
   "name": {
-    "uk": "FlexiFun – Онлайн тренажер FlexiFun Geometry",
-    "sk": "FlexiFun – Online trenažér FlexiFun Geometry"
+    "uk": "FlexiFun – набір для розвитку FlexiFun Geometry",
+    "sk": "FlexiFun – vývojový kit FlexiFun Geometry"
   },
   "short_name": {
     "uk": "FlexiFun",
     "sk": "FlexiFun"
   },
   "description": {
-    "uk": "FlexiFun Geometry – це інноваційний онлайн тренажер, який допомагає розвивати моторику та логічне мислення за допомогою системи відео вправ. Завдяки двом режимам вправ, тренажер адаптується до різних потреб користувачів, роблячи навчання цікавим і ефективним.",
-    "sk": "FlexiFun Geometry je inovatívny online trenažér, ktorý pomáha rozvíjať motoriku a logické myslenie pomocou systému video cvičení. Vďaka dvom režimom cvičení sa trenažér prispôsobuje rôznym potrebám používateľov, čím robí učenie zábavným a efektívnym."
+    "uk": "FlexiFun Geometry – це інноваційний набір для розвитку дитини, який допомагає розвивати моторику та логічне мислення за допомогою системи відео вправ. Завдяки двом режимам вправ, тренажер адаптується до різних потреб користувачів, роблячи навчання цікавим і ефективним.",
+    "sk": "FlexiFun Geometry - je inovatívna súprava na rozvoj detí, ktorá pomáha rozvíjať motorické zručnosti a logické myslenie prostredníctvom systému video cvičení. Vďaka dvom režimom cvičenia sa simulátor prispôsobuje rôznym potrebám používateľov, vďaka čomu je tréning zaujímavý a efektívny."
   },
   "icons": [
     {
