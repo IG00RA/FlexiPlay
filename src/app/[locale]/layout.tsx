@@ -46,7 +46,7 @@ export const generateMetadata = async ({
 
   return {
     metadataBase: new URL(
-      process.env.NEXT_PUBLIC_SITE_URL || 'https://mustage.team'
+      process.env.NEXT_PUBLIC_SITE_URL || 'https://flexifun.io'
     ),
     title: metadataValues.title,
     description: metadataValues.description,
