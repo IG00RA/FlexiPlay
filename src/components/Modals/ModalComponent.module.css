@@ -8,6 +8,7 @@
   margin: 0 auto;
   width: 91.1vw;
   max-width: 1280px;
+  outline: none;
 }
 
 .overlay {

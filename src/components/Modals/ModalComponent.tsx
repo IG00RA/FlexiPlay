@@ -27,6 +27,7 @@ export default function ModalComponent({
       onRequestClose={onClose}
       className={styles.modal}
       overlayClassName={styles.overlay}
+      shouldFocusAfterRender={false}
     >
       <>
         <button onClick={onClose} className={styles.close_btn}>

@@ -30,6 +30,7 @@ export default function Included() {
     StaticImageData | string | null
   >(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [videoTime, setVideoTime] = useState(0); // Зберігаємо поточний час відео
   const swiperRef = useRef<SwiperCore | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -45,6 +46,9 @@ export default function Included() {
   };
 
   const handleContentClick = (content: StaticImageData | string) => {
+    if (content === videoSrc && videoRef.current) {
+      setVideoTime(videoRef.current.currentTime); // Зберігаємо час перед відкриттям модалки
+    }
     setSelectedContent(content);
     setIsModalOpen(true);
     if (videoRef.current) {
@@ -211,7 +215,6 @@ export default function Included() {
             </div>
           </SwiperSlide>
 
-          {/* Зображення */}
           {originalGalleryImages.map((image, index) => (
             <SwiperSlide key={index + 1}>
               {loadingImages[index] && (
@@ -284,6 +287,11 @@ export default function Included() {
               controls
               autoPlay
               className={styles.modal_image}
+              ref={el => {
+                if (el && selectedContent === videoSrc) {
+                  el.currentTime = videoTime; // Встановлюємо час із слайдера
+                }
+              }}
             />
           ) : (
             <Image
