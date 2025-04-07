@@ -2,16 +2,19 @@ import ipm1 from '../img/important/first.webp';
 import ipm2 from '../img/important/second.webp';
 import ipm3 from '../img/important/third.webp';
 
-// import reas1 from '../img/reasons/1.webp';
-// import reas2 from '../img/reasons/2.webp';
-// import reas3 from '../img/reasons/3.webp';
-// import reas4 from '../img/reasons/4.webp';
-
+import slider from '../img/hero/slider.webp';
 import slider1 from '../img/hero/slider1.webp';
-import slider2 from '../img/hero/slider1.webp';
-import slider3 from '../img/hero/slider1.webp';
-import slider4 from '../img/hero/slider1.webp';
-import slider5 from '../img/hero/slider1.webp';
+import slider2 from '../img/hero/slider2.webp';
+import slider3 from '../img/hero/slider3.webp';
+import slider4 from '../img/hero/slider4.webp';
+import slider5 from '../img/hero/slider5.webp';
+import slider6 from '../img/hero/slider6.webp';
+import slider7 from '../img/hero/slider7.webp';
+import slider8 from '../img/hero/slider8.webp';
+import slider9 from '../img/hero/slider9.webp';
+import slider10 from '../img/hero/slider10.webp';
+import slider11 from '../img/hero/slider11.webp';
+import slider12 from '../img/hero/slider12.webp';
 
 import feed1 from '../img/review/1.webp';
 import feed2 from '../img/review/2.webp';
@@ -40,7 +43,21 @@ export const heroItems = [
   'Hero.items.fourth',
 ];
 
-export const slideItems = [slider1, slider2, slider3, slider4, slider5];
+export const slideItems = [
+  slider,
+  slider1,
+  slider2,
+  slider3,
+  slider4,
+  slider5,
+  slider6,
+  slider7,
+  slider8,
+  slider9,
+  slider10,
+  slider11,
+  slider12,
+];
 
 export const importantItems = [
   {

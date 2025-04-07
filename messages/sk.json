@@ -204,7 +204,7 @@
   },
   "Hero": {
     "price": "65€",
-    "priceSecond": "20€",
+    "priceSecond": "19.99€",
     "text": "FlexiFun Geometry: Prvé kroky do sveta logiky",
     "header": "Vývojová sada pre deti od 1 do 3 rokov ",
     "headerDesk": "Prístup k interaktívnemu online trenažéru",
@@ -299,6 +299,7 @@
   "Included": {
     "header": "Fascinujúce cvičenia pre rozvoj",
     "text": "Popis cvičení",
+    "video": "Kliknutím zobrazíte recenziu",
     "items": {
       "first": "Naučte sa rozlišovať farby a vytvárať vzory. Dieťa si zapamätaním a reprodukovaním sekvencií rozvíja pamäť a pozornosť.",
       "second": "Skúmanie vlastností rôznych tvarov. Od jednoduchých po zložité: kruh, trojuholník, štvorec a ich kombinácie.",
@@ -417,7 +418,7 @@
       "namePlaceHolder": "Názov",
       "nickPlaceHolder": "Priezvisko",
       "priceText": "Počet súprav",
-      "price": 20,
+      "price": 19.99,
       "priceValue": "€",
       "socialPar": "Spôsob komunikácie",
       "phone": "Phone number"

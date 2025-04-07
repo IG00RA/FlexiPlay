@@ -40,11 +40,13 @@
 .gallery_slider {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 834/626;
   margin: 0 auto;
   position: relative;
   max-width: var(--mobile_xl);
   margin-bottom: 16px;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .slider_image {
@@ -292,11 +294,8 @@
     right: 0;
   }
   .gallery_slider {
-    aspect-ratio: 664/601;
-    max-width: 664px;
-    padding: 9.54px;
-    border-radius: 57.241px;
-    background: #fbfbfb;
+    max-width: 834px;
+    border-radius: 40px;
     margin-bottom: 24px;
   }
   .list {
@@ -370,4 +369,13 @@
   .header span {
     display: none;
   }
+}
+
+.modal_image {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
 }

@@ -198,7 +198,7 @@ export default function Form({ toggleForm, isFormOpen }: FormProps) {
               onClick={() => handleQuantityChange(1)}
             ></button>
             <span className={styles.priceTotal}>
-              ={formData.quantity * (locale === 'sk' ? 20 : 420)}
+              ={formData.quantity * (locale === 'sk' ? 19.99 : 899)}
               {t('Form.form.priceValue')}
             </span>
           </div>
