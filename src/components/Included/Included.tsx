@@ -33,7 +33,7 @@ export default function Included() {
   const swiperRef = useRef<SwiperCore | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const videoSrc = '/assets/review.mov';
+  const videoSrc = '/assets/review.mp4';
 
   const handleImageLoad = (index: number) => {
     setLoadingImages(prev => {
