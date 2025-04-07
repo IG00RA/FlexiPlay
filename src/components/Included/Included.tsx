@@ -33,7 +33,8 @@ export default function Included() {
   const swiperRef = useRef<SwiperCore | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const videoSrc = '/assets/review.mp4';
+  const videoSrc =
+    'https://www.dropbox.com/scl/fi/79vl5eef6zd0yy8aop1w0/geometry-rewiev.mov?rlkey=7a186ulsuw26smh1yqmwba97a&st=p1l78weh&dl=1';
 
   const handleImageLoad = (index: number) => {
     setLoadingImages(prev => {
