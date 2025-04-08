@@ -88,6 +88,25 @@
   }
 }
 
+.loader_video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  animation: spin 1s linear infinite; /* Додаємо анімацію обертання */
+}
+
+/* Визначаємо анімацію */
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg); /* Початкове положення */
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg); /* Повний оберт */
+  }
+}
+
 .play_wrapper {
   width: 136px;
   height: 136px;

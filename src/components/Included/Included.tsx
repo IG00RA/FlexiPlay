@@ -33,6 +33,7 @@ export default function Included() {
   const [videoTime, setVideoTime] = useState(0); // Зберігаємо поточний час відео
   const swiperRef = useRef<SwiperCore | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const videoSrc =
     'https://www.dropbox.com/scl/fi/79vl5eef6zd0yy8aop1w0/geometry-rewiev.mov?rlkey=7a186ulsuw26smh1yqmwba97a&st=p1l78weh&dl=1';
@@ -67,7 +68,6 @@ export default function Included() {
   const playVideo = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (videoRef.current) {
-      videoRef.current.muted = true;
       videoRef.current
         .play()
         .then(() => {
@@ -109,6 +109,10 @@ export default function Included() {
     let start = activeIndex - half;
     let end = activeIndex + half + 1;
 
+    if (activeIndex !== 0) {
+      pauseVideo();
+    }
+
     if (start < 0) {
       start = 0;
       end = maxBullets;
@@ -148,6 +152,10 @@ export default function Included() {
   const totalSlides = originalGalleryImages.length + 1;
   const enableLoop = totalSlides >= 2;
 
+  const handleLoadedData = () => {
+    setIsLoading(false);
+  };
+
   return (
     <section id="included" className={styles.section}>
       <div className={styles.swiper_container}>
@@ -186,13 +194,23 @@ export default function Included() {
             <div className={styles.video_wrapper}>
               <video
                 ref={videoRef}
+                onLoadedData={handleLoadedData}
                 src={videoSrc}
                 className={styles.slider_image}
-                muted
                 onClick={handleVideoClick}
                 style={{ cursor: isPlaying ? 'pointer' : 'default' }}
               />
-              {!isPlaying && (
+              {isLoading && (
+                <div className={styles.loader_video}>
+                  <Icon
+                    name="icon-load"
+                    width={55}
+                    height={55}
+                    color="#88b2ff"
+                  />
+                </div>
+              )}
+              {!isPlaying && !isLoading && (
                 <div className={styles.image_wrapper}>
                   <div className={styles.play_wrapper} onClick={playVideo}>
                     <Icon name="icon-play" width={136} height={136} />
