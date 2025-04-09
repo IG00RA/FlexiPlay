@@ -19,6 +19,7 @@ import ButtonMain from '../Buttons/ButtonMain';
 import ButtonWhite from '../Buttons/ButtonWhite';
 import ModalComponent from '../Modals/ModalComponent';
 import SwiperCore from 'swiper';
+import YouTube from 'react-youtube'; // Додаємо бібліотеку react-youtube
 
 export default function Included() {
   const t = useTranslations();
@@ -30,13 +31,12 @@ export default function Included() {
     StaticImageData | string | null
   >(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [videoTime, setVideoTime] = useState(0); // Зберігаємо поточний час відео
+  const [videoTime, setVideoTime] = useState(0);
   const swiperRef = useRef<SwiperCore | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
 
-  const videoSrc =
-    'https://www.dropbox.com/scl/fi/79vl5eef6zd0yy8aop1w0/geometry-rewiev.mov?rlkey=7a186ulsuw26smh1yqmwba97a&st=p1l78weh&dl=1';
+  const videoSrc = '/assets/geometry-review.webm';
+  const youtubeShortsId = 'cFc5NUbCQBw';
 
   const handleImageLoad = (index: number) => {
     setLoadingImages(prev => {
@@ -152,8 +152,15 @@ export default function Included() {
   const totalSlides = originalGalleryImages.length + 1;
   const enableLoop = totalSlides >= 2;
 
-  const handleLoadedData = () => {
-    setIsLoading(false);
+  // Налаштування для YouTube плеєра
+  const youtubeOpts = {
+    height: '610',
+    width: '350',
+    playerVars: {
+      autoplay: 1, // Автовідтворення
+      start: Math.floor(videoTime), // Початок із збереженого часу
+      controls: 1, // Показувати елементи керування
+    },
   };
 
   return (
@@ -194,13 +201,12 @@ export default function Included() {
             <div className={styles.video_wrapper}>
               <video
                 ref={videoRef}
-                onLoadedData={handleLoadedData}
                 src={videoSrc}
                 className={styles.slider_image}
                 onClick={handleVideoClick}
                 style={{ cursor: isPlaying ? 'pointer' : 'default' }}
               />
-              {isLoading && (
+              {/* {isLoading && (
                 <div className={styles.loader_video}>
                   <Icon
                     name="icon-load"
@@ -209,8 +215,8 @@ export default function Included() {
                     color="#88b2ff"
                   />
                 </div>
-              )}
-              {!isPlaying && !isLoading && (
+              )} */}
+              {!isPlaying && (
                 <div className={styles.image_wrapper}>
                   <div className={styles.play_wrapper} onClick={playVideo}>
                     <Icon name="icon-play" width={136} height={136} />
@@ -299,17 +305,12 @@ export default function Included() {
       {/* Модалка */}
       <ModalComponent isOpen={isModalOpen} onClose={closeModal}>
         {selectedContent &&
-          (typeof selectedContent === 'string' ? (
-            <video
-              src={selectedContent}
-              controls
-              autoPlay
-              className={styles.modal_image}
-              ref={el => {
-                if (el && selectedContent === videoSrc) {
-                  el.currentTime = videoTime; // Встановлюємо час із слайдера
-                }
-              }}
+          (typeof selectedContent === 'string' &&
+          selectedContent === videoSrc ? (
+            <YouTube
+              videoId={youtubeShortsId}
+              opts={youtubeOpts}
+              className={styles.modal_video}
             />
           ) : (
             <Image

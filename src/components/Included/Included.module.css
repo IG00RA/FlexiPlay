@@ -406,3 +406,12 @@
     transform: scale(1.1);
   }
 }
+
+.modal_video {
+  margin: 0 auto;
+  width: 350px;
+  max-height: 90vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
