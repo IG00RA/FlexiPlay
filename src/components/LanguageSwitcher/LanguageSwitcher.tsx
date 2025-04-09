@@ -10,7 +10,7 @@ const LanguageSwitcher = () => {
   const router = useRouter();
 
   const { query, setLocale, setQuery } = useLanguageStore();
-  const [hoveredButton, setHoveredButton] = useState<string | null>(null); // Стан для ховера
+  const [hoveredButton, setHoveredButton] = useState<string | null>(null);
 
   // Функція для визначення локалі з URL
   const getLocaleFromPath = (pathname: string): string => {
@@ -35,7 +35,7 @@ const LanguageSwitcher = () => {
 
   const handleLanguageChange = (lang: string) => {
     const path = pathname?.split('/').slice(2).join('/');
-    router.push(`/${lang}/${path}?${query}`);
+    router.push(`/${lang}/${path}${query}`);
   };
 
   // Обробники подій для ховера

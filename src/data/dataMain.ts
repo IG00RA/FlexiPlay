@@ -24,6 +24,7 @@ import feed5 from '../img/review/5.webp';
 import feed6 from '../img/review/6.webp';
 import feed7 from '../img/review/7.webp';
 import feed8 from '../img/review/8.webp';
+import feed9 from '../img/review/9.webp';
 
 import qual1 from '../img/choose/first.webp';
 import qual2 from '../img/choose/second.webp';
@@ -169,6 +170,12 @@ export const feedbackItems = [
     head: 'Feedback.items.eighth.head',
     img: feed8.src,
     text: 'Feedback.items.eighth.text',
+  },
+  {
+    span: 'Feedback.items.ninth.span',
+    head: 'Feedback.items.ninth.head',
+    img: feed9.src,
+    text: 'Feedback.items.ninth.text',
   },
 ];
 

@@ -46,7 +46,7 @@ export default function Feedback() {
   useEffect(() => {
     const updateGroups = () => {
       const screenWidth = window.innerWidth;
-      const groupSize = screenWidth >= 768 && screenWidth < 1250 ? 4 : 3;
+      const groupSize = screenWidth >= 768 && screenWidth < 1250 ? 2 : 3;
       setGroupedItems(groupItems(originalGalleryImages, groupSize));
     };
     updateGroups();
