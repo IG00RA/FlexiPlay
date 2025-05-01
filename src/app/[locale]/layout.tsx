@@ -7,6 +7,7 @@ import { getMessages } from 'next-intl/server';
 import { ToastContainer } from 'react-toastify';
 import { Suspense } from 'react';
 import { FacebookPixel } from '@/components/FacebookPixel/FacebookPixel';
+import { TikTokPixel } from '@/components/TikTokPixel/TikTokPixel';
 
 const fredoka = Fredoka({
   subsets: ['latin'],
@@ -114,6 +115,7 @@ export default async function RootLayout({
           <ToastContainer />
           <Suspense fallback={null}>
             <FacebookPixel />
+            <TikTokPixel />
           </Suspense>
         </body>
       </NextIntlClientProvider>

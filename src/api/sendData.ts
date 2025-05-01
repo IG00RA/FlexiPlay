@@ -20,6 +20,7 @@ interface QueryParams {
   sub7?: string | null | undefined;
   sub8?: string | null | undefined;
   fbp?: string | null | undefined;
+  ttp?: string | null | undefined;
 }
 
 const getDefaultUrl = (): string =>
@@ -53,6 +54,7 @@ const getQueryParams = (): QueryParams => {
     sub7: searchParams.get('sub7'),
     sub8: searchParams.get('sub8'),
     fbp: searchParams.get('fbp'),
+    ttp: searchParams.get('ttp'),
   };
 };
 
@@ -85,7 +87,7 @@ export const sendToGoogleScript = async (data: FormData) => {
 export const sendMessage = async (sendData: FormData): Promise<void> => {
   let botMessage;
 
-  botMessage = '<b>Користувач зробив замовлення:</b>\n';
+  botMessage = '<b>Користувач зробив замовлення FlexiFun geometry:</b>\n';
   botMessage += 'Імя: <b>' + sendData.name + '</b>\n';
   botMessage += 'Прізвище: <b>' + sendData.surname + '</b>\n';
   botMessage += 'Кількість: <b>' + sendData.quantity + '</b>\n';
